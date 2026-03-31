@@ -1,0 +1,36 @@
+.hero{
+  padding: 2rem 1rem;
+}
+.container{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  
+  align-items: center;
+  text-align: center;
+}
+.left{
+  text-align: left;
+}
+.right{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+  /* image */
+.svg {
+  width: 100%;
+  max-width: 400px;
+}
+.path {
+  stroke: #111;
+  stroke-width: 3.5;
+  fill: none;
+
+  stroke-linecap: round;
+  stroke-linejoin: round;
+
+  /* suaviza visualmente */
+  filter: drop-shadow(0 2px 2px rgba(0,0,0,0.1));
+}
