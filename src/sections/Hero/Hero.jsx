@@ -31,7 +31,7 @@ function Hero() {
 
                 setTimeout(() => {
                     el.style.transition = `
-                  stroke-dashoffset 2.5s ease ${i * 0.6}s,
+                  stroke-dashoffset 2s ease ${i * 0.6}s,
                   opacity 0.6s ease ${i * 0.4}s
                 `
                     el.style.strokeDashoffset = "0"

@@ -1,0 +1,78 @@
+.header {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  background: #F8F9FA;
+  z-index: 100;
+}
+
+/* CONTAINER */
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+/* LOGO */
+.logo {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  width: 40px;
+}
+.path {
+  opacity: 0;
+}
+.hStart {
+  transform: translateY(-120px);
+}
+
+.dotStart {
+  transform: translateY(-120px);
+}
+
+/* NAV (oculto en mobile) */
+.nav {
+  display: none;
+}
+
+/* BURGER */
+.burger {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.burger span {
+  width: 24px;
+  height: 2px;
+  background: #111;
+}
+
+/* DESKTOP */
+@media (min-width: 768px) {
+  .container {
+    padding: 1rem 2rem;
+  }
+
+  /* Mostrar menú */
+  .nav {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .nav a {
+    text-decoration: none;
+    color: #111;
+    font-size: 0.95rem;
+  }
+
+  /* Ocultar burger */
+  .burger {
+    display: none;
+  }
+}

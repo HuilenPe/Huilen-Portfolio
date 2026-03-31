@@ -1,5 +1,6 @@
 .hero{
-  padding: 2rem 1rem;
+  padding: 6rem 1rem;
+  background: #F8F9FA;
 }
 .container{
   display: flex;

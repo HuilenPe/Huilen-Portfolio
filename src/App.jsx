@@ -1,3 +1,4 @@
+import Header from "./components/Header/header.jsx"
 import Hero from "./sections/Hero/Hero.jsx"
 /* import About from "./sections/About" */
 /* import Projects from "./sections/Projects" */
@@ -7,8 +8,9 @@ import Hero from "./sections/Hero/Hero.jsx"
 function App() {
   return (
     <>
+        <Header />
         <Hero />
-{/*         <About />
+       {/*<About />
         <Projects />
         <Skills />
         <Contact /> */}
