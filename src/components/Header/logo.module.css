@@ -1,0 +1,11 @@
+.path {
+  opacity: 0;
+}
+
+.hStart {
+  transform: translateY(-120px);
+}
+
+.dotStart {
+  transform: translateY(-120px);
+}
