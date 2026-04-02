@@ -31,22 +31,20 @@ function Hero() {
 
                 setTimeout(() => {
                     el.style.transition = `
-                  stroke-dashoffset 2s ease ${i * 0.6}s,
+                  stroke-dashoffset 2s ease ${i * 0.3}s,
                   opacity 0.6s ease ${i * 0.4}s
                 `
                     el.style.strokeDashoffset = "0"
                 }, 50)
 
-            } catch (e) {
-                console.log("Path error:", e)
-            }
+            } catch (e) { }
         })
     }, [])
 
     return (
         <section className={styles.hero}>
-            <div className={styles.container}>
-
+            <div className="container">
+                <div className={styles.content}>
                 <div className={styles.right}>
                     <svg
                     className={styles.svg}
@@ -99,8 +97,12 @@ function Hero() {
                     </svg>
                 </div>   
                 <div className={styles.left}>
+                    <div className="container">
                     <h1>Hola, Soy Huilen</h1>
-                    <p>Frontend Developer & UI Designer</p>
+                        <p>Frontend Developer & UI Designer</p>
+                    </div>
+                
+                    </div>
                 </div>
             </div>
         </section>

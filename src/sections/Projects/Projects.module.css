@@ -1,0 +1,61 @@
+/* TITLE */
+.title {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+/* CARD */
+.card {
+ /*  border: 1px solid var(--text-light); */
+  border-radius: 12px;
+  background: var(--bg-light);
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* IMAGE */
+.img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* CONTENT */
+.content {
+  padding: 1.5rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+
+  flex: 1;
+}
+
+/* ACTIONS (botones) */
+.actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: auto;
+}
+
+/* TABLET */
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* DESKTOP */
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

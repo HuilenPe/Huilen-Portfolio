@@ -2,7 +2,7 @@
   width: 100%;
   position: sticky;
   top: 0;
-  background: #F8F9FA;
+  background: var(--bg-light);
   z-index: 100;
 }
 
@@ -12,7 +12,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem;
+  padding: var(--padding);
 }
 
 /* LOGO */
@@ -42,7 +42,7 @@
   transition: all 0.3s ease;
   width: 24px;
   height: 2px;
-  background: #111;
+  background: var(--text-main);
 }
 
 /* abierto */
@@ -71,20 +71,20 @@
   gap: 1.5rem;
   padding: 2rem;
   
-  background: #F8F9FA;
-  border-top: 1px solid #ddd;
+  background: var(--bg-light);
+/*   border-top: 1px solid var(--text-light); */
 }
 
 .mobileNav a {
   text-decoration: none;
-  color: #111;
+  color: var(--text-main);
   font-size: 1.2rem;
 }
 
 /* DESKTOP */
 @media (min-width: 768px) {
   .container {
-    padding: 1rem 2rem;
+    padding: var(--padding) 2rem;
   }
 
   /* Mostrar menú */
@@ -95,7 +95,7 @@
 
   .nav a {
     text-decoration: none;
-    color: #111;
+    color: var(--text-main);
     font-size: 0.95rem;
   }
 

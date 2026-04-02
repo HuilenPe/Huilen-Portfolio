@@ -1,0 +1,7 @@
+.link {
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}

@@ -29,3 +29,38 @@ textarea,
 select {
   font: inherit;
 }
+
+:root {
+  --bg-main: #F8F9FA;
+  --bg-light: #fdfdfd;
+  --bg-dark: #111111;
+
+  --text-main: #111111;
+  --text-light: #666666;
+
+  /* layout */
+  --max-width: 1200px;
+  --padding: 1rem;
+}
+
+/* base global */
+body {
+  background: var(--bg-main);
+  color: var(--text-main);
+}
+
+/* estructura base */
+section {
+  width: 100%;
+  padding: 5rem var(--padding);
+}
+
+/* contenedor reutilizable */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+html{
+  scroll-behavior: smooth;
+}
