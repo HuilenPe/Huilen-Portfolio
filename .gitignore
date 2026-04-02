@@ -12,9 +12,6 @@ dist
 dist-ssr
 *.local
 
-# Assets grandes o sensibles
-src/assets/PantallaHealth.png
-
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
