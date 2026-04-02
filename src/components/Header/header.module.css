@@ -4,6 +4,10 @@
   top: 0;
   background: var(--bg-light);
   z-index: 100;
+
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
 }
 
 /* CONTAINER */
@@ -20,7 +24,7 @@
   display: flex;
   align-items: flex-end;
   gap: 4px;
-  width: 40px;
+  width: 45px;
 }
 
 /* NAV (oculto en mobile) */
@@ -72,7 +76,6 @@
   padding: 2rem;
   
   background: var(--bg-light);
-/*   border-top: 1px solid var(--text-light); */
 }
 
 .mobileNav a {
