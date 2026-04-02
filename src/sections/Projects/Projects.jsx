@@ -1,5 +1,4 @@
 import styles from "./Projects.module.css"
-import saludHealth from "../../assets/PantallaHealth.png"
 import Button from "../../components/Button/button"
 
 function Projects() {
@@ -10,7 +9,7 @@ function Projects() {
 
                 <div className={styles.grid}>
                     <div className={styles.card}>
-                        <img src={saludHealth} alt="Salud Health" className={styles.img} />
+                        <img src="" alt="" className={styles.img} />
 
                         <div className={styles.content}>
                             <h3>Health Management</h3>
