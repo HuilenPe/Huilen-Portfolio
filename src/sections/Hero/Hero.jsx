@@ -99,9 +99,8 @@ function Hero() {
                 <div className={styles.left}>
                     <div className="container">
                     <h1>Hola, Soy Huilen</h1>
-                        <p>Frontend Developer & UI Designer</p>
+                    <p>Frontend Developer & UI Designer</p>
                     </div>
-                
                     </div>
                 </div>
             </div>

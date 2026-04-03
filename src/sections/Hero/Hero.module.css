@@ -1,7 +1,9 @@
 .hero{
   padding: 6rem 1rem;
   background: var(--bg-light);
+  font-family: var(--font-display);
 }
+
 
 .content{
   display: flex;
@@ -20,6 +22,14 @@
   width: 100%;
   display: flex;
   justify-content: center;
+}
+
+.left h1 {
+  font-size: clamp(3.5rem, 7vw, 5.2rem);
+}
+
+.left p {
+  font-size: 1.2rem;
 }
 
 .svg {

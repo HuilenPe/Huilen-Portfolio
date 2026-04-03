@@ -7,7 +7,29 @@ function Header() {
     const dotRef = useRef(null)
     const [isOpen, setIsOpen] = useState(false)
 
+    // lock body scroll when menu is open
     useEffect(() => {
+        document.body.style.overflow = isOpen ? "hidden" : "auto"
+    }, [isOpen])
+
+    // close mobile menu on desktop
+    useEffect(() => {
+        function handleResize() {
+            if (window.innerWidth >= 768) {
+                setIsOpen(false)
+            }
+        }
+
+        window.addEventListener("resize", handleResize)
+
+        return () => {
+            window.removeEventListener("resize", handleResize)
+        }
+    }, [])
+
+    // run intro logo animation
+    useEffect(() => {
+        
         if (!hRef.current || !dotRef.current) return
 
         // H 
