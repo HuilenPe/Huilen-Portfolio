@@ -1,7 +1,6 @@
 .hero{
   padding: 6rem 1rem;
-  background: var(--bg-light);
-  font-family: var(--font-display);
+  background: var(--bg-light);;
 }
 
 
@@ -26,6 +25,7 @@
 
 .left h1 {
   font-size: clamp(3.5rem, 7vw, 5.2rem);
+  font-family: var(--font-display)
 }
 
 .left p {
