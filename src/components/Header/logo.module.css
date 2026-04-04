@@ -1,18 +1,6 @@
-/* .path {
-  opacity: 0;
-}
-
-.hStart {
-  transform: translateY(-120px);
-}
-
-.dotStart {
-  transform: translateY(-120px);
-} */
-/* Estado base: logo siempre visible */
 .path {
-  opacity: 1;           /* visible por defecto */
-  transform: translateY(0); /* sin desplazamiento */
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Animación solo para desktop */

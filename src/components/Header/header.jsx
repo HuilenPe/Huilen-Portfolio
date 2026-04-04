@@ -27,42 +27,6 @@ function Header() {
         }
     }, [])
 
-   /*  // run intro logo animation
-    useEffect(() => {
-        
-        if (!hRef.current || !dotRef.current) return
-
-        // H 
-        hRef.current.animate(
-            [
-                { transform: "translateY(-120px)", opacity: 0 },
-                { transform: "translateY(0)", opacity: 1 }
-            ],
-            {
-                duration: 600,
-                easing: "cubic-bezier(0.22, 1, 0.36, 1)",
-                fill: "forwards"
-            }
-        )
-
-        // DOT rebote
-        setTimeout(() => {
-            dotRef.current.animate(
-                [
-                    { transform: "translateY(-120px)", opacity: 0 },
-                    { transform: "translateY(0)", opacity: 1 }
-                ],
-                {
-                    duration: 900,
-                    easing: "cubic-bezier(0.34, 2.2, 0.64, 1)", 
-                    fill: "forwards"
-                }
-            )
-        }, 400)
-
-    }, [])
- */
-
     return (
         <header className={styles.header}>
             <div className={styles.container}>

@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react"
 import styles from "./Hero.module.css"
+import scrollStyles from "./ScrollIndicator.module.css"
 
 function Hero() {
     const contornoRef = useRef(null)
@@ -99,6 +100,15 @@ function Hero() {
                 <div className={styles.left}>
                     <h1>Hola, Soy Huilen</h1>
                     <p>Frontend Developer & UI Designer</p>
+                    </div>
+                </div>
+                <div className={scrollStyles.scrollWrap}>
+                    <div className={scrollStyles.mouseScroll}></div>
+
+                    <div className={scrollStyles.arrowScroll}>
+                        <span className={scrollStyles.arrow}></span>
+                        <span className={scrollStyles.arrow}></span>
+                        <span className={scrollStyles.arrow}></span>
                     </div>
                 </div>
             </div>

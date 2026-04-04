@@ -8,12 +8,12 @@ import Projects from "@/sections/Projects/Projects.jsx"
 function App() {
   return (
     <>
-        <Header />
-        <Hero />
-{/*<About /> */}
-        <Projects />
-{/*<Skills />
-        <Contact /> */}
+      <Header />
+      <Hero />
+      <Projects />
+      {/*<Skills />
+      {/*<About /> 
+      <Contact /> */}
     </>
   )
 }
