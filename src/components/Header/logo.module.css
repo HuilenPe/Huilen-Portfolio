@@ -1,4 +1,4 @@
-.path {
+/* .path {
   opacity: 0;
 }
 
@@ -8,4 +8,43 @@
 
 .dotStart {
   transform: translateY(-120px);
+} */
+/* Estado inicial: invisible y arriba */
+.path {
+  opacity: 0;
+  transform: translateY(-120px);
+}
+
+/* Animación H */
+.hStart {
+  animation: slideInH 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* Animación DOT con delay */
+.dotStart {
+  animation: slideInDot 0.9s cubic-bezier(0.34, 2.2, 0.64, 1) 0.4s forwards;
+}
+
+/* Keyframes para H */
+@keyframes slideInH {
+  0% {
+    opacity: 0;
+    transform: translateY(-120px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Keyframes para DOT */
+@keyframes slideInDot {
+  0% {
+    opacity: 0;
+    transform: translateY(-120px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

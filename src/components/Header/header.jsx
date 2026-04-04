@@ -27,7 +27,7 @@ function Header() {
         }
     }, [])
 
-    // run intro logo animation
+   /*  // run intro logo animation
     useEffect(() => {
         
         if (!hRef.current || !dotRef.current) return
@@ -61,7 +61,7 @@ function Header() {
         }, 400)
 
     }, [])
-
+ */
 
     return (
         <header className={styles.header}>
