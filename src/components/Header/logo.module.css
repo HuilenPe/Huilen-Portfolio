@@ -9,42 +9,29 @@
 .dotStart {
   transform: translateY(-120px);
 } */
-/* Estado inicial: invisible y arriba */
+/* Estado base: logo siempre visible */
 .path {
-  opacity: 1;
-  transform: translateY(0);
+  opacity: 1;           /* visible por defecto */
+  transform: translateY(0); /* sin desplazamiento */
 }
 
-/* Animación H */
-.hStart {
-  animation: slideInH 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-}
-
-/* Animación DOT con delay */
-.dotStart {
-  animation: slideInDot 0.9s cubic-bezier(0.34, 2.2, 0.64, 1) 0.4s forwards;
-}
-
-/* Keyframes para H */
-@keyframes slideInH {
-  0% {
-    opacity: 0;
-    transform: translateY(-120px);
+/* Animación solo para desktop */
+@media (min-width: 768px) {
+  .hStart {
+    animation: slideInH 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
   }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
-/* Keyframes para DOT */
-@keyframes slideInDot {
-  0% {
-    opacity: 0;
-    transform: translateY(-120px);
+  .dotStart {
+    animation: slideInDot 0.9s cubic-bezier(0.34, 2.2, 0.64, 1) 0.4s forwards;
   }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
+
+  @keyframes slideInH {
+    0% { transform: translateY(-120px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+  }
+
+  @keyframes slideInDot {
+    0% { transform: translateY(-120px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
   }
 }
