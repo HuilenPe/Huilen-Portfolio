@@ -10,9 +10,9 @@ function App() {
     <>
         <Header />
         <Hero />
-{/*         <About /> */}
+{/*<About /> */}
         <Projects />
-{/*         <Skills />
+{/*<Skills />
         <Contact /> */}
     </>
   )
