@@ -1,12 +1,12 @@
 .hero{
-  padding: 6rem 1rem;
+  padding: 3rem 1rem;
   background: var(--bg-light);
 }
 
 .content{
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1rem;
   
   align-items: center;
   text-align: center;
@@ -24,13 +24,13 @@
 }
 
 .left h1 {
-  font-size: clamp(2.5rem, 7vw, 4.2rem);
+  font-size: clamp(2.2rem, 7vw, 4.2rem);
   line-height: 1.1;
   font-family: var(--font-display)
 }
 
 .subtitile {
-font-size: 1.3rem;
+font-size: 1.1rem;
 }
 
 .svg {

@@ -16,6 +16,7 @@
 
 .heroButton {
   background: transparent;
+  color: #000;
   padding: 0.6rem 5rem;
   border-radius: 5px;
   border: none;
