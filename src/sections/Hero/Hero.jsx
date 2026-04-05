@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react"
 import styles from "./Hero.module.css"
 import scrollStyles from "./ScrollIndicator.module.css"
-
+import HeroButton from "../../components/Button/HeroButton/heroButton"
 function Hero() {
     const contornoRef = useRef(null)
     const ojoIzqRef = useRef(null)
@@ -98,10 +98,16 @@ function Hero() {
                     </svg>
                 </div>   
                 <div className={styles.left}>
-                    <h1>Hola, Soy Huilen</h1>
-                    <p>Frontend Developer & UI Designer</p>
+                        <h1>Hola, Soy Huilen</h1>
+                        <p className={styles.subtitile}>Frontend Developer & UI Designer</p>
+                        <br />
+                        <p>Creo experiencias web con sensibilidad artística</p>
+                        <div className={styles.ctaButtons}>
+                            <HeroButton text="Ver mis proyectos" />
+                        </div>
                     </div>
                 </div>
+
                 <div className={scrollStyles.scrollWrap}>
                     <div className={scrollStyles.mouseScroll}></div>
 
