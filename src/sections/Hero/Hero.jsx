@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react"
 import styles from "./Hero.module.css"
 import scrollStyles from "./ScrollIndicator.module.css"
 import HeroButton from "../../components/Button/HeroButton/heroButton"
+
 function Hero() {
     const contornoRef = useRef(null)
     const ojoIzqRef = useRef(null)
@@ -9,6 +10,11 @@ function Hero() {
     const narizRef = useRef(null)
     const bocaRef = useRef(null)
     const detallesRef = useRef(null)
+    {/* scroll a Projects*/ }
+    const handleScrollToProjects = () => {
+        const section = document.getElementById("projects")
+        section?.scrollIntoView({ behavior: "smooth" })
+    }
 
     useEffect(() => {
         const paths = [
@@ -102,7 +108,7 @@ function Hero() {
                         <p className={styles.subtitile}>Frontend Developer & UI Designer</p>
                         <br />
                         <p>Creo experiencias web con sensibilidad artística</p>
-                        <div className={styles.ctaButtons}>
+                        <div className={styles.ctaButton} onClick={handleScrollToProjects} >
                             <HeroButton text="Ver mis proyectos" />
                         </div>
                     </div>

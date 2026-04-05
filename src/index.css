@@ -1,3 +1,4 @@
+/* RESET */
 *,
 *::before,
 *::after {
@@ -8,31 +9,9 @@
   margin: 0;
 }
 
-body {
-  font-family: var(--font-primary);
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-  background: var(--bg-main);
-  color: var(--text-main);
-}
-
-img,
-picture,
-video,
-canvas,
-svg {
-  display: block;
-  max-width: 100%;
-}
-
-button,
-input,
-textarea,
-select {
-  font: inherit;
-}
-
+/* ROOT / VARIABLES */
 :root {
+  /* colors */
   --bg-main: #F8F9FA;
   --bg-light: #fdfdfd;
   --bg-dark: #111111;
@@ -49,22 +28,38 @@ select {
   --font-display: 'Stardom', serif;
 }
 
-/* estructura base */
-section {
-  width: 100%;
-  padding: 5rem var(--padding);
-}
-
-/* contenedor reutilizable */
-.container {
-  max-width: var(--max-width);
-  margin: 0 auto;
-}
-
-html{
+/* BASE / BODY */
+html {
   scroll-behavior: smooth;
 }
 
+body {
+  font-family: var(--font-primary);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased; 
+  background: var(--bg-main);
+  color: var(--text-main);
+}
+
+/* MEDIA ELEMENTS */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* FORM ELEMENTS */
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+/* TYPOGRAPHY */
 h1 {
   font-weight: 700;
   letter-spacing: -0.02em;
@@ -85,6 +80,19 @@ button {
   font-weight: 500;
 }
 
+/* LAYOUT */
+section {
+  width: 100%;
+  padding: 5rem var(--padding);
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* FONTS */
 @font-face {
   font-family: 'Satoshi';
   src: url('/fonts/satoshi/Satoshi-Regular.woff2') format('woff2');

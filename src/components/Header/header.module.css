@@ -64,7 +64,7 @@
 }
 
 .mobileNav {
- position: absolute;
+  position: absolute;
   top: 100%;
   left: 0;
   width: 100%;
@@ -74,8 +74,8 @@
   align-items: center;
 
   height: calc(100vh - 80px);
-  gap: 1.5rem;
-  padding: 2rem;
+  gap: 3rem;
+  padding: 6rem;
   
   background: var(--bg-light);
 }
@@ -88,24 +88,45 @@
 
 /* DESKTOP */
 @media (min-width: 768px) {
-  .container {
-    padding: var(--padding) 2rem;
-  }
+.container {
+  padding: var(--padding) 2rem;
+}
 
-  /* Mostrar menú */
-  .nav {
-    display: flex;
-    gap: 2rem;
-  }
+/* Mostrar menú */
+.nav {
+  display: flex;
+  gap: 2rem;
+}
 
-  .nav a {
-    text-decoration: none;
-    color: var(--text-main);
-    font-size: 0.95rem;
-  }
+.nav a {
+  text-decoration: none;
+  color: var(--text-main);
+  font-size: 0.95rem;
+}
 
-  /* Ocultar burger */
-  .burger {
+.menuLink {
+  position: relative;
+  text-decoration: none;
+  color: var(--text-main);
+}
+
+.menuLink::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: currentColor;
+  transition: width 0.3s ease;
+}
+
+.menuLink:hover::after {
+  width: 100%;
+}
+
+/* Ocultar burger */
+.burger {
     display: none;
   }
 }

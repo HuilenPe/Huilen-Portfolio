@@ -62,10 +62,10 @@ function Header() {
 
                 {/* nav desktop (visible desde 768px)*/}
                 <nav className={styles.nav}>
-                    <a href="#projects">Proyectos</a>
-                    <a href="#about">Sobre mí</a>
-                    <a href="#skills">Skills</a>
-                    <a href="#contact">Contacto</a>
+                    <a href="#projects" className={styles.menuLink}>Proyectos</a>
+                    <a href="#about" className={styles.menuLink}>Sobre mí</a>
+                    <a href="#skills" className={styles.menuLink}>Skills</a>
+                    <a href="#contact" className={styles.menuLink}>Contacto</a>
                 </nav>
 
                 {/* burger (solo mobile) */}
@@ -82,10 +82,10 @@ function Header() {
                 {/* nav mobile */}
                 {isOpen && (
                     <nav className={styles.mobileNav}>
-                        <a href="#projects" onClick={() => setIsOpen(false)}>Proyectos</a>
-                        <a href="#about" onClick={() => setIsOpen(false)}>Sobre mí</a>
-                        <a href="#skills" onClick={() => setIsOpen(false)}>Skills</a>
-                        <a href="#contact" onClick={() => setIsOpen(false)}>Contacto</a>
+                        <a href="#projects" className={styles.burgerMenu} onClick={() => setIsOpen(false)}>Proyectos</a>
+                        <a href="#about" className={styles.burgerMenu} onClick={() => setIsOpen(false)}>Sobre mí</a>
+                        <a href="#skills" className={styles.burgerMenu} onClick={() => setIsOpen(false)}>Skills</a>
+                        <a href="#contact" className={styles.burgerMenu} onClick={() => setIsOpen(false)}>Contacto</a>
                     </nav>
                 )}
 
