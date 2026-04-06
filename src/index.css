@@ -17,7 +17,8 @@
   --bg-dark: #111111;
 
   --text-main: #111111;
-  --text-light: #666666;
+  --text-medium: #7a7a7a;
+  --text-light: #d3d3d3;
 
   /* layout */
   --max-width: 1200px;
