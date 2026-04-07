@@ -1,7 +1,7 @@
 import styles from "./Projects.module.css"
 import { FiArrowUpRight, FiGithub, FiFigma } from "react-icons/fi"
 import Button from "../../components/Button/button.jsx"
-import { projects } from "./projectsData"
+import { projects } from "./ProjectsData.js"
 
 function Projects() {
     // Función para hacer scroll usando cada ID
