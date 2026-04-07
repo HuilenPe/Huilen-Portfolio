@@ -36,10 +36,7 @@
 
 /* Buttons */
 .actions {
-/*   display: flex;
-  gap: 0.75rem;
-  margin-top: auto; */
-    display: flex;
+  display: flex;
   justify-content: space-between;
   gap: 0.75rem;
   margin-top: auto;

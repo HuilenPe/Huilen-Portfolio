@@ -1,124 +1,62 @@
 import styles from "./Projects.module.css"
-import photo from "/images/Health.png"
-import photoPortfolio from "/images/MacBook.png"
-import Button from "../../components/Button/button.jsx"
 import { FiArrowUpRight, FiGithub, FiFigma } from "react-icons/fi"
-
-const handleScrollToFullProject = () => {
-    document.getElementById("project-details").scrollIntoView({
-        behavior: "smooth"
-    });
-};
+import Button from "../../components/Button/button.jsx"
+import { projects } from "./projectsData"
 
 function Projects() {
+    // Función para hacer scroll usando cada ID
+    const handleScrollToProject = (id) => {
+        const element = document.getElementById(id)
+        if (element) element.scrollIntoView()
+    }
+
     return (
         <section id="projects" className={styles.section}>
             <div className="container">
                 <h2 className={styles.title}>Proyectos</h2>
 
+                {/* Grid de tarjetas */}
                 <div className={styles.grid}>
+                    {projects.map((project) => (
+                        // Tarjeta individual
+                        <div key={project.id} className={styles.card}>
+                            <img src={project.img} alt={project.title} className={styles.img} />
+                            <div className={styles.content}>
+                                <h3>{project.title}</h3>
+                                <p>{project.description}</p>
 
-                    <div className={styles.card}>
-                        <img src={photo} alt="" className={styles.img} />
+                                <div className={styles.actions}>
+                                    <Button
+                                        variant="link"
+                                        onClick={() => handleScrollToProject(project.id)}
+                                        icon={<FiArrowUpRight />}
+                                    >
+                                        Ver proyecto
+                                    </Button>
 
-                        <div className={styles.content}>
-                            <h3>Health Client Management</h3>
-                            <p>UX/UI Design</p>
-                            <div className={styles.actions}>
-                                <Button
-                                    variant="link"
-                                    onClick={handleScrollToFullProject}
-                                    icon={<FiArrowUpRight />}
-                                >
-                                    Ver proyecto
-                                </Button>
-
-                                <Button
-                                    variant="link"
-                                    href="https://github.com/HuilenPe/Huilen-Portfolio"
-                                    icon={<FiGithub />}
-                                >
-                                    GitHub
-                                </Button>
+                                    {project.github && (
+                                        <Button
+                                            variant="link"
+                                            href={project.github}
+                                            icon={<FiGithub />}
+                                        >
+                                            GitHub
+                                        </Button>
+                                    )}
+                                    
+                                    {project.figma && (
+                                        <Button
+                                            variant="link"
+                                            href={project.figma}
+                                            icon={<FiFigma />}
+                                        >
+                                            Prototipo
+                                        </Button>
+                                    )}
+                                </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div className={styles.card}>
-                        <img src="" alt="" className={styles.img} />
-                        <div className={styles.content}>
-                            <h3>Proyecto</h3>
-                            <p>Descripción</p>
-                            <div className={styles.actions}>
-                                <Button
-                                    variant="link"
-                                    onClick={handleScrollToFullProject}
-                                    icon={<FiArrowUpRight />}
-                                >
-                                    Ver proyecto
-                                </Button>
-
-                                <Button
-                                    variant="link"
-                                    href="https://github.com/HuilenPe/Huilen-Portfolio"
-                                    icon={<FiFigma />}
-                                >
-                                    Prototipo
-                                </Button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className={styles.card}>
-                        <img src={photoPortfolio} alt="" className={styles.img} />
-                        <div className={styles.content}>   
-                            <h3>Portfolio web personal</h3>
-                            <p>Desarrollo Frontend </p>
-                            <div className={styles.actions}>
-                                <Button
-                                    variant="link"
-                                    onClick={handleScrollToFullProject}
-                                    icon={<FiArrowUpRight />}
-                                >
-                                    Ver proyecto
-                                </Button>
-
-                                <Button
-                                    variant="link"
-                                    href="https://github.com/HuilenPe/Huilen-Portfolio"
-                                    icon={<FiGithub />}
-                                >
-                                    GitHub
-                                </Button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className={styles.card}>
-                        <img src="" alt="" className={styles.img} />
-                        <div className={styles.content}>
-                            <h3>Proyecto</h3>
-                            <p>Desarrollo Frontend </p>
-                            <div className={styles.actions}>
-                                <Button
-                                    variant="link"
-                                    onClick={handleScrollToFullProject}
-                                    icon={<FiArrowUpRight />}
-                                >
-                                    Ver proyecto
-                                </Button>
-
-                                <Button
-                                    variant="link"
-                                    href="https://github.com/HuilenPe/Huilen-Portfolio"
-                                    icon={<FiGithub />}
-                                >
-                                    GitHub
-                                </Button>
-                            </div>
-                        </div>
-                    </div>
-
+                    ))}
                 </div>
             </div>
         </section>
