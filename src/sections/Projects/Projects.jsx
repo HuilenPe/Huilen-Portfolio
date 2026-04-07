@@ -1,6 +1,6 @@
 import styles from "./Projects.module.css"
-import photo from "../../assets/Health.png"
-import photoPortfolio from "../../assets/MacBook.png"
+import photo from "/images/Health.png"
+import photoPortfolio from "/images/MacBook.png"
 import Button from "../../components/Button/button.jsx"
 import { FiArrowUpRight, FiGithub, FiFigma } from "react-icons/fi"
 
