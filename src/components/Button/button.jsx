@@ -1,17 +1,32 @@
 import styles from "./button.module.css";
 
-function Button({ children, onClick, href }) {
+function Button({ children, onClick, href, variant = "primary", icon }) {
+    const className = `${styles.button} ${styles[variant]}`;
+    const content = (
+        <>
+            <span>{children}</span>
+            {icon && <span className={styles.icon}>{icon}</span>}
+        </>
+    );
+
+
     if (href) {
         return (
-            <a href={href} className={styles.link} target="_blank" rel="noopener noreferrer">
-                {children}
+            <a
+                href={href}
+                className={className}
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                {content}
             </a>
         );
     }
+
     return (
-        <span onClick={onClick} className={styles.link}>
-            {children}
-        </span>
+        <button onClick={onClick} className={className}>
+            {content}
+        </button>
     );
 }
 

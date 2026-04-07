@@ -1,7 +1,36 @@
-.link {
-  text-decoration: none;
-  font-weight: 600;
-  position: relative;
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+
+  font-size: 0.9rem;
+  font-weight: 500;
+
+  background: transparent;
+  border: none;
+  padding: 0;
+
   cursor: pointer;
-  transition: color 0.3s ease;
+  color: var(--text-main);
+
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.button:hover .icon {
+  transform: translateX(3px);
+  transition: transform 0.4s ease;
+}
+
+.link {
+  opacity: 0.8;
+}
+
+.link:hover {
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+.icon {
+  display: flex;
+  align-items: center;
 }

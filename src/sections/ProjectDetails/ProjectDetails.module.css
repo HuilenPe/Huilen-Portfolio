@@ -1,0 +1,43 @@
+.details {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 6rem 1.5rem;
+  text-align: center;
+}
+
+/* Título */
+.details h2 {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+/* Descripción */
+.details p {
+  font-size: 0.95rem;
+  color: var(--text-medium);
+  max-width: 500px;
+  margin: 0 auto 3rem auto;
+  line-height: 1.6;
+}
+
+/* Contenedor de imágenes */
+.details div {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+/* Imágenes */
+.details img {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover sutil */
+.details img:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}

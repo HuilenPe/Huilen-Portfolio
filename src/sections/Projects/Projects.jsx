@@ -1,5 +1,14 @@
 import styles from "./Projects.module.css"
-import Button from "../../components/Button/button"
+import photo from "../../assets/Health.png"
+import photoPortfolio from "../../assets/MacBook.png"
+import Button from "../../components/Button/button.jsx"
+import { FiArrowUpRight, FiGithub, FiFigma } from "react-icons/fi"
+
+const handleScrollToFullProject = () => {
+    document.getElementById("project-details").scrollIntoView({
+        behavior: "smooth"
+    });
+};
 
 function Projects() {
     return (
@@ -8,29 +17,108 @@ function Projects() {
                 <h2 className={styles.title}>Proyectos</h2>
 
                 <div className={styles.grid}>
+
                     <div className={styles.card}>
-                        <img src="" alt="" className={styles.img} />
+                        <img src={photo} alt="" className={styles.img} />
 
                         <div className={styles.content}>
-                            <h3>Health Management</h3>
+                            <h3>Health Client Management</h3>
                             <p>UX/UI Design</p>
-
                             <div className={styles.actions}>
-                                <Button href="#">Ver proyecto</Button>
-                                <Button href="#">Figma</Button>
+                                <Button
+                                    variant="link"
+                                    onClick={handleScrollToFullProject}
+                                    icon={<FiArrowUpRight />}
+                                >
+                                    Ver proyecto
+                                </Button>
+
+                                <Button
+                                    variant="link"
+                                    href="https://github.com/HuilenPe/Huilen-Portfolio"
+                                    icon={<FiGithub />}
+                                >
+                                    GitHub
+                                </Button>
                             </div>
                         </div>
                     </div>
 
                     <div className={styles.card}>
-                        <h3>Proyecto</h3>
-                        <p>Descripción</p>
+                        <img src="" alt="" className={styles.img} />
+                        <div className={styles.content}>
+                            <h3>Proyecto</h3>
+                            <p>Descripción</p>
+                            <div className={styles.actions}>
+                                <Button
+                                    variant="link"
+                                    onClick={handleScrollToFullProject}
+                                    icon={<FiArrowUpRight />}
+                                >
+                                    Ver proyecto
+                                </Button>
+
+                                <Button
+                                    variant="link"
+                                    href="https://github.com/HuilenPe/Huilen-Portfolio"
+                                    icon={<FiFigma />}
+                                >
+                                    Prototipo
+                                </Button>
+                            </div>
+                        </div>
                     </div>
 
                     <div className={styles.card}>
-                        <h3>Proyecto</h3>
-                        <p>Descripción</p>
+                        <img src={photoPortfolio} alt="" className={styles.img} />
+                        <div className={styles.content}>   
+                            <h3>Portfolio web personal</h3>
+                            <p>Desarrollo Frontend </p>
+                            <div className={styles.actions}>
+                                <Button
+                                    variant="link"
+                                    onClick={handleScrollToFullProject}
+                                    icon={<FiArrowUpRight />}
+                                >
+                                    Ver proyecto
+                                </Button>
+
+                                <Button
+                                    variant="link"
+                                    href="https://github.com/HuilenPe/Huilen-Portfolio"
+                                    icon={<FiGithub />}
+                                >
+                                    GitHub
+                                </Button>
+                            </div>
+                        </div>
                     </div>
+
+                    <div className={styles.card}>
+                        <img src="" alt="" className={styles.img} />
+                        <div className={styles.content}>
+                            <h3>Proyecto</h3>
+                            <p>Desarrollo Frontend </p>
+                            <div className={styles.actions}>
+                                <Button
+                                    variant="link"
+                                    onClick={handleScrollToFullProject}
+                                    icon={<FiArrowUpRight />}
+                                >
+                                    Ver proyecto
+                                </Button>
+
+                                <Button
+                                    variant="link"
+                                    href="https://github.com/HuilenPe/Huilen-Portfolio"
+                                    icon={<FiGithub />}
+                                >
+                                    GitHub
+                                </Button>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
