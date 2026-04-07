@@ -23,18 +23,20 @@ const projects = [
 
 function ProjectDetails() {
     return (
-        <section>
-            {projects.map(project => (
-                <div key={project.id} id={project.id} className={styles.details}>
-                    <h2>{project.title}</h2>
-                    <p>{project.description}</p>
-                    <div>
-                        {project.images.map((src, idx) => (
-                            <img key={idx} src={src} alt={`${project.title} mockup ${idx + 1}`} />
-                        ))}
+        <section className={styles.section}>
+            <div className="container">
+                {projects.map(project => (
+                    <div key={project.id} id={project.id} className={styles.details}>
+                        <h2>{project.title}</h2>
+                        <p>{project.description}</p>
+                        <div className={styles.images}>
+                            {project.images.map((src, idx) => (
+                                <img key={idx} src={src} alt={`${project.title} mockup ${idx + 1}`} />
+                            ))}
+                        </div>
                     </div>
-                </div>
-            ))}
+                ))}
+            </div>
         </section>
     );
 }

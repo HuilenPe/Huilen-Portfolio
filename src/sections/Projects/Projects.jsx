@@ -4,11 +4,6 @@ import Button from "../../components/Button/button.jsx"
 import { projects } from "./ProjectsData.js"
 
 function Projects() {
-    // Función para hacer scroll usando cada ID
-/*     const handleScrollToProject = (id) => {
-        const element = document.getElementById(id)
-        if (element) element.scrollIntoView()
-    } */
 
     return (
         <section id="projects" className={styles.section}>
