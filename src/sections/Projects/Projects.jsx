@@ -5,10 +5,10 @@ import { projects } from "./ProjectsData.js"
 
 function Projects() {
     // Función para hacer scroll usando cada ID
-    const handleScrollToProject = (id) => {
+/*     const handleScrollToProject = (id) => {
         const element = document.getElementById(id)
         if (element) element.scrollIntoView()
-    }
+    } */
 
     return (
         <section id="projects" className={styles.section}>
@@ -28,7 +28,7 @@ function Projects() {
                                 <div className={styles.actions}>
                                     <Button
                                         variant="link"
-                                        onClick={() => handleScrollToProject(project.id)}
+                                        href={`#${project.id}`}
                                         icon={<FiArrowUpRight />}
                                     >
                                         Ver proyecto

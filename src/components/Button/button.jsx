@@ -2,6 +2,7 @@ import styles from "./button.module.css";
 
 function Button({ children, onClick, href, variant = "primary", icon }) {
     const className = `${styles.button} ${styles[variant]}`;
+    const isExternal = href && href.startsWith("http");
     const content = (
         <>
             <span>{children}</span>
@@ -15,8 +16,10 @@ function Button({ children, onClick, href, variant = "primary", icon }) {
             <a
                 href={href}
                 className={className}
-                target="_blank"
-                rel="noopener noreferrer"
+                {...(isExternal && {
+                    target: "_blank",
+                    rel: "noopener noreferrer"
+                })}
             >
                 {content}
             </a>

@@ -15,7 +15,7 @@ export const projects = [
         title: "App de tareas UX/UI & Frontend",
         description: "Diseño y desarrollo de una app para mejorar la productividad",
         img: "",
-        github: "",
+        github: "https://github.com/HuilenPe/Huilen-Portfolio",
         figma: "",
     },
     {
