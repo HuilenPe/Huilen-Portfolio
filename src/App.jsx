@@ -1,4 +1,4 @@
-import Header from "@/components/Header/header.jsx"
+import Header from "@/components/Layout/Header/header.jsx"
 import Hero from "@/sections/Hero/Hero.jsx"
 import Projects from "@/sections/Projects/Projects.jsx"
 import ProjectDetails from "./sections/ProjectDetails/ProjectDetails.jsx"

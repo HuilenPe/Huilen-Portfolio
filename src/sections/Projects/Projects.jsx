@@ -1,6 +1,6 @@
 import styles from "./Projects.module.css"
 import { FiArrowUpRight, FiGithub, FiFigma } from "react-icons/fi"
-import Button from "../../components/Button/button.jsx"
+import Button from "../../components/UI/Button/button"
 import { projects } from "./ProjectsData.js"
 
 function Projects() {

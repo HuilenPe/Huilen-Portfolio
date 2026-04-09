@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react"
 import styles from "./Hero.module.css"
 import scrollStyles from "./ScrollIndicator.module.css"
-import Button from "../../components/Button/button.jsx"
+import Button from "../../components/UI/Button/button.jsx"
 import { FiArrowUpRight } from "react-icons/fi"
 
 function Hero() {
