@@ -21,7 +21,8 @@ function Projects() {
                                 <p>{project.description}</p>
 
                                 <div className={styles.actions}>
-                                    <Button
+                                    <Button 
+                                        className={styles.primaryButton}
                                         variant="link"
                                         href={`#${project.id}`}
                                         icon={<FiArrowUpRight />}
@@ -35,7 +36,7 @@ function Projects() {
                                             href={project.github}
                                             icon={<FiGithub />}
                                         >
-                                            GitHub
+                                            Ver código
                                         </Button>
                                     )}
                                     
@@ -45,7 +46,7 @@ function Projects() {
                                             href={project.figma}
                                             icon={<FiFigma />}
                                         >
-                                            Prototipo
+                                            Ver prototipo
                                         </Button>
                                     )}
                                 </div>
