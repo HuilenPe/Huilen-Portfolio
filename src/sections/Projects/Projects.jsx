@@ -22,7 +22,6 @@ function Projects() {
 
                                 <div className={styles.actions}>
                                     <Button 
-                                        className={styles.primaryButton}
                                         variant="link"
                                         href={`#${project.id}`}
                                         icon={<FiArrowUpRight />}

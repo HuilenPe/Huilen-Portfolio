@@ -13,21 +13,39 @@ function ProjectDetails() {
                         className={styles.details}
                     >
 
-                        {/* 👉 SOLO renderiza si tiene details */}
+                        {/*SOLO renderiza si tiene details */}
                         {project.details && (
                             <>
                                 {/* HERO */}
-                                <div className={styles.hero}>
-                                    <h2>{project.details.hero?.title || project.title}</h2>
-                                    <p>{project.details.hero?.subtitle}</p>
+                                <div
+                                    className={styles.hero}
+                                    style={{
+                                        backgroundImage: project.details.hero?.background
+                                            ? `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${project.details.hero.background})`
+                                            : "none"
+                                    }}
+                                >
 
-                                    <div className={styles.tags}>
-                                        {project.details.hero?.tags?.map((tag, i) => (
-                                            <span key={i} className={styles.tag}>
-                                                {tag}
-                                            </span>
-                                        ))}
+                                    <div className={styles.heroContent}>
+                                        <h2>{project.details.hero?.title || project.title}</h2>
+                                        <p>{project.details.hero?.subtitle}</p>
+
+                                        <div className={styles.tags}>
+                                            {project.details.hero?.tags?.map((tag, i) => (
+                                                <span key={i} className={styles.tag}>
+                                                    {tag}
+                                                </span>
+                                            ))}
+                                        </div>
                                     </div>
+
+                                    {/* MOCKUP */}
+                                    {project.details.hero?.mockup && (
+                                        <div className={styles.mockup}>
+                                            <img src={project.details.hero.mockup} alt="mockup" />
+                                        </div>
+                                    )}
+
                                 </div>
 
                                 {/* CONTEXT + APPROACH */}

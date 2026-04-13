@@ -1,5 +1,7 @@
-import photo from "/images/Health.png";
+import photo from "/images/heroCard.png";
 import photoPortfolio from "/images/MacBook.png";
+import backgroundHeroHealth from "/images/backgroundHero.png"
+import mockupDashboardScreen from "/images/Dashboard.png"
 
 export const projects = [
     {
@@ -13,8 +15,10 @@ export const projects = [
             hero: {
                 title: "Agendar una cita médica sin fricción",
                 subtitle: "Reduciendo la complejidad en la toma de decisiones del usuario",
-                tags: ["UX/UI", "Product Design", "Mobile App"]
-            },
+                tags: ["UX/UI", "Product Design", "Mobile App"],
+                background: backgroundHeroHealth,
+                mockup: mockupDashboardScreen,
+            }, 
 
             context: {
                 problema: "Los usuarios encuentran fricción...",
