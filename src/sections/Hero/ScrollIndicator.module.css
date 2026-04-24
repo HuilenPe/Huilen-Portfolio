@@ -1,90 +1,44 @@
 .scrollWrap {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 4.5rem;
-  font-size: 0.5rem;
+  justify-content: center;
+  margin-top: 45px;
 }
 
-/* Mouse */
-.mouseScroll {
-  width: 2.1em;
-  height: 4em;
-  border: 2px solid var(--text-medium);
-  border-radius: 30px;
-  position: relative;
+.scrollSvg {
+  width: 48px;
+  height: 70px;
+  overflow: visible;
+  animation: scrollFloat 3s ease-in-out infinite;
 }
 
-.mouseScroll::before {
-  content: "";
-  width: 0.4em;
-  height: 0.4em;
-  border-radius: 50%;
-  background: var(--text-medium);
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  animation: scroll 2.5s infinite;
+.scrollLine,
+.scrollArrow {
+  stroke: var(--text-main);
+  stroke-width: 2.3;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
-/* Flechas */
-.arrowScroll {
-  position: relative;
-  height: 3em;
-  margin-top: .5rem;
+.scrollLine {
+  stroke-dasharray: 120;
+  stroke-dashoffset: 120;
+  animation: drawScroll 1s ease forwards;
 }
 
-.arrow {
-  border: solid var(--text-medium);
-  border-width: 0 2px 2px 0;
-  display: inline-block;
-  padding: 4px;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%) rotate(45deg);
-  opacity: 0;
-}
-
-/* Animaciones escalonadas */
-.arrow:nth-child(1) {
-  animation: arrow1 2.5s infinite;
-}
-
-.arrow:nth-child(2) {
-  animation: arrow2 2.5s infinite;
-}
-
-.arrow:nth-child(3) {
-  animation: arrow3 2.5s infinite;
-}
-
-/* Animación ruedita */
-@keyframes scroll {
-  0% {
-    top: 10%;
-    opacity: 1;
-  }
-  100% {
-    top: 70%;
-    opacity: 0;
+@keyframes drawScroll {
+  to {
+    stroke-dashoffset: 0;
   }
 }
 
-/* Flechas */
-@keyframes arrow1 {
-  0% { top: 0%; opacity: 0; }
-  50% { opacity: 1; }
-  100% { top: 100%; opacity: 0; }
-}
+@keyframes scrollFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
 
-@keyframes arrow2 {
-  0% { top: 20%; opacity: 0; }
-  50% { opacity: 1; }
-  100% { top: 120%; opacity: 0; }
-}
-
-@keyframes arrow3 {
-  0% { top: 40%; opacity: 0; }
-  50% { opacity: 1; }
-  100% { top: 140%; opacity: 0; }
+  50% {
+    transform: translateY(6px);
+    opacity: .7;
+  }
 }

@@ -100,37 +100,53 @@ function Hero() {
                     ref={detallesRef}
                     className={styles.path}
                     d="M202.5 922.5V1084M1131.5 867C1117 850 1077 846.5 1071 845.5C1083.24 861.333 1083.79 926.5 1083.79 957.5M1131.5 867C1133.1 870.2 1135.83 874 1137 875.5M1131.5 867C1131.4 874.928 1131.3 883.877 1131.22 893.5M1344.5 1276.5C1323.7 1286.1 1279.83 1268.5 1260.5 1258.5C1242 1258.5 1232 1258.5 1220 1252C1189 1191 1208.5 1179 1208 1140.5C1207.5 1102 1255 1084.5 1251 1077C1247 1069.5 1226 1041 1220 1036C1214 1031 1203 1051.5 1198.5 1041C1194 1030.5 1219.5 1001.5 1216 1009.5C1212.5 1017.5 1185.5 1031.5 1181.5 1028.5C1177.5 1025.5 1181.5 1017.5 1171 1009.5C1162.6 1003.1 1155.17 999.167 1152.5 998C1151.17 995.833 1149.3 989.2 1152.5 980C1156.5 968.5 1190 951 1181.5 948.5C1174.7 946.5 1145.15 911 1131.22 893.5M467.5 289C467.5 292.235 466.883 300.263 466.029 310C467.853 307.833 472.1 303.5 474.5 303.5C482.971 297 496 289 508.5 289C518.5 289 544 298.667 555.5 303.5L581 310V284L569 274C551.5 271.167 515.7 265.7 512.5 266.5C508.5 267.5 478 271 467.5 296M937.5 516.5C949.5 490 950.923 456 934 451.5C920.462 447.9 896.359 482 886 499.5C885.167 502.833 884.6 510.2 889 513C889 517.8 882 529.333 878.5 534.5C877.167 538.833 876.8 546.2 886 541C891 539 893 534.5 898 534.5C903 534.5 906 545.5 911.5 538.5C917 531.5 917.5 527 916.5 523M710 545C714.5 549.333 720.3 559.9 707.5 567.5M718 521C726 526.333 739.6 543.1 730 567.5M553.5 622C567 618.5 597.6 615.7 612 632.5M1141 1337.5C1144.83 1328.83 1152.5 1310.5 1152.5 1306.5C1152.5 1301.5 1157 1250 1152.5 1235.5C1148 1221 1141 1093 1135 1077C1130.79 1065.77 1130.63 962.365 1131.22 893.5M581 514C585.667 519.333 596.7 526.4 603.5 512C603.5 496 600 489 597.5 486.5M655.5 348.051C650.667 348.643 643.9 353.594 655.5 368.664M679.5 390C694.5 397.667 729 412.8 747 412M569 379.5C558.833 388.167 547.5 396.5 536 395.5M804.5 858.5C757 928 582.5 942.5 544 889.5L541 930.5C571 969.5 697.5 997.4 799.5 923L804.5 858.5ZM806.5 315.5C798.5 306.833 778.8 288.4 764 284C745.5 278.5 693 279 679.5 284C666 289 658.5 287 658 298.5C658 301.3 658 307.333 658 310C665 310 681.5 310 691.5 310C704 310 726.5 298.5 732.5 298.5C738.5 298.5 760 297 769.5 303.5C775.5 306.5 803 316.177 806.5 315.5Z" stroke="black" strokeWidth="4"
-                    />
+                            />
                     </svg>
+                    
                 </div>   
                 <div className={styles.left}>
                         <h1>Hola, Soy Huilen</h1>
                         <p className={styles.subtitile}>Frontend Developer & UI Designer</p>
-                        <br />
-                        <p>Creo experiencias web con sensibilidad artística</p>
-
+                        <p className={styles.description}>Creo experiencias web con sensibilidad artística</p>
                         <div className={styles.ctaButton}>
-                            <div className={styles.actions}>
-                                <Button
-                                    variant="link"
-                                    onClick={handleScrollToProjects}
-                                    icon={<FiArrowUpRight />}
-                                >
-                                    Ver mis proyectos
-                                </Button>
-                            </div>
+                            
+<button
+  className={styles.sketchButton}
+  onClick={handleScrollToProjects}
+>
+  <span>Explorar proyectos</span>
+
+  <svg
+    className={styles.sketchOval}
+    viewBox="0 0 210 58"
+    fill="none"
+    aria-hidden="true"
+  >
+    <path d="M24 32C18 18 48 7 98 8C151 9 187 18 184 33C181 49 127 53 80 49C36 45 12 40 24 32Z" />
+  </svg>
+</button>
+                           
                         </div>
                     </div>
                 </div>
 
                 <div className={scrollStyles.scrollWrap}>
-                    <div className={scrollStyles.mouseScroll}></div>
-
-                    <div className={scrollStyles.arrowScroll}>
-                        <span className={scrollStyles.arrow}></span>
-                        <span className={scrollStyles.arrow}></span>
-                        <span className={scrollStyles.arrow}></span>
-                    </div>
+                    <svg
+                        className={scrollStyles.scrollSvg}
+                        viewBox="0 0 48 100"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true"
+                    >
+                        <path
+                            className={scrollStyles.scrollLine}
+                            d="M24 4 C20 18 30 30 24 44 C18 58 22 70 24 82"
+                        />
+                        <path
+                            className={scrollStyles.scrollArrow}
+                            d="M16 72 L24 82 L32 72"
+                        />
+                    </svg>
                 </div>
             </div>
         </section>
