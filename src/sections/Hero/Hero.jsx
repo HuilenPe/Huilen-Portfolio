@@ -105,16 +105,16 @@ function Hero() {
                     
                 </div>   
                 <div className={styles.left}>
-                        <h1>Hola, Soy Huilen</h1>
+                        <h1>Hola, soy Huilen</h1>
                         <p className={styles.subtitile}>Frontend Developer & UI Designer</p>
-                        <p className={styles.description}>Creo experiencias web con sensibilidad artística</p>
+                        <p className={styles.description}>UI · Frontend · Sensibilidad</p>
                         <div className={styles.ctaButton}>
                             
 <button
   className={styles.sketchButton}
   onClick={handleScrollToProjects}
 >
-  <span>Explorar proyectos</span>
+  <span>Ver proyectos</span>
 
   <svg
     className={styles.sketchOval}
