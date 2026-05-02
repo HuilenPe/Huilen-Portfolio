@@ -21,13 +21,25 @@ function Projects() {
                                 <p>{project.description}</p>
 
                                 <div className={styles.actions}>
-                                    <Button 
-                                        variant="link"
-                                        href={`#${project.id}`}
-                                        icon={<FiArrowUpRight />}
-                                    >
-                                        Ver proyecto
-                                    </Button>
+                                    {project.type === "case-study" && (
+                                        <Button
+                                            variant="link"
+                                            href={`#${project.id}`}
+                                            icon={<FiArrowUpRight />}
+                                        >
+                                            Ver case study
+                                        </Button>
+                                    )}
+
+                                    {project.type !== "case-study" && (
+                                        <Button
+                                            variant="link"
+                                            href={project.demo || project.github}
+                                            icon={<FiArrowUpRight />}
+                                        >
+                                            Ver proyecto
+                                        </Button>
+                                    )}
 
                                     {project.github && (
                                         <Button

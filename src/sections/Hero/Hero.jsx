@@ -107,7 +107,7 @@ function Hero() {
                 <div className={styles.left}>
                         <h1>Hola, soy Huilen</h1>
                         <p className={styles.subtitile}>Frontend Developer & UI Designer</p>
-                        <p className={styles.description}>UI · Frontend · Sensibilidad</p>
+                        <p className={styles.description}>Frontend developer · UI designer</p>
                         <div className={styles.ctaButton}>
                             
 <button
