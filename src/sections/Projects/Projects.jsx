@@ -23,7 +23,7 @@ function Projects() {
                                 <div className={styles.actions}>
                                     {project.type === "case-study" && (
                                         <Button
-                                            variant="link"
+                                            variant="outline"
                                             href={`#${project.id}`}
                                             icon={<FiArrowUpRight />}
                                         >
@@ -33,7 +33,7 @@ function Projects() {
 
                                     {project.type !== "case-study" && (
                                         <Button
-                                            variant="link"
+                                            variant="outline"
                                             href={project.demo || project.github}
                                             icon={<FiArrowUpRight />}
                                         >

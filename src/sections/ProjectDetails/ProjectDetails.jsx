@@ -5,6 +5,7 @@ function ProjectDetails() {
     return (
         <section className={styles.section}>
             <div className="container">
+                <h2 className={styles.title}>Proyectos en detalle</h2>
 
                 {projects.map(project => (
                     <div
