@@ -16,7 +16,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: var(--padding);
+
+  width: min(100% - 2rem, 1200px);
+  margin-inline: auto;
+  padding-block: var(--padding);
 }
 
 /* LOGO */
@@ -88,9 +91,9 @@
 
 /* DESKTOP */
 @media (min-width: 768px) {
-.container {
-  padding: var(--padding) 2rem;
-}
+  .container {
+    width: min(100% - 4rem, 1200px);
+  }
 
 /* Mostrar menú */
 .nav {

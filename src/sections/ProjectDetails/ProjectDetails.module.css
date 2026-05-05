@@ -3,6 +3,23 @@
   scroll-margin-top: 120px;
 }
 
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-main);
+  font-size: 0.95rem;
+  text-decoration: none;
+  opacity: 0.7;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.backLink:hover {
+  opacity: 1;
+  transform: translateX(-2px);
+}
+
 /* HERO MOBILE */
 .hero {
   position: relative;
