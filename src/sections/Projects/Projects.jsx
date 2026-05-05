@@ -8,7 +8,7 @@ function Projects() {
     return (
         <section id="projects" className={styles.section}>
             <div className="container">
-                <h2 className={styles.title}>Proyectos</h2>
+                <h2 className={styles.title}>Frontend & UI/UX</h2>
 
                 {/* Grid de tarjetas */}
                 <div className={styles.grid}>
