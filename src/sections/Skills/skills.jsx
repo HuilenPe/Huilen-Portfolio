@@ -1,4 +1,4 @@
-import styles from "../Skills/Skills.module.css"
+/* import styles from "../Skills/Skills.module.css"
 
 const skillGroups = [
   {
@@ -47,4 +47,4 @@ function Skills() {
   )
 }
 
-export default Skills
+export default Skills */

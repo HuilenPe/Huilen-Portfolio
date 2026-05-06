@@ -1,4 +1,4 @@
-.skills {
+/* .skills {
   padding: 5rem 1rem;
   background: var(--bg-light);
   color: var(--text-main);
@@ -89,7 +89,7 @@
   opacity: 0.8;
 }
 
-/* DESKTOP */
+/* DESKTOP 
 @media (min-width: 768px) {
   .skills {
     padding: 8rem 1rem;
@@ -108,4 +108,4 @@
     min-height: 320px;
     padding: 2.4rem;
   }
-}
+} */
