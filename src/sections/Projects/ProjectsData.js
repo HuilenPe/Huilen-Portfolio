@@ -8,7 +8,7 @@ export const projects = [
         id: "health-client",
         type: "case-study",
         title: "Agendar una cita médica sin fricción",
-        description: "Diseño UX/UI · Flujo de reserva sin fricción",
+        description: "Diseño UX/UI",
         img: photo,
         github: "",
         figma: "https://www.figma.com/proto/GEOaUR9zuCeRrDR2pyiCsu/Health?node-id=4-2&t=W5Sg2dUk9bwRazsg-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=2168%3A1663",
