@@ -1,4 +1,4 @@
-import styles from "./Skills.module.css"
+import styles from "./skills.module.css"
 
 const skillGroups = [
   {
