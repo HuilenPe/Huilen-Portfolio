@@ -47,7 +47,7 @@ function Contact() {
           </div>
         </div>
 
-        <p className={styles.footerText}>h. portfolio — frontend & UI/UX</p>
+        <p className={styles.footerText}>portfolio — frontend & UI/UX</p>
       </div>
     </section>
   )

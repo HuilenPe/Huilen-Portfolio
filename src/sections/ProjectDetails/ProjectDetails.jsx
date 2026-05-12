@@ -6,10 +6,9 @@ function ProjectDetails() {
   return (
     <section className={styles.section}>
       <div className="container">
-        <a href="#projects" className={styles.backLink}>
-          <span aria-hidden="true">←</span>
-          Volver a proyectos
-        </a>
+<a href="#projects" className={styles.backLabel}>
+  ← Volver a proyectos
+</a>
 
         {projects.map((project) => (
           <div key={project.id} id={project.id} className={styles.details}>

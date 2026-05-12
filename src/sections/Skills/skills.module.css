@@ -47,17 +47,6 @@
   overflow: hidden;
 }
 
-.card::after {
-  content: "";
-  position: absolute;
-  right: -50px;
-  bottom: -50px;
-  width: 150px;
-  height: 150px;
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  border-radius: 50%;
-}
-
 .number {
   display: block;
   margin-bottom: 2rem;

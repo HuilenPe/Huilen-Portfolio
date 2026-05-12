@@ -19,7 +19,21 @@
   opacity: 1;
   transform: translateX(-2px);
 }
+.backLabel {
+  display: inline-block;
+  margin-bottom: 2rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--text-main);
+  opacity: 0.75;
+  transition: opacity 0.2s ease;
+}
 
+.backLabel:hover {
+  opacity: 1;
+}
 /* HERO MOBILE */
 .hero {
   position: relative;

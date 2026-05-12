@@ -129,11 +129,7 @@
 }
 
 .infoGrid {
-  margin-top: 4rem;
-  padding-top: 2rem;
-  border-top: 1px solid rgba(0, 0, 0, 0.16);
-  display: grid;
-  gap: 2rem;
+  display: none;
 }
 
 .infoBlock h3 {
@@ -195,6 +191,10 @@
   }
 
   .infoGrid {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.16);
+    display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 3rem;
   }
