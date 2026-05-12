@@ -21,7 +21,7 @@ function About() {
         <div className={styles.layout}>
           <div className={styles.visual} aria-hidden="true">
             <div className={styles.blob}></div>
-            <p className={styles.verticalText}>DISEÑO · CÓDIGO · EXPERIENCIA</p>
+            <p className={styles.verticalText}>DISEÑO · CÓDIGO</p>
 
             <div className={styles.sketchBox}>
               <span className={styles.sketchLine}></span>
@@ -64,7 +64,7 @@ function About() {
         </div>
 
         <p className={styles.quote}>
-          Creo en interfaces simples, humanas y visualmente honestas.
+          Me interesa crear experiencias simples, intuitivas y visualmente cuidadas.
         </p>
       </div>
     </section>
