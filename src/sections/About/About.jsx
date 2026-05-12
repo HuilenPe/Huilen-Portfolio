@@ -64,7 +64,7 @@ function About() {
         </div>
 
         <p className={styles.quote}>
-          Creo en interfaces simples, humanas y visualmente honestas.
+          Me interesa crear experiencias simples, intuitivas y visualmente cuidadas.
         </p>
       </div>
     </section>
