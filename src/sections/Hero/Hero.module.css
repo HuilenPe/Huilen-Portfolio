@@ -1,166 +1,298 @@
-.hero{
-  padding: 2.3rem 1rem;
+.hero {
+  padding: 3.5rem 1rem 4rem;
   background: var(--bg-light);
   color: var(--text-main);
 }
 
-.content{
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
+.content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
   align-items: center;
-  text-align: center;
 }
 
-.left{
+/* TEXT */
+.left {
   display: flex;
   flex-direction: column;
-  gap: .6rem;
+  align-items: flex-start;
 }
 
-.right{
-  width: 100%;
-  display: flex;
-  justify-content: center;
+.eyebrow {
+  margin-bottom: 1.2rem;
+
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+
+  color: var(--text-medium);
 }
 
 .left h1 {
-  font-size: clamp(2.2rem, 7vw, 4.2rem);
-  line-height: 1.1;
-  font-family: var(--font-display);
-  margin-bottom: 1.2rem;
-}
+  max-width: 700px;
 
-.subtitile {
-  font-size: 0.95rem;
-  opacity: 0.7;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  margin-top: 0.6rem;
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 10vw, 4.8rem);
+  font-weight: 400;
+
+  line-height: 0.95;
+  letter-spacing: -0.035em;
 }
 
 .description {
-  font-size:.95rem;
-  line-height: 1.5;
-  opacity: 0.75;
-  margin-top: 0.6rem;
+  max-width: 520px;
+  margin-top: 1.7rem;
+
+  font-size: 1rem;
+  line-height: 1.65;
+
+  color: var(--text-medium);
+}
+
+/* ILLUSTRATION */
+.right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .svg {
-  width: 80%;
-  max-width: 260px;
-  transform: translateY(-20px);
+  width: 82%;
+  max-width: 320px;
 }
 
 .path {
   stroke: var(--text-main);
   stroke-width: 3.5;
   fill: none;
+
   stroke-linecap: round;
   stroke-linejoin: round;
-  filter: drop-shadow(0 2px 2px rgba(0,0,0,0.1));
+
+  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.08));
 }
 
-/* CTA */
-.ctaButton{
+/* HERO ACTIONS */
+.heroActions {
   display: flex;
-  justify-content: center;
-  margin-top: 2.4rem;
-  width: 100%;
-  font-size: 1.2rem;
-  letter-spacing: 0.06em;
-  opacity: 0.9;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+
+  margin-top: 2rem;
 }
 
-.ctaButton:hover {
-  opacity: 1;
-}
-
+/* PRIMARY CTA */
 .sketchButton {
   position: relative;
+
   display: inline-flex;
   align-items: center;
   justify-content: center;
 
-  padding: 1rem 1.6rem;
+  padding: 0.9rem 1.4rem;
+
   border: 0;
   background: transparent;
   color: var(--text-main);
 
-  font-size: 1.05rem;
   font: inherit;
-  cursor: pointer;
+  font-size: 1rem;
   font-weight: 500;
-  letter-spacing: 0.02em;
+
+  cursor: pointer;
+}
+
+.sketchButton span {
+  position: relative;
+  z-index: 1;
+
+  letter-spacing: 0.04em;
 }
 
 .sketchOval {
   position: absolute;
   inset: 0;
+
   width: 100%;
   height: 100%;
+
   overflow: visible;
   pointer-events: none;
 }
 
 .sketchOval path {
-  stroke: var(--text-main);
+  stroke: currentColor;
   stroke-width: 2;
   fill: none;
+
   stroke-linecap: round;
   stroke-linejoin: round;
 
-  stroke-dasharray: none;
-  stroke-dashoffset: 0;
   opacity: 0.75;
 }
 
-.sketchButton:focus-visible {
-  outline: none;
+/* SECONDARY CTA */
+.secondaryLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+
+  color: var(--text-main);
+  text-decoration: none;
+
+  font-size: 0.95rem;
+  font-weight: 500;
+
+  opacity: 0.72;
+  transition: opacity 0.2s ease;
 }
 
-.sketchButton span {
-  letter-spacing: 0.06em;
+.secondaryLink:hover {
+  opacity: 1;
 }
 
+.secondaryLink span {
+  transition: transform 0.2s ease;
+}
 
-/* DESKTOP */
-@media (min-width: 768px) {
+.secondaryLink:hover span {
+  transform: translateX(3px);
+}
+
+/* FOCUS */
+.sketchButton:focus-visible,
+.secondaryLink:focus-visible {
+  outline: 2px solid var(--text-main);
+  outline-offset: 5px;
+}
+
+/* MOBILE */
+@media (max-width: 767px) {
+  .hero {
+    padding: 2.5rem 1rem 3rem;
+  }
+
   .content {
-    flex-direction: row;
-    justify-content: flex-start;
+    gap: 1.5rem;
+  }
+
+  .left h1 {
+    font-size: clamp(3.1rem, 13vw, 4.4rem);
+    line-height: 0.94;
+  }
+
+  .description {
+    max-width: 100%;
+    margin-top: 1.4rem;
+  }
+
+  .heroActions {
+    margin-top: 1.6rem;
+    gap: 1.4rem;
+  }
+
+  .right {
+    margin-top: 1.5rem;
+    justify-content: center;
+  }
+
+  .svg {
+    width: 80%;
+    max-width: 340px;
+  }
+}
+
+/* TABLET */
+@media (min-width: 600px) and (max-width: 767px) {
+  .hero {
+    padding: 3rem 1rem 4rem;
+  }
+
+  .content {
+    gap: 1rem;
+  }
+
+  .left {
+    max-width: 620px;
+  }
+
+  .left h1 {
+    font-size: 4.3rem;
+  }
+
+  .description {
+    max-width: 520px;
+  }
+
+  .right {
+    margin-top: 0.5rem;
+  }
+
+  .svg {
+    width: 55%;
+    max-width: 360px;
+  }
+}
+
+/* TABLET / DESKTOP */
+@media (min-width: 768px) {
+  .hero {
+    min-height: auto;
+    padding: 4rem 1rem 5rem;
+  }
+
+  .content {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(380px, 0.82fr);
+
+    gap: 3.25rem;
     align-items: center;
-    gap: 3rem;
-    text-align: left;
-    margin-left: 2rem;
+  }
+
+  .left {
+    max-width: 680px;
+  }
+
+  .left h1 {
+    font-size: clamp(4.5rem, 6vw, 6.5rem);
+  }
+
+  .description {
+    max-width: 560px;
+
+    font-size: 1.05rem;
+  }
+
+  .right {
+    justify-content: flex-start;
   }
 
   .svg {
     width: 100%;
-    max-width: 420px;
-    transform: none;
+    max-width: 500px;
   }
 
-  .left {
-    width: 45%;
-    text-align: left;
+  .heroActions {
+    gap: 1.8rem;
+    margin-top: 2rem;
   }
 
-  .right {
-    width: 55%;
+  /* Compensa el padding interno para alinear visualmente
+     "Ver proyectos" con el resto del bloque de texto */
+  .sketchButton {
+    margin-left: -1.3rem;
   }
+}
 
-  .ctaButton {
-    justify-content: flex-start;
-  }
-
-   .sketchButton {
-    margin-left: -1.1rem; 
-    padding: 0.9rem 1.4rem;
-  }
+/* REAL HOVER DEVICES ONLY */
+@media (hover: hover) and (pointer: fine) {
   .sketchOval path {
     stroke-dasharray: 430;
     stroke-dashoffset: 430;
+
     transition: stroke-dashoffset 0.55s ease;
   }
 

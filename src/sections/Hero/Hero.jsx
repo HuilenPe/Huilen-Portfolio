@@ -1,8 +1,5 @@
 import { useEffect, useRef } from "react"
 import styles from "./Hero.module.css"
-import scrollStyles from "./ScrollIndicator.module.css"
-import Button from "../../components/UI/Button/button.jsx"
-import { FiArrowUpRight } from "react-icons/fi"
 
 function Hero() {
     const contornoRef = useRef(null)
@@ -48,16 +45,64 @@ function Hero() {
         })
     }, [])
 
-    return (
-        <section className={styles.hero}>
-            <div className="container">
-                <div className={styles.content}>
+return (
+    <section className={styles.hero}>
+        <div className="container">
+
+            <div className={styles.content}>
+
+                {/* TEXTO */}
+                <div className={styles.left}>
+                    <p className={styles.eyebrow}>
+                        Frontend Developer · UI Designer
+                    </p>
+
+                    <h1>
+                        Hola, soy
+                        <br />
+                        Huilen Peña.
+                    </h1>
+
+                    <p className={styles.description}>
+                        Diseño interfaces y las convierto en experiencias digitales
+                        claras y cuidadas, desde Figma hasta código.
+                    </p>
+
+                    <div className={styles.heroActions}>
+
+                    <button
+                        className={styles.sketchButton}
+                        onClick={handleScrollToProjects}
+                    >
+                        <span>Ver proyectos</span>
+
+                        <svg
+                            className={styles.sketchOval}
+                            viewBox="0 0 210 58"
+                            fill="none"
+                            aria-hidden="true"
+                        >
+                            <path d="M24 32C18 18 48 7 98 8C151 9 187 18 184 33C181 49 127 53 80 49C36 45 12 40 24 32Z" />
+                        </svg>
+                    </button>
+
+                    <a href="#about" className={styles.secondaryLink}>
+                        Sobre mí
+                        <span aria-hidden="true">→</span>
+                    </a>
+                    </div>
+                </div>
+
+                {/* ILUSTRACIÓN */}
                 <div className={styles.right}>
+
+                    {/* AQUÍ DEJAS TU SVG ACTUAL EXACTAMENTE COMO ESTÁ */}
+
                     <svg
-                    className={styles.svg}
-                    viewBox="0 0 1330 1356"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
+                        className={styles.svg}
+                        viewBox="0 0 1330 1356"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
                     >
 
                     {/* face-outline */}
@@ -103,54 +148,11 @@ function Hero() {
                             />
                     </svg>
                     
-                </div>   
-                <div className={styles.left}>
-                        <h1>Hola, soy Huilen</h1>
-                        <p className={styles.subtitile}>Frontend Developer & UI Designer</p>
-                     {/*    <p className={styles.description}>Frontend developer · UI designer</p> */}
-                        <div className={styles.ctaButton}>
-                            
-<button
-  className={styles.sketchButton}
-  onClick={handleScrollToProjects}
->
-  <span>Ver proyectos</span>
-
-  <svg
-    className={styles.sketchOval}
-    viewBox="0 0 210 58"
-    fill="none"
-    aria-hidden="true"
-  >
-    <path d="M24 32C18 18 48 7 98 8C151 9 187 18 184 33C181 49 127 53 80 49C36 45 12 40 24 32Z" />
-  </svg>
-</button>
-                           
-                        </div>
-                    </div>
-                </div>
-
-                <div className={scrollStyles.scrollWrap}>
-                    <svg
-                        className={scrollStyles.scrollSvg}
-                        viewBox="0 0 48 100"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                        aria-hidden="true"
-                    >
-                        <path
-                            className={scrollStyles.scrollLine}
-                            d="M24 4 C20 18 30 30 24 44 C18 58 22 70 24 82"
-                        />
-                        <path
-                            className={scrollStyles.scrollArrow}
-                            d="M16 72 L24 82 L32 72"
-                        />
-                    </svg>
                 </div>
             </div>
-        </section>
-    )
+        </div>
+    </section>
+)
 }
 
 export default Hero
