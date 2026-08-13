@@ -27,7 +27,7 @@ function Projects() {
   return (
     <section id="projects" className={styles.section}>
       <div className="container">
-        <h2 className={styles.title}>Frontend & UI/UX</h2>
+        <h2 className={styles.title}>Proyectos seleccionados</h2>
 
         <div className={styles.grid}>
           {projects.map((project) => (
