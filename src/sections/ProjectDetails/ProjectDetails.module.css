@@ -332,6 +332,18 @@
   }
 }
 
+@media (max-width: 767px) {
+  .statement {
+    max-width: 100%;
+    margin: 3rem 0 4rem;
+
+    padding-left: 1rem;
+
+    font-size: clamp(1.7rem, 8vw, 2.3rem);
+    line-height: 1.18;
+  }
+}
+
 /* PROCESS */
 .process {
   margin: 5rem 0;

@@ -7,97 +7,108 @@ import photoAldo from "/images/aldo/aldo-pena-cover.png";
 import aldoHero from "/images/aldo/aldo-pena-hero.png";
 
 export const projects = [
-        {
-    id: "aldo-pena",
-    title: "Aldo Peña — Archivo Artístico Digital",
-    description: "Diseño UX/UI y desarrollo Frontend de una plataforma cultural para preservar y difundir la obra y trayectoria de un artista.",
-    img: photoAldo,
-    demo: "https://aldo-pena-web.vercel.app/",
-    github: "https://github.com/HuilenPe/aldo-pena-web",
-    figma: "",
-    details: {
-        hero: {
-            title: "Aldo Peña — Archivo Artístico Digital",
-            subtitle:
-            "Diseño UX/UI y desarrollo Frontend de una plataforma cultural para preservar, organizar y difundir la obra y trayectoria del artista.",
-            tags: [
-            "UX/UI",
-            "Frontend Development",
-            "React",
-            "Responsive Design"
-            ],
-            background: aldoHero,
-            mockup: "",
-        },
-        origin: {
-        eyebrow: "El origen del proyecto",
-        title: "Un archivo digital creado para preservar una trayectoria artística y cultural.",
-        content:
-            "Aldo Peña fue mi padre, artista, docente y gestor cultural. Tras su fallecimiento, mi madre impulsó como clienta la creación de un archivo digital que permitiera preservar, organizar y difundir su obra y trayectoria. A partir de este encargo, asumí el diseño UX/UI y el desarrollo Frontend de una plataforma pensada para conservar su legado y hacerlo accesible a largo plazo.",
-        },
-        context: {
-            problema:
-            "El archivo artístico de Aldo Peña necesitaba una estructura digital clara, visual y escalable que permitiera organizar obra, trayectoria, documentación y legado en una misma experiencia.",
-            objetivo:
-            "Diseñar y desarrollar una plataforma editorial que facilite la exploración del archivo, mantenga una identidad visual coherente y pueda crecer con nuevos contenidos y secciones.",
-            usuario: [
-            "Personas interesadas en la obra y trayectoria del artista",
-            "Investigadores y perfiles vinculados al ámbito cultural",
-            "Usuarios que acceden desde dispositivos móviles y desktop",
-            ],
-        },
+{
+  id: "aldo-pena",
+  title: "Aldo Peña — Archivo Artístico Digital",
+  description:
+    "Diseño UX/UI y desarrollo Frontend de un archivo digital con enfoque editorial y museográfico.",
+  img: photoAldo,
+  demo: "https://aldo-pena-web.vercel.app/",
+  github: "https://github.com/HuilenPe/aldo-pena-web",
+  figma: "",
 
-        approach: {
-            decisiones: [
-            "Diseño editorial inspirado en archivos culturales y museos",
-            "Arquitectura de información por áreas: obra, biografía, práctica y legado",
-            "Desarrollo mobile-first y responsive",
-            "Internacionalización ES / EN desde el inicio",
-            "Componentización orientada a escalabilidad y mantenimiento",
-            ],
-        },
-        process: {
-        sitemap: {
-            title: "Arquitectura de información",
-            description:
-            "La estructura del archivo se organizó en cinco áreas principales, definiendo jerarquías, categorías y recorridos antes de abordar el diseño de las interfaces.",
-            img: "/images/aldo/aldo-sitemap.png",
-        },
+  details: {
+    hero: {
+      title: "Aldo Peña — Archivo Artístico Digital",
+      subtitle:
+        "Diseño UX/UI y desarrollo Frontend de un archivo digital concebido como un recorrido por la obra y trayectoria del artista.",
+      tags: [
+        "UX/UI",
+        "Frontend Development",
+        "React",
+        "Responsive Design",
+      ],
+      background: aldoHero,
+      mockup: "",
+    },
+
+    origin: {
+      eyebrow: "El origen del proyecto",
+      title:
+        "De una web para mostrar obra a un archivo digital capaz de preservar una trayectoria.",
+      content:
+        "La iniciativa nace de la cliente con la intención de crear un espacio digital donde reunir y mostrar la obra de Aldo Peña. Al comenzar a analizar el material, su trayectoria y la estructura inicial propuesta, el proyecto reveló un reto mayor: organizar décadas de producción artística, docencia, exposiciones, diseño y documentación dentro de una experiencia clara y coherente.",
+    },
+
+    context: {
+      problema:
+        "El volumen y la diversidad del contenido podían derivar en una arquitectura con demasiadas páginas o, en el extremo contrario, en grandes bloques de información difíciles de recorrer. El reto dejó de ser simplemente cómo mostrar las obras y pasó a ser cómo convertir una trayectoria extensa en un recorrido comprensible para el usuario.",
+
+      objetivo:
+        "Construir una arquitectura que permitiera descubrir progresivamente obra, biografía, práctica y archivo, manteniendo las relaciones entre los contenidos y preparando el sistema para crecer a medida que nuevos materiales fueran catalogados.",
+
+      usuario: [
+        "Personas interesadas en la obra y trayectoria del artista",
+        "Investigadores y perfiles vinculados al ámbito artístico y cultural",
+        "Usuarios que necesitan explorar un archivo amplio sin perder el contexto de navegación",
+      ],
+    },
+
+    approach: {
+      decisiones: [
+        "Explorar distintas arquitecturas de información antes de definir la estructura final",
+        "Reducir la fragmentación entre páginas y establecer relaciones claras entre los contenidos",
+        "Plantear la experiencia desde un lenguaje editorial y museográfico",
+        "Utilizar jerarquía, ritmo, imagen y espacios de lectura para construir un recorrido progresivo",
+        "Diseñar una arquitectura preparada para incorporar nuevos materiales con el crecimiento del archivo",
+      ],
+    },
+
+    process: {
+      sitemap: {
+        title: "Explorar antes de estructurar",
+        description:
+          "La organización del contenido pasó por distintas propuestas y versiones del sitemap. El objetivo era encontrar un equilibrio entre profundidad y simplicidad: evitar una navegación excesivamente fragmentada sin concentrar décadas de información en bloques difíciles de recorrer.",
+        img: "/images/aldo/aldo-sitemap.png",
+      },
 
         interaction: {
-            title: "Diseño de interacción",
-            description:
-            "El sistema de Obras se diseñó para permitir explorar el archivo por categorías y acceder progresivamente al detalle de cada pieza o serie sin perder el contexto de navegación.",
-            img: "/images/aldo/aldo-works-interaction.png",
+        title: "Del portfolio al recorrido museográfico",
+        description:
+            "Más que mostrar una colección de obras, el proyecto propone recorrer una trayectoria. De esta exploración surgió la decisión de no plantearlo únicamente como un portfolio artístico basado en galerías, sino como una experiencia editorial y museográfica. Obra, biografía, práctica y archivo forman parte de una misma narrativa que permite descubrir progresivamente la trayectoria del artista.",
+        img: "/images/aldo/aldo-works-interaction.png",
         },
 
-        responsive: {
-            title: "Diseño responsive e implementación",
-            description:
-            "Las decisiones definidas en Figma se trasladaron a una implementación responsive en React, adaptando navegación, composición y jerarquía visual a desktop y móvil.",
-            img: "/images/aldo/aldo-responsive.png",
-            technologies: [
-            "React",
-            "React Router",
-            "i18next",
-            "Responsive Design",
-            "ES / EN",
-            ],
-        },
-        },
-        result: {
-            title: "Resultado",
-            content:
-            "Una plataforma cultural en desarrollo con navegación responsive, sistema bilingüe, arquitectura escalable y una experiencia visual coherente con la identidad del artista.",
-        },
+      responsive: {
+        title: "Trasladar el recorrido a cada dispositivo",
+        description:
+          "La implementación responsive no se planteó únicamente como una reducción del layout de escritorio. Navegación, galerías, jerarquías y ritmo de lectura se adaptaron para conservar la intención editorial también en pantallas pequeñas. El proyecto se desarrolla en React e incorpora navegación entre secciones e internacionalización ES / EN.",
+        img: "/images/aldo/aldo-responsive.png",
 
-        learnings: [
-            "Diseñar para contenido cultural requiere equilibrar jerarquía visual y protagonismo de la obra.",
-            "La arquitectura de información es clave cuando el contenido crecerá con el tiempo.",
-            "La internacionalización y el responsive funcionan mejor cuando se plantean desde el inicio.",
+        technologies: [
+          "React",
+          "React Router",
+          "i18next",
+          "Responsive Design",
+          "ES / EN",
         ],
-        },
+      },
     },
+
+    result: {
+      title: "Un archivo en desarrollo",
+      content:
+        "El proyecto continúa creciendo en paralelo al proceso de investigación, catalogación y recuperación documental de la obra y trayectoria del artista. Actualmente se está recopilando y reorganizando material fotográfico y documental procedente tanto del archivo personal como de fondos históricos vinculados a las instituciones en las que el artista se formó y desarrolló gran parte de su trayectoria. Por este motivo, algunas secciones y contenidos de la web todavía se encuentran en proceso de incorporación.",
+    },
+
+    learnings: [
+      "La arquitectura de información es especialmente importante cuando el contenido es extenso, heterogéneo y continuará creciendo.",
+      "Diseñar un archivo cultural requiere equilibrar el protagonismo de la obra con el contexto necesario para comprenderla.",
+      "Explorar diferentes estructuras antes de diseñar las interfaces permitió convertir un gran volumen de información en un recorrido más coherente.",
+      "Diseñar desde el inicio para un archivo en crecimiento evita tener que replantear la experiencia cada vez que aparece nuevo material.",
+    ],
+  },
+},
     {
         id: "health-client",
         type: "case-study",
