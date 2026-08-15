@@ -202,25 +202,25 @@ export const projects = [
             title: "1. Punto de entrada visible",
             description:
               "La reserva aparece como una acción principal desde el dashboard, permitiendo iniciar el flujo sin recorrer otras secciones.",
-            img: "/images/health-home.png",
+            img: "/images/health-booking-entry.png",
           },
           {
             title: "2. Elegir profesional",
             description:
               "La información necesaria para comparar profesionales se agrupa antes de avanzar a la selección de disponibilidad.",
-            img: "/images/health-doctor.png",
+            img: "/images/health-booking-doctor.png",
           },
           {
             title: "3. Fecha y horario",
             description:
               "La selección se concentra en una única tarea, utilizando estados visuales para diferenciar disponibilidad y elección.",
-            img: "/images/health-date.png",
+            img: "/images/health-booking-date.png",
           },
           {
             title: "4. Confirmación",
             description:
               "El flujo termina con un estado explícito de éxito y un resumen de la cita para confirmar qué se ha reservado.",
-            img: "/images/health-confirmation.png",
+            img: "/images/health-booking-confirmation.png",
           },
         ],
       },

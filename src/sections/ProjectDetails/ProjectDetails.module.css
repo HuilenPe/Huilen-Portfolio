@@ -329,17 +329,30 @@
 
 .bookingScreen {
   min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .bookingScreen img {
   display: block;
 
   width: 100%;
+  max-width: 260px;
+  aspect-ratio: 9 / 19.5;
+
+  object-fit: contain;
+
+  margin: 0 auto;
 
   border-radius: 14px;
 }
 
 .bookingScreenText {
+  width: 100%;
+  max-width: 360px;
+
   margin-top: 1.25rem;
 }
 
@@ -422,6 +435,14 @@
   .bookingFlow {
     margin: 4.5rem 0;
   }
+
+  .bookingScreen img {
+    max-width: 230px;
+  }
+
+  .bookingScreenText {
+    max-width: 300px;
+  }
 }
 
 /* TABLET */
@@ -496,5 +517,9 @@
 
   .mockup img {
     max-width: 320px;
+  }
+
+  .bookingScreen img {
+    max-width: 250px;
   }
 }
