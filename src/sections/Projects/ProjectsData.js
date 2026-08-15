@@ -192,12 +192,12 @@ export const projects = [
             ],
         },
     },
-    {
+/*     {
         id: "portfolio",
         title: "Portfolio web personal",
         description: "Desarrollo Frontend",
         img: photoPortfolio,
         github: "https://github.com/HuilenPe/Huilen-Portfolio",
         figma: "",
-    },
+    }, */
 ];

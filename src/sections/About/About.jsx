@@ -62,10 +62,6 @@ function About() {
           <InfoBlock title="Stack" items={stack} />
           <InfoBlock title="Enfoque" items={focus} />
         </div>
-
-        <p className={styles.quote}>
-          Me interesa crear experiencias simples, intuitivas y visualmente cuidadas.
-        </p>
       </div>
     </section>
   )

@@ -8,7 +8,7 @@ function Contact() {
         <div className={styles.content}>
           <p className={styles.label}>Contacto</p>
 
-          <h2>¿Creamos algo juntas?</h2>
+          <h2>¿Creamos algo?</h2>
 
           <p className={styles.description}>
             Estoy abierta a oportunidades junior frontend, UI design y proyectos
