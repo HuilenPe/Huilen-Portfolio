@@ -34,6 +34,9 @@ function Header() {
   const logoAnchorRef = useRef(null)
   const movingLogoRef = useRef(null)
 
+  const skipAboutAnimationRef = useRef(false)
+  const navigationCleanupRef = useRef(null)
+
   const [isOpen, setIsOpen] = useState(false)
   const [isAboutActive, setIsAboutActive] = useState(false)
 
@@ -78,21 +81,82 @@ function Header() {
     }
   }, [isOpen])
 
+function handleSectionNav(targetId) {
+  setIsOpen(false)
+
+  // Si el usuario quiere ir a About, permitimos la animación normal.
+  if (targetId === "about") {
+    navigationCleanupRef.current?.()
+    navigationCleanupRef.current = null
+
+    skipAboutAnimationRef.current = false
+    return
+  }
+
+  // Si va a otra sección, About puede cruzarse durante el scroll
+  // pero el logo debe permanecer en el navbar.
+  skipAboutAnimationRef.current = true
+  setIsAboutActive(false)
+
+  navigationCleanupRef.current?.()
+
+  let scrollEndTimer
+
+  function releaseAboutAnimation() {
+    window.clearTimeout(scrollEndTimer)
+    window.removeEventListener("scroll", handleNavigationScroll)
+
+    skipAboutAnimationRef.current = false
+    navigationCleanupRef.current = null
+  }
+
+  function handleNavigationScroll() {
+    window.clearTimeout(scrollEndTimer)
+
+    // Consideramos terminado el scroll cuando lleva
+    // un pequeño tiempo sin volver a moverse.
+    scrollEndTimer = window.setTimeout(
+      releaseAboutAnimation,
+      180
+    )
+  }
+
+  window.addEventListener(
+    "scroll",
+    handleNavigationScroll,
+    { passive: true }
+  )
+
+  // Fallback por si el enlace apunta a una sección que
+  // ya está prácticamente en la posición actual.
+  scrollEndTimer = window.setTimeout(
+    releaseAboutAnimation,
+    1200
+  )
+
+  navigationCleanupRef.current = releaseAboutAnimation
+}
+
   /* ABOUT — detect target entering viewport */
   useEffect(() => {
     const target = document.getElementById("about-logo-target")
-    const desktop = window.matchMedia("(min-width: 768px)")
 
-    if (!target || !desktop.matches) return
+    if (!target) return
 
     const observer = new IntersectionObserver(
       ([entry]) => {
+        if (skipAboutAnimationRef.current) {
+          setIsAboutActive(false)
+          return
+        }
+
         setIsAboutActive(
-          entry.isIntersecting && entry.intersectionRatio >= 0.45
+          entry.isIntersecting &&
+          entry.intersectionRatio >= 0.35
         )
       },
       {
-        threshold: [0, 0.45, 1],
+        threshold: [0, 0.35, 1],
       }
     )
 
@@ -102,6 +166,13 @@ function Header() {
       observer.disconnect()
     }
   }, [])
+
+  /* CLEANUP navigation observer */
+    useEffect(() => {
+      return () => {
+        navigationCleanupRef.current?.()
+      }
+    }, [])
 
   /* MOVING LOGO — position */
   useEffect(() => {
@@ -117,12 +188,8 @@ function Header() {
       cancelAnimationFrame(frame)
 
       frame = requestAnimationFrame(() => {
-        const desktop = window.innerWidth >= 768
-
-        if (!desktop) return
-
         const destination =
-          isAboutActive && target
+          isAboutActive && target && !isOpen
             ? target.getBoundingClientRect()
             : source.getBoundingClientRect()
 
@@ -140,15 +207,16 @@ function Header() {
 
     return () => {
       cancelAnimationFrame(frame)
+
       window.removeEventListener("resize", updateLogoPosition)
       window.removeEventListener("scroll", updateLogoPosition)
     }
-  }, [isAboutActive])
+  }, [isAboutActive, isOpen])
 
   return (
     <header className={styles.header}>
       <div className={styles.container}>
-        {/* Logo anchor — mantiene el espacio original */}
+        {/* LOGO ANCHOR */}
         <div
           ref={logoAnchorRef}
           className={styles.logo}
@@ -156,7 +224,7 @@ function Header() {
           <LogoMark className={styles.h} />
         </div>
 
-        {/* Logo viajero — desktop */}
+        {/* MOVING LOGO */}
         <div
           ref={movingLogoRef}
           className={`${styles.movingLogo} ${
@@ -169,19 +237,35 @@ function Header() {
 
         {/* NAV DESKTOP */}
         <nav className={styles.nav} aria-label="Menú principal">
-          <a href="#projects" className={styles.menuLink}>
+          <a
+            href="#projects"
+            className={styles.menuLink}
+            onClick={() => handleSectionNav("projects")}
+          >
             Proyectos
           </a>
 
-          <a href="#about" className={styles.menuLink}>
+          <a
+            href="#about"
+            className={styles.menuLink}
+            onClick={() => handleSectionNav("about")}
+          >
             Sobre mí
           </a>
 
-          <a href="#skills" className={styles.menuLink}>
+          <a
+            href="#skills"
+            className={styles.menuLink}
+            onClick={() => handleSectionNav("skills")}
+          >
             Skills
           </a>
 
-          <a href="#contact" className={styles.menuLink}>
+          <a
+            href="#contact"
+            className={styles.menuLink}
+            onClick={() => handleSectionNav("contact")}
+          >
             Contacto
           </a>
         </nav>
@@ -212,7 +296,7 @@ function Header() {
             <a
               href="#projects"
               className={styles.burgerMenu}
-              onClick={() => setIsOpen(false)}
+              onClick={() => handleSectionNav("projects")}
             >
               Proyectos
             </a>
@@ -220,7 +304,7 @@ function Header() {
             <a
               href="#about"
               className={styles.burgerMenu}
-              onClick={() => setIsOpen(false)}
+              onClick={() => handleSectionNav("about")}
             >
               Sobre mí
             </a>
@@ -228,7 +312,7 @@ function Header() {
             <a
               href="#skills"
               className={styles.burgerMenu}
-              onClick={() => setIsOpen(false)}
+              onClick={() => handleSectionNav("skills")}
             >
               Skills
             </a>
@@ -236,7 +320,7 @@ function Header() {
             <a
               href="#contact"
               className={styles.burgerMenu}
-              onClick={() => setIsOpen(false)}
+              onClick={() => handleSectionNav("contact")}
             >
               Contacto
             </a>

@@ -185,7 +185,7 @@
   top: 50%;
   left: 50%;
 
-  width: 105px;
+  width: 85px;
   aspect-ratio: 369 / 420;
 
   transform: translate(-50%, -50%);
@@ -195,7 +195,7 @@
 /* DESKTOP */
 @media (min-width: 768px) {
   .about {
-    padding: 8rem 1rem;
+    padding: 8rem 1rem 4rem;
   }
 
   .layout {
