@@ -46,7 +46,7 @@ function Hero() {
     }, [])
 
 return (
-    <section className={styles.hero}>
+    <section id="hero" className={styles.hero}>
         <div className="container">
 
             <div className={styles.content}>

@@ -1,18 +1,35 @@
-import styles from "./ProjectDetails.module.css";
-import { projects } from "../Projects/ProjectsData";
-import Button from "../../components/UI/Button/button";
+import { useRef, useState } from "react"
+import styles from "./ProjectDetails.module.css"
+import { projects } from "../Projects/ProjectsData"
+import Button from "../../components/UI/Button/button"
 
 function ProjectDetails() {
-  const projectsWithDetails = projects.filter((project) => project.details);
+  const processRef = useRef(null)
+  const [activeProcessSlide, setActiveProcessSlide] = useState(0)
 
-  if (!projectsWithDetails.length) return null;
+  const projectsWithDetails = projects.filter((project) => project.details)
+
+  if (!projectsWithDetails.length) return null
+
+  const handleProcessScroll = () => {
+    const container = processRef.current
+
+    if (!container) return
+
+    const slideWidth = container.clientWidth
+
+    if (!slideWidth) return
+
+    const activeSlide = Math.round(container.scrollLeft / slideWidth)
+
+    setActiveProcessSlide(Math.min(activeSlide, 2))
+  }
 
   return (
     <section className={styles.section}>
       <div className="container">
         {projectsWithDetails.map((project) => (
           <div key={project.id} id={project.id} className={styles.details}>
-            
             {/* BACK */}
             <a href="#projects" className={styles.backLabel}>
               ← Volver a proyectos
@@ -247,67 +264,88 @@ function ProjectDetails() {
 
             {/* ALDO — PROCESS */}
             {project.details.process && (
-              <div className={styles.process}>
-                
-                {/* SITEMAP */}
-                <div className={styles.processBlock}>
-                  <div className={styles.processText}>
-                    <span className={styles.processEyebrow}>
-                      Proceso
-                    </span>
+              <>
+                <div
+                  ref={processRef}
+                  className={styles.process}
+                  onScroll={handleProcessScroll}
+                >
+                  {/* SITEMAP */}
+                  <div className={styles.processBlock}>
+                    <div className={styles.processText}>
+                      <span className={styles.processEyebrow}>
+                        Proceso
+                      </span>
 
-                    <h3>{project.details.process.sitemap.title}</h3>
-                    <p>{project.details.process.sitemap.description}</p>
+                      <h3>{project.details.process.sitemap.title}</h3>
+                      <p>{project.details.process.sitemap.description}</p>
+                    </div>
+
+                    <img
+                      src={project.details.process.sitemap.img}
+                      alt="Arquitectura de información del archivo artístico digital"
+                      className={styles.processImage}
+                    />
                   </div>
 
-                  <img
-                    src={project.details.process.sitemap.img}
-                    alt="Arquitectura de información del archivo artístico digital"
-                    className={styles.processImage}
-                  />
-                </div>
+                  {/* INTERACTION */}
+                  <div className={styles.processBlock}>
+                    <div className={styles.processText}>
+                      <h3>{project.details.process.interaction.title}</h3>
+                      <p>{project.details.process.interaction.description}</p>
+                    </div>
 
-                {/* INTERACTION */}
-                <div className={styles.processBlock}>
-                  <div className={styles.processText}>
-                    <h3>{project.details.process.interaction.title}</h3>
-                    <p>{project.details.process.interaction.description}</p>
+                    <img
+                      src={project.details.process.interaction.img}
+                      alt="Diseño de interacción de la sección Obras"
+                      className={styles.processImage}
+                    />
                   </div>
 
-                  <img
-                    src={project.details.process.interaction.img}
-                    alt="Diseño de interacción de la sección Obras"
-                    className={styles.processImage}
-                  />
-                </div>
+                  {/* RESPONSIVE */}
+                  <div className={styles.processBlock}>
+                    <div className={styles.processText}>
+                      <h3>{project.details.process.responsive.title}</h3>
+                      <p>{project.details.process.responsive.description}</p>
 
-                {/* RESPONSIVE */}
-                <div className={styles.processBlock}>
-                  <div className={styles.processText}>
-                    <h3>{project.details.process.responsive.title}</h3>
-                    <p>{project.details.process.responsive.description}</p>
+                      {project.details.process.responsive.technologies?.length >
+                        0 && (
+                        <div className={styles.techList}>
+                          {project.details.process.responsive.technologies.map(
+                            (tech) => (
+                              <span key={tech} className={styles.techItem}>
+                                {tech}
+                              </span>
+                            )
+                          )}
+                        </div>
+                      )}
+                    </div>
 
-                    {project.details.process.responsive.technologies?.length >
-                      0 && (
-                      <div className={styles.techList}>
-                        {project.details.process.responsive.technologies.map(
-                          (tech) => (
-                            <span key={tech} className={styles.techItem}>
-                              {tech}
-                            </span>
-                          )
-                        )}
-                      </div>
-                    )}
+                    <img
+                      src={project.details.process.responsive.img}
+                      alt={`Implementación responsive de ${project.title}`}
+                      className={styles.processImage}
+                    />
                   </div>
-
-                  <img
-                    src={project.details.process.responsive.img}
-                    alt={`Implementación responsive de ${project.title}`}
-                    className={styles.processImage}
-                  />
                 </div>
-              </div>
+
+                <div
+                  className={styles.processDots}
+                  aria-label={`Paso ${activeProcessSlide + 1} de 3`}
+                >
+                  {[0, 1, 2].map((index) => (
+                    <span
+                      key={index}
+                      className={`${styles.processDot} ${
+                        activeProcessSlide === index
+                          ? styles.processDotActive
+                          : ""
+                      }`}
+                    />
+                  ))}
+                </div>
+              </>
             )}
 
             {/* RESULT / SCOPE */}
@@ -330,12 +368,11 @@ function ProjectDetails() {
                 </ul>
               </div>
             )}
-
           </div>
         ))}
       </div>
     </section>
-  );
+  )
 }
 
-export default ProjectDetails;
+export default ProjectDetails

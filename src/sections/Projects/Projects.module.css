@@ -3,12 +3,31 @@
   margin-bottom: 2rem;
 }
 
+/* MOBILE — CARRUSEL */
 .grid {
-  display: grid;
-  gap: 1.5rem;
+  display: flex;
+  gap: 1rem;
+
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: 1rem;
+
+  padding-bottom: 0.75rem;
+
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.grid::-webkit-scrollbar {
+  display: none;
 }
 
 .card {
+  flex: 0 0 86%;
+  scroll-snap-align: start;
+
   border-radius: 12px;
   background: #fff;
   border: 1px solid rgba(0, 0, 0, 0.08);
@@ -16,7 +35,6 @@
 
   display: flex;
   flex-direction: column;
-  height: 100%;
 
   cursor: pointer;
 
@@ -70,7 +88,20 @@
 /* TABLET */
 @media (min-width: 768px) {
   .grid {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+
+    overflow: visible;
+    scroll-snap-type: none;
+    scroll-padding-inline: 0;
+    padding-bottom: 0;
+  }
+
+  .card {
+    flex: initial;
+    scroll-snap-align: none;
+    height: 100%;
   }
 }
 

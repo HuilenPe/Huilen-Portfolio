@@ -225,15 +225,17 @@ function handleSectionNav(targetId) {
         </div>
 
         {/* MOVING LOGO */}
-        <div
+        <a
           ref={movingLogoRef}
+          href="#hero"
           className={`${styles.movingLogo} ${
             isAboutActive ? styles.logoInAbout : ""
           }`}
-          aria-hidden="true"
+          aria-label="Volver al inicio"
+          onClick={() => handleSectionNav("hero")}
         >
           <LogoMark />
-        </div>
+        </a>
 
         {/* NAV DESKTOP */}
         <nav className={styles.nav} aria-label="Menú principal">

@@ -97,7 +97,7 @@ export const projects = [
       result: {
         title: "Un archivo en desarrollo",
         content:
-          "El proyecto continúa creciendo en paralelo al proceso de investigación, catalogación y recuperación documental de la obra y trayectoria del artista. Actualmente se está recopilando y reorganizando material fotográfico y documental procedente tanto del archivo personal como de fondos históricos vinculados a las instituciones en las que el artista se formó y desarrolló gran parte de su trayectoria. Por este motivo, algunas secciones y contenidos de la web todavía se encuentran en proceso de incorporación.",
+          "El proyecto continúa creciendo en paralelo al proceso de investigación, catalogación y recuperación documental de la obra y trayectoria del artista. Actualmente se está recopilando y reorganizando material fotográfico y documental procedente tanto de archivos privados y colección familiar como de archivos históricos vinculados a las instituciones en las que el artista se formó y desarrolló gran parte de su trayectoria. Por este motivo, algunas secciones y contenidos de la web todavía se encuentran en proceso de incorporación.",
       },
 
       learnings: [
@@ -117,8 +117,7 @@ export const projects = [
       "Diseño UX/UI de una aplicación móvil para gestionar citas, información médica y comunicación con profesionales.",
     img: photo,
     github: "",
-    figma:
-      "https://www.figma.com/proto/GEOaUR9zuCeRrDR2pyiCsu/Health?node-id=4-2&t=W5Sg2dUk9bwRazsg-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=2168%3A1663",
+    figma:"",
 
     details: {
       hero: {

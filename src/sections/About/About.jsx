@@ -46,13 +46,12 @@ function About() {
 
             <div className={styles.text}>
               <p>
-                Vengo del mundo de las artes visuales y encontré en el diseño
-                digital una forma de unir creatividad y funcionalidad.
+                Actualmente desarrollo interfaces frontend y experiencias UI/UX
+                enfocadas en claridad, estética y usabilidad.
               </p>
 
               <p>
-                Actualmente desarrollo interfaces frontend y experiencias UI/UX
-                enfocadas en claridad, estética y usabilidad.
+                Mi formación en Artes Visuales complementa mi perfil técnico y aporta una mirada enriquecedora sobre composición, jerarquía visual y experiencia de usuario.
               </p>
             </div>
 
