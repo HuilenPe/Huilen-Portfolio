@@ -294,7 +294,7 @@
   border-radius: 14px;
 }
 
-/* PROCESS DOTS */
+/* ALDO — PROCESS DOTS */
 .processDots {
   display: none;
 }
@@ -304,7 +304,6 @@
   height: 6px;
 
   border-radius: 50%;
-
   background: rgba(0, 0, 0, 0.2);
 
   transition:
@@ -391,6 +390,28 @@
 
   font-size: 0.9rem;
   line-height: 1.6;
+}
+
+/* HEALTH — BOOKING DOTS */
+.bookingDots {
+  display: none;
+}
+
+.bookingDot {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.2);
+
+  transition:
+    transform 0.25s ease,
+    background-color 0.25s ease;
+}
+
+.bookingDotActive {
+  background: var(--text-main);
+  transform: scale(1.35);
 }
 
 /* FLOW */
@@ -496,8 +517,38 @@
     margin-bottom: 4rem;
   }
 
+  /* HEALTH — BOOKING FLOW CAROUSEL */
   .bookingFlow {
     margin: 4.5rem 0;
+  }
+
+  .bookingGrid {
+    display: flex;
+    gap: 1rem;
+
+    margin-top: 3rem;
+
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+
+    scroll-snap-type: x mandatory;
+
+    padding-bottom: 0.75rem;
+
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .bookingGrid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .bookingScreen {
+    flex: 0 0 calc(100% - 1rem);
+    min-width: calc(100% - 1rem);
+
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
   }
 
   .bookingScreen img {
@@ -506,6 +557,15 @@
 
   .bookingScreenText {
     max-width: 300px;
+  }
+
+  .bookingDots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+
+    margin-top: 1.25rem;
   }
 }
 
@@ -564,8 +624,16 @@
   }
 
   .bookingGrid {
+    display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 3.5rem 2rem;
+
+    overflow: visible;
+    padding-bottom: 0;
+  }
+
+  .bookingScreen {
+    min-width: 0;
   }
 
   .screens {

@@ -42,17 +42,38 @@
   opacity: 0.72;
 }
 
-/* SKILLS GRID */
+/* SKILLS GRID — MOBILE CAROUSEL */
 .grid {
-  display: grid;
+  display: flex;
+  gap: 1rem;
+
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+
+  scroll-snap-type: x mandatory;
 
   border-top: 1px solid rgba(0, 0, 0, 0.16);
+
+  padding-bottom: 0.75rem;
+
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.grid::-webkit-scrollbar {
+  display: none;
 }
 
 .skillGroup {
-  padding: 2.5rem 0;
+  flex: 0 0 86%;
+  min-width: 0;
+
+  padding: 2.5rem 1rem 2.5rem 0;
 
   border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 .number {
@@ -123,14 +144,25 @@
   }
 
   .grid {
+    display: grid;
     grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+
+    overflow: visible;
+    scroll-snap-type: none;
+
+    padding-bottom: 0;
   }
 
   .skillGroup {
+    flex: initial;
+
     padding: 2.5rem 2.5rem 3rem 0;
 
     border-bottom: none;
     border-right: 1px solid rgba(0, 0, 0, 0.16);
+
+    scroll-snap-align: none;
   }
 
   .skillGroup + .skillGroup {

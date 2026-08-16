@@ -6,6 +6,8 @@ import Button from "../../components/UI/Button/button"
 function ProjectDetails() {
   const processRef = useRef(null)
   const [activeProcessSlide, setActiveProcessSlide] = useState(0)
+  const bookingRef = useRef(null)
+  const [activeBookingSlide, setActiveBookingSlide] = useState(0)
 
   const projectsWithDetails = projects.filter((project) => project.details)
 
@@ -23,6 +25,20 @@ function ProjectDetails() {
     const activeSlide = Math.round(container.scrollLeft / slideWidth)
 
     setActiveProcessSlide(Math.min(activeSlide, 2))
+  }
+
+  const handleBookingScroll = () => {
+  const container = bookingRef.current
+
+  if (!container) return
+
+  const slideWidth = container.clientWidth
+
+  if (!slideWidth) return
+
+  const activeSlide = Math.round(container.scrollLeft / slideWidth)
+
+  setActiveBookingSlide(Math.min(activeSlide, 3))
   }
 
   return (
@@ -221,7 +237,11 @@ function ProjectDetails() {
                   <p>{project.details.bookingFlow.description}</p>
                 </div>
 
-                <div className={styles.bookingGrid}>
+                <div
+                  ref={bookingRef}
+                  className={styles.bookingGrid}
+                  onScroll={handleBookingScroll}
+                >
                   {project.details.bookingFlow.screens?.map((screen) => (
                     <article
                       key={screen.title}
@@ -237,6 +257,22 @@ function ProjectDetails() {
                         <p>{screen.description}</p>
                       </div>
                     </article>
+                  ))}
+                </div>
+
+                <div
+                  className={styles.bookingDots}
+                  aria-label={`Paso ${activeBookingSlide + 1} de 4`}
+                >
+                  {[0, 1, 2, 3].map((index) => (
+                    <span
+                      key={index}
+                      className={`${styles.bookingDot} ${
+                        activeBookingSlide === index
+                          ? styles.bookingDotActive
+                          : ""
+                      }`}
+                    />
                   ))}
                 </div>
               </div>
