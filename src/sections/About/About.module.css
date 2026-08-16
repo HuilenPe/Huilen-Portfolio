@@ -170,6 +170,28 @@
   max-width: 760px;
 }
 
+.blob {
+  position: relative;
+
+  width: min(72vw, 280px);
+  height: min(72vw, 280px);
+
+  border-radius: 48% 52% 45% 55%;
+  background: rgba(0, 0, 0, 0.035);
+}
+
+.logoTarget {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 105px;
+  aspect-ratio: 369 / 420;
+
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
 /* DESKTOP */
 @media (min-width: 768px) {
   .about {
@@ -212,5 +234,14 @@
 
   .infoBlock:last-child {
     border-right: none;
+  }
+
+    .blob {
+    width: 380px;
+    height: 380px;
+  }
+
+  .logoTarget {
+    width: 145px;
   }
 }

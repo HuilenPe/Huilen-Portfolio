@@ -20,7 +20,13 @@ function About() {
       <div className="container">
         <div className={styles.layout}>
           <div className={styles.visual} aria-hidden="true">
-            <div className={styles.blob}></div>
+            <div className={styles.blob}>
+              <span
+                id="about-logo-target"
+                className={styles.logoTarget}
+                aria-hidden="true"
+              />
+            </div>
             <p className={styles.verticalText}>DISEÑO · CÓDIGO</p>
 
             <div className={styles.sketchBox}>
