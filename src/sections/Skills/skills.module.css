@@ -1,100 +1,144 @@
-/* .skills {
+.skills {
   padding: 5rem 1rem;
   background: var(--bg-light);
   color: var(--text-main);
 }
 
+/* HEADER */
 .header {
-  max-width: 760px;
-  margin-bottom: 3rem;
+  padding-bottom: 3rem;
 }
 
 .label {
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+
   font-size: 0.8rem;
   letter-spacing: 0.28em;
   text-transform: uppercase;
+
   opacity: 0.75;
 }
 
-.header h2 {
+.intro {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.intro h2 {
   font-family: var(--font-display);
-  font-size: clamp(2.2rem, 7vw, 4.5rem);
+  font-size: clamp(2.3rem, 8vw, 4.8rem);
   line-height: 1.05;
   letter-spacing: -0.03em;
-  margin-bottom: 1.4rem;
 }
 
-.description {
-  max-width: 620px;
+.intro > p {
+  max-width: 520px;
+
+  color: var(--text-main);
+
   font-size: 1rem;
   line-height: 1.65;
-  opacity: 0.75;
+
+  opacity: 0.72;
 }
 
+/* SKILLS GRID */
 .grid {
   display: grid;
-  gap: 1.2rem;
+
+  border-top: 1px solid rgba(0, 0, 0, 0.16);
 }
 
-.card {
-  position: relative;
-  padding: 2rem;
-  min-height: 260px;
-  border: 1px solid rgba(0, 0, 0, 0.16);
-  border-radius: 1.8rem;
-  background: rgba(255, 255, 255, 0.35);
-  overflow: hidden;
+.skillGroup {
+  padding: 2.5rem 0;
+
+  border-bottom: 1px solid rgba(0, 0, 0, 0.16);
 }
 
 .number {
   display: block;
+
   margin-bottom: 2rem;
+
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+
+  opacity: 0.45;
+}
+
+.skillGroup h3 {
+  margin-bottom: 0.8rem;
+
   font-family: var(--font-display);
-  font-size: 2rem;
-  opacity: 0.35;
+  font-size: 1.6rem;
+  font-weight: 500;
 }
 
-.card h3 {
-  margin-bottom: 1.4rem;
-  font-size: 1.3rem;
-  letter-spacing: 0.04em;
+.description {
+  max-width: 340px;
+
+  margin-bottom: 2rem;
+
+  font-size: 0.9rem;
+  line-height: 1.6;
+
+  opacity: 0.65;
 }
 
-.card ul {
+.skillGroup ul {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.7rem;
-  padding: 0;
+  flex-direction: column;
+  gap: 0.65rem;
+
   margin: 0;
+  padding: 0;
+
   list-style: none;
 }
 
-.card li {
-  padding: 0.45rem 0.8rem;
-  border: 1px solid rgba(0, 0, 0, 0.14);
-  border-radius: 999px;
-  font-size: 0.9rem;
-  opacity: 0.8;
+.skillGroup li {
+  font-size: 1rem;
+  line-height: 1.4;
 }
 
-/* DESKTOP 
+/* DESKTOP */
 @media (min-width: 768px) {
   .skills {
-    padding: 8rem 1rem;
+    padding: 5rem 1rem 1.5rem;
   }
 
   .header {
-    margin-bottom: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .intro {
+    grid-template-columns: 1.3fr 0.7fr;
+    gap: 4rem;
+
+    align-items: end;
+  }
+
+  .intro > p {
+    padding-bottom: 0.5rem;
   }
 
   .grid {
     grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
   }
 
-  .card {
-    min-height: 320px;
-    padding: 2.4rem;
+  .skillGroup {
+    padding: 2.5rem 2.5rem 3rem 0;
+
+    border-bottom: none;
+    border-right: 1px solid rgba(0, 0, 0, 0.16);
   }
-} */
+
+  .skillGroup + .skillGroup {
+    padding-left: 2.5rem;
+  }
+
+  .skillGroup:last-child {
+    padding-right: 0;
+    border-right: none;
+  }
+}

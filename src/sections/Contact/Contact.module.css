@@ -1,23 +1,26 @@
 .contact {
-  padding: 5rem 1rem 2rem;
+  min-height: calc(100vh - 80px);
+  padding: 3.5rem 1rem 2rem;
+
   background: var(--bg-light);
   color: var(--text-main);
 }
 
 .content {
-  min-height: 55vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   gap: 1.4rem;
+
+  padding: 3rem 0 4rem;
+
   border-top: 1px solid rgba(0, 0, 0, 0.16);
-  padding-top: 4rem;
 }
 
 .label {
   font-size: 0.8rem;
   letter-spacing: 0.28em;
   text-transform: uppercase;
+
   opacity: 0.75;
 }
 
@@ -30,13 +33,16 @@
 
 .description {
   max-width: 620px;
+
   font-size: 1rem;
   line-height: 1.65;
+
   opacity: 0.75;
 }
 
 .links {
   margin-top: 1.8rem;
+
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -56,11 +62,13 @@
   font-family: var(--font-display);
 
   opacity: 0.72;
+
   transition: opacity 0.2s ease;
 }
 
 .mainLink span {
   margin-left: 0;
+
   transition: transform 0.2s ease;
 }
 
@@ -84,23 +92,31 @@
 
 .socials a {
   position: relative;
+
   width: 44px;
   height: 44px;
-  color: var(--text-main);
+
   display: inline-flex;
   align-items: center;
   justify-content: center;
+
+  color: var(--text-main);
   text-decoration: none;
+
   transition: transform 0.2s ease;
 }
 
 .socials a::before {
   content: "";
+
   position: absolute;
   inset: 0;
+
   border: 1.4px solid rgba(0, 0, 0, 0.22);
   border-radius: 42% 58% 53% 47% / 48% 38% 62% 52%;
+
   transform: rotate(-7deg);
+
   transition:
     transform 0.25s ease,
     border-radius 0.25s ease,
@@ -113,34 +129,40 @@
 
 .socials a:hover::before {
   background: rgba(0, 0, 0, 0.035);
+
   transform: rotate(5deg) scale(1.06);
+
   border-radius: 58% 42% 44% 56% / 40% 60% 45% 55%;
 }
 
 .socials svg {
   position: relative;
   z-index: 1;
+
   font-size: 1.2rem;
 }
 
 .footerText {
   padding-top: 2rem;
+
   border-top: 1px solid rgba(0, 0, 0, 0.12);
+
   font-size: 0.78rem;
   letter-spacing: 0.24em;
   text-transform: uppercase;
+
   opacity: 0.55;
 }
 
 /* DESKTOP */
 @media (min-width: 768px) {
   .contact {
-    padding: 8rem 1rem 2.5rem;
+    min-height: calc(100vh - 80px);
+    padding: 3rem 1rem 2.5rem;
   }
 
   .content {
-    min-height: 60vh;
-    padding-top: 5rem;
+    padding: 3rem 0 3.5rem;
   }
 
   .links {
