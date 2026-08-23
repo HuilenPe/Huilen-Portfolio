@@ -162,6 +162,7 @@ export const projects = [
 
       flow: {
         eyebrow: "Arquitectura de experiencia",
+        alt: "User flow del proyecto Health",
         title: "Antes de diseñar pantallas, ordenar el recorrido",
         description:
           "El flujo se planteó para definir cómo accedería el usuario a las principales áreas de la aplicación y qué decisiones serían necesarias en cada recorrido. Esta estructura permitió separar autenticación, navegación principal y acciones específicas antes de avanzar hacia el diseño visual.",
@@ -170,6 +171,7 @@ export const projects = [
 
       exploration: {
         eyebrow: "Exploración e iteración",
+        alt: "Wireframes iniciales del proyecto Health",
         title: "De la estructura a la interfaz",
         description:
           "Los primeros wireframes sirvieron para explorar la distribución del contenido, la navegación y la jerarquía de las acciones principales sin depender todavía de decisiones visuales. A partir de esta base, fui iterando la experiencia y refinando la interfaz a medida que el producto tomaba forma.",
@@ -178,6 +180,7 @@ export const projects = [
 
       designSystem: {
         eyebrow: "Design system",
+        alt: "Foundations y componentes del sistema de diseño de Health",
         title: "Una base visual para mantener consistencia",
         description:
           "Definí foundations y componentes reutilizables para mantener coherencia entre pantallas y facilitar la evolución del prototipo. El sistema incluye color, tipografía, espaciado, iconografía, radios y estados de componentes.",
@@ -228,6 +231,7 @@ export const projects = [
 
       finalDesign: {
         eyebrow: "Final UI",
+        alt: "Diseño final del prototipo Health",
         title: "Del sistema al prototipo final",
         description:
           "El sistema visual y los componentes definidos se aplicaron al prototipo de alta fidelidad, manteniendo una jerarquía clara y una experiencia consistente a lo largo de los principales flujos.",

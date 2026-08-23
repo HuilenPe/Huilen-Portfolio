@@ -414,56 +414,6 @@
   transform: scale(1.35);
 }
 
-/* FLOW */
-.flow {
-  margin-bottom: 4rem;
-}
-
-.flow img {
-  width: 100%;
-
-  border-radius: 14px;
-
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-}
-
-/* SCREENS */
-.screens {
-  display: grid;
-  gap: 2rem;
-}
-
-.screenCard {
-  text-align: center;
-}
-
-.screenCard img {
-  width: 100%;
-
-  margin-bottom: 1rem;
-
-  border-radius: 14px;
-
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
-}
-
-.screenCard h4 {
-  margin-bottom: 0.3rem;
-
-  font-size: 1rem;
-  font-weight: 500;
-}
-
-.screenCard p {
-  max-width: 220px;
-
-  margin: 0 auto;
-
-  color: var(--text-medium);
-
-  font-size: 0.85rem;
-}
-
 /* MOBILE */
 @media (max-width: 767px) {
   .section {

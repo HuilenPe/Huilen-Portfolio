@@ -1,42 +1,10 @@
-import { useRef, useState } from "react"
 import styles from "./ProjectDetails.module.css"
 import Button from "../../components/UI/Button/button"
+import ProcessCarousel from "./components/ProcessCarousel"
+import BookingFlow from "./components/BookingFlow"
 
 function ProjectDetails({ project }) {
-  const processRef = useRef(null)
-  const [activeProcessSlide, setActiveProcessSlide] = useState(0)
-  const bookingRef = useRef(null)
-  const [activeBookingSlide, setActiveBookingSlide] = useState(0)
-
   if (!project?.details) return null
-
-  const handleProcessScroll = () => {
-    const container = processRef.current
-
-    if (!container) return
-
-    const slideWidth = container.clientWidth
-
-    if (!slideWidth) return
-
-    const activeSlide = Math.round(container.scrollLeft / slideWidth)
-
-    setActiveProcessSlide(Math.min(activeSlide, 2))
-  }
-
-  const handleBookingScroll = () => {
-  const container = bookingRef.current
-
-  if (!container) return
-
-  const slideWidth = container.clientWidth
-
-  if (!slideWidth) return
-
-  const activeSlide = Math.round(container.scrollLeft / slideWidth)
-
-  setActiveBookingSlide(Math.min(activeSlide, 3))
-  }
 
   return (
     <section className={styles.section}>
@@ -165,7 +133,7 @@ function ProjectDetails({ project }) {
 
                 <img
                   src={project.details.flow.img}
-                  alt="User flow del proyecto Health"
+                  alt={project.details.flow.alt}
                   className={styles.processImage}
                 />
               </div>
@@ -185,7 +153,7 @@ function ProjectDetails({ project }) {
 
                 <img
                   src={project.details.exploration.img}
-                  alt="Wireframes iniciales del proyecto Health"
+                  alt={project.details.exploration.alt}
                   className={styles.processImage}
                 />
               </div>
@@ -215,7 +183,7 @@ function ProjectDetails({ project }) {
 
                 <img
                   src={project.details.designSystem.image}
-                  alt="Foundations y componentes del sistema de diseño de Health"
+                  alt={project.details.designSystem.alt}
                   className={styles.processImage}
                 />
               </div>
@@ -223,55 +191,7 @@ function ProjectDetails({ project }) {
 
             {/* HEALTH — BOOKING FLOW */}
             {project.details.bookingFlow && (
-              <div className={styles.bookingFlow}>
-                <div className={styles.processText}>
-                  <span className={styles.processEyebrow}>
-                    {project.details.bookingFlow.eyebrow}
-                  </span>
-
-                  <h3>{project.details.bookingFlow.title}</h3>
-                  <p>{project.details.bookingFlow.description}</p>
-                </div>
-
-                <div
-                  ref={bookingRef}
-                  className={styles.bookingGrid}
-                  onScroll={handleBookingScroll}
-                >
-                  {project.details.bookingFlow.screens?.map((screen) => (
-                    <article
-                      key={screen.title}
-                      className={styles.bookingScreen}
-                    >
-                      <img
-                        src={screen.img}
-                        alt={screen.title}
-                      />
-
-                      <div className={styles.bookingScreenText}>
-                        <h4>{screen.title}</h4>
-                        <p>{screen.description}</p>
-                      </div>
-                    </article>
-                  ))}
-                </div>
-
-                <div
-                  className={styles.bookingDots}
-                  aria-label={`Paso ${activeBookingSlide + 1} de 4`}
-                >
-                  {[0, 1, 2, 3].map((index) => (
-                    <span
-                      key={index}
-                      className={`${styles.bookingDot} ${
-                        activeBookingSlide === index
-                          ? styles.bookingDotActive
-                          : ""
-                      }`}
-                    />
-                  ))}
-                </div>
-              </div>
+              <BookingFlow bookingFlow={project.details.bookingFlow} />
             )}
 
             {/* HEALTH — FINAL UI */}
@@ -288,7 +208,7 @@ function ProjectDetails({ project }) {
 
                 <img
                   src={project.details.finalDesign.image}
-                  alt="Diseño final del prototipo Health"
+                  alt={project.details.finalDesign.alt}
                   className={styles.processImage}
                 />
               </div>
@@ -296,88 +216,10 @@ function ProjectDetails({ project }) {
 
             {/* ALDO — PROCESS */}
             {project.details.process && (
-              <>
-                <div
-                  ref={processRef}
-                  className={styles.process}
-                  onScroll={handleProcessScroll}
-                >
-                  {/* SITEMAP */}
-                  <div className={styles.processBlock}>
-                    <div className={styles.processText}>
-                      <span className={styles.processEyebrow}>
-                        Proceso
-                      </span>
-
-                      <h3>{project.details.process.sitemap.title}</h3>
-                      <p>{project.details.process.sitemap.description}</p>
-                    </div>
-
-                    <img
-                      src={project.details.process.sitemap.img}
-                      alt="Arquitectura de información del archivo artístico digital"
-                      className={styles.processImage}
-                    />
-                  </div>
-
-                  {/* INTERACTION */}
-                  <div className={styles.processBlock}>
-                    <div className={styles.processText}>
-                      <h3>{project.details.process.interaction.title}</h3>
-                      <p>{project.details.process.interaction.description}</p>
-                    </div>
-
-                    <img
-                      src={project.details.process.interaction.img}
-                      alt="Diseño de interacción de la sección Obras"
-                      className={styles.processImage}
-                    />
-                  </div>
-
-                  {/* RESPONSIVE */}
-                  <div className={styles.processBlock}>
-                    <div className={styles.processText}>
-                      <h3>{project.details.process.responsive.title}</h3>
-                      <p>{project.details.process.responsive.description}</p>
-
-                      {project.details.process.responsive.technologies?.length >
-                        0 && (
-                        <div className={styles.techList}>
-                          {project.details.process.responsive.technologies.map(
-                            (tech) => (
-                              <span key={tech} className={styles.techItem}>
-                                {tech}
-                              </span>
-                            )
-                          )}
-                        </div>
-                      )}
-                    </div>
-
-                    <img
-                      src={project.details.process.responsive.img}
-                      alt={`Implementación responsive de ${project.title}`}
-                      className={styles.processImage}
-                    />
-                  </div>
-                </div>
-
-                <div
-                  className={styles.processDots}
-                  aria-label={`Paso ${activeProcessSlide + 1} de 3`}
-                >
-                  {[0, 1, 2].map((index) => (
-                    <span
-                      key={index}
-                      className={`${styles.processDot} ${
-                        activeProcessSlide === index
-                          ? styles.processDotActive
-                          : ""
-                      }`}
-                    />
-                  ))}
-                </div>
-              </>
+              <ProcessCarousel
+                process={project.details.process}
+                projectTitle={project.title}
+              />
             )}
 
             {/* RESULT / SCOPE */}
