@@ -14,16 +14,29 @@ function ScrollToHash() {
       location.hash.replace("#", "")
     )
 
-    const frame = requestAnimationFrame(() => {
+    let frame
+    let attempts = 0
+    const maxAttempts = 10
+
+    function scrollToTarget() {
       const target = document.getElementById(targetId)
 
-      if (!target) return
+      if (target) {
+        target.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        })
+        return
+      }
 
-      target.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      })
-    })
+      attempts += 1
+
+      if (attempts < maxAttempts) {
+        frame = requestAnimationFrame(scrollToTarget)
+      }
+    }
+
+    frame = requestAnimationFrame(scrollToTarget)
 
     return () => cancelAnimationFrame(frame)
   }, [location.pathname, location.hash])

@@ -153,33 +153,55 @@ function handleSectionNav(targetId) {
 
   /* ABOUT — detect target entering viewport */
   useEffect(() => {
-    const target = document.getElementById("about-logo-target")
+    let observer
+    let frame
+    let attempts = 0
 
-    if (!target) return
+    if (!isHome) {
+      setIsAboutActive(false)
+      return
+    }
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (skipAboutAnimationRef.current) {
-          setIsAboutActive(false)
-          return
+    function connectObserver() {
+      const target = document.getElementById("about-logo-target")
+
+      if (!target) {
+        attempts += 1
+
+        if (attempts < 60) {
+          frame = requestAnimationFrame(connectObserver)
         }
 
-        setIsAboutActive(
-          entry.isIntersecting &&
-          entry.intersectionRatio >= 0.35
-        )
-      },
-      {
-        threshold: [0, 0.35, 1],
+        return
       }
-    )
 
-    observer.observe(target)
+      observer = new IntersectionObserver(
+        ([entry]) => {
+          if (skipAboutAnimationRef.current) {
+            setIsAboutActive(false)
+            return
+          }
+
+          setIsAboutActive(
+            entry.isIntersecting &&
+            entry.intersectionRatio >= 0.35
+          )
+        },
+        {
+          threshold: [0, 0.35, 1],
+        }
+      )
+
+      observer.observe(target)
+    }
+
+    frame = requestAnimationFrame(connectObserver)
 
     return () => {
-      observer.disconnect()
+      cancelAnimationFrame(frame)
+      observer?.disconnect()
     }
-  }, [])
+  }, [isHome])
 
   /* CLEANUP navigation observer */
     useEffect(() => {
@@ -192,7 +214,6 @@ function handleSectionNav(targetId) {
   useEffect(() => {
     const movingLogo = movingLogoRef.current
     const source = logoAnchorRef.current
-    const target = document.getElementById("about-logo-target")
 
     if (!movingLogo || !source) return
 
@@ -202,6 +223,10 @@ function handleSectionNav(targetId) {
       cancelAnimationFrame(frame)
 
       frame = requestAnimationFrame(() => {
+        // Reconsultamos el target porque Home puede haberse
+        // desmontado y montado de nuevo al cambiar de ruta.
+        const target = document.getElementById("about-logo-target")
+
         const destination =
           isAboutActive && target && !isOpen
             ? target.getBoundingClientRect()
@@ -217,7 +242,9 @@ function handleSectionNav(targetId) {
     updateLogoPosition()
 
     window.addEventListener("resize", updateLogoPosition)
-    window.addEventListener("scroll", updateLogoPosition, { passive: true })
+    window.addEventListener("scroll", updateLogoPosition, {
+      passive: true,
+    })
 
     return () => {
       cancelAnimationFrame(frame)
@@ -225,7 +252,7 @@ function handleSectionNav(targetId) {
       window.removeEventListener("resize", updateLogoPosition)
       window.removeEventListener("scroll", updateLogoPosition)
     }
-  }, [isAboutActive, isOpen])
+  }, [isAboutActive, isOpen, location.pathname])
 
   return (
     <header className={styles.header}>
