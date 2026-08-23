@@ -466,6 +466,51 @@
 
 /* MOBILE */
 @media (max-width: 767px) {
+  .section {
+    padding-top: 3rem;
+    padding-bottom: 4rem;
+  }
+
+  .backLabel {
+    margin-bottom: 1.5rem;
+  }
+
+  .hero {
+    margin-bottom: 2.5rem;
+  }
+
+  .gridTwo {
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .gridTwo p,
+  .gridTwo li,
+  .originGrid p,
+  .detailBlock p,
+  .detailBlock li,
+  .processText p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .detailBlock {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+  }
+
+  .detailBlock li {
+    margin-bottom: 0.5rem;
+  }
+
+  .processBlock {
+    margin-bottom: 3.75rem;
+  }
+
+  .processText {
+    margin-bottom: 1.5rem;
+  }
+
   .projectActions {
     justify-content: flex-start;
     margin-top: -1rem;
