@@ -57,10 +57,9 @@ export const projects = [
       approach: {
         decisiones: [
           "Explorar distintas arquitecturas de información antes de definir la estructura final",
-          "Reducir la fragmentación entre páginas y establecer relaciones claras entre los contenidos",
-          "Plantear la experiencia desde un lenguaje editorial y museográfico",
-          "Utilizar jerarquía, ritmo, imagen y espacios de lectura para construir un recorrido progresivo",
-          "Diseñar una arquitectura preparada para incorporar nuevos materiales con el crecimiento del archivo",
+          "Reducir la fragmentación y establecer relaciones claras entre obra, biografía, práctica y archivo",
+          "Construir el recorrido desde un lenguaje editorial y museográfico basado en jerarquía, imagen y ritmo de lectura",
+          "Diseñar una estructura preparada para incorporar nuevos contenidos sin replantear la experiencia",
         ],
       },
 
@@ -80,17 +79,17 @@ export const projects = [
         },
 
         responsive: {
-          title: "Trasladar el recorrido a cada dispositivo",
+          title: "Del diseño a un sistema preparado para crecer",
           description:
-            "La implementación responsive no se planteó únicamente como una reducción del layout de escritorio. Navegación, galerías, jerarquías y ritmo de lectura se adaptaron para conservar la intención editorial también en pantallas pequeñas. El proyecto se desarrolla en React e incorpora navegación entre secciones e internacionalización ES / EN.",
+            "La implementación en React se planteó desde una arquitectura mobile-first y reutilizable. Obras y series se gestionan desde datos independientes de la interfaz, permitiendo ampliar el archivo sin reconstruir las vistas. Navegación, galerías y jerarquías se adaptan según el dispositivo, incorporando además rutas e internacionalización ES / EN.",
           img: "/images/aldo/aldo-responsive.png",
 
           technologies: [
             "React",
             "React Router",
             "i18next",
-            "Responsive Design",
-            "ES / EN",
+            "Mobile-first",
+            "Reusable Components",
           ],
         },
       },
@@ -98,14 +97,13 @@ export const projects = [
       result: {
         title: "Un archivo en desarrollo",
         content:
-          "El proyecto continúa creciendo en paralelo al proceso de investigación, catalogación y recuperación documental de la obra y trayectoria del artista. Actualmente se está recopilando y reorganizando material fotográfico y documental procedente tanto de archivos privados y colección familiar como de archivos históricos vinculados a las instituciones en las que el artista se formó y desarrolló gran parte de su trayectoria. Por este motivo, algunas secciones y contenidos de la web todavía se encuentran en proceso de incorporación.",
+          "El proyecto continúa creciendo en paralelo al proceso de investigación, catalogación y recuperación documental. Nuevas obras, fotografías y materiales procedentes de archivos privados, familiares e históricos se incorporan progresivamente, por lo que algunas secciones permanecen todavía en desarrollo.",
       },
 
       learnings: [
         "La arquitectura de información es especialmente importante cuando el contenido es extenso, heterogéneo y continuará creciendo.",
+        "Separar datos, componentes y presentación permite ampliar un archivo progresivamente sin reconstruir la experiencia.",
         "Diseñar un archivo cultural requiere equilibrar el protagonismo de la obra con el contexto necesario para comprenderla.",
-        "Explorar diferentes estructuras antes de diseñar las interfaces permitió convertir un gran volumen de información en un recorrido más coherente.",
-        "Diseñar desde el inicio para un archivo en crecimiento evita tener que replantear la experiencia cada vez que aparece nuevo material.",
       ],
     },
   },
