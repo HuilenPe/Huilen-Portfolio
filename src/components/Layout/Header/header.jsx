@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react"
+import { useLocation, useNavigate } from "react-router-dom"
 import styles from "./header.module.css"
 import logoStyles from "./logo.module.css"
 
@@ -31,6 +32,11 @@ function LogoMark({ className = "" }) {
 }
 
 function Header() {
+  const location = useLocation()
+  const navigate = useNavigate()
+
+  const isHome = location.pathname === "/"
+
   const logoAnchorRef = useRef(null)
   const movingLogoRef = useRef(null)
 
@@ -137,6 +143,14 @@ function handleSectionNav(targetId) {
   navigationCleanupRef.current = releaseAboutAnimation
 }
 
+  function handleNavClick(event, targetId) {
+    event.preventDefault()
+
+    handleSectionNav(targetId)
+
+    navigate(`/#${targetId}`)
+  }
+
   /* ABOUT — detect target entering viewport */
   useEffect(() => {
     const target = document.getElementById("about-logo-target")
@@ -227,12 +241,12 @@ function handleSectionNav(targetId) {
         {/* MOVING LOGO */}
         <a
           ref={movingLogoRef}
-          href="#hero"
+          href={isHome ? "#hero" : "/#hero"}
           className={`${styles.movingLogo} ${
             isAboutActive ? styles.logoInAbout : ""
           }`}
           aria-label="Volver al inicio"
-          onClick={() => handleSectionNav("hero")}
+          onClick={(event) => handleNavClick(event, "hero")}
         >
           <LogoMark />
         </a>
@@ -240,33 +254,33 @@ function handleSectionNav(targetId) {
         {/* NAV DESKTOP */}
         <nav className={styles.nav} aria-label="Menú principal">
           <a
-            href="#projects"
+            href={isHome ? "#projects" : "/#projects"}
             className={styles.menuLink}
-            onClick={() => handleSectionNav("projects")}
+            onClick={(event) => handleNavClick(event, "projects")}
           >
             Proyectos
           </a>
 
           <a
-            href="#about"
+            href={isHome ? "#about" : "/#about"}
             className={styles.menuLink}
-            onClick={() => handleSectionNav("about")}
+            onClick={(event) => handleNavClick(event, "about")}
           >
             Sobre mí
           </a>
 
           <a
-            href="#skills"
+            href={isHome ? "#skills" : "/#skills"}
             className={styles.menuLink}
-            onClick={() => handleSectionNav("skills")}
+            onClick={(event) => handleNavClick(event, "skills")}
           >
             Skills
           </a>
 
           <a
-            href="#contact"
+            href={isHome ? "#contact" : "/#contact"}
             className={styles.menuLink}
-            onClick={() => handleSectionNav("contact")}
+            onClick={(event) => handleNavClick(event, "contact")}
           >
             Contacto
           </a>
@@ -296,33 +310,33 @@ function handleSectionNav(targetId) {
             aria-label="Menú principal mobile"
           >
             <a
-              href="#projects"
+              href={isHome ? "#projects" : "/#projects"}
               className={styles.burgerMenu}
-              onClick={() => handleSectionNav("projects")}
+              onClick={(event) => handleNavClick(event, "projects")}
             >
               Proyectos
             </a>
 
             <a
-              href="#about"
+              href={isHome ? "#about" : "/#about"}
               className={styles.burgerMenu}
-              onClick={() => handleSectionNav("about")}
+              onClick={(event) => handleNavClick(event, "about")}
             >
               Sobre mí
             </a>
 
             <a
-              href="#skills"
+              href={isHome ? "#skills" : "/#skills"}
               className={styles.burgerMenu}
-              onClick={() => handleSectionNav("skills")}
+              onClick={(event) => handleNavClick(event, "skills")}
             >
               Skills
             </a>
 
             <a
-              href="#contact"
+              href={isHome ? "#contact" : "/#contact"}
               className={styles.burgerMenu}
-              onClick={() => handleSectionNav("contact")}
+              onClick={(event) => handleNavClick(event, "contact")}
             >
               Contacto
             </a>

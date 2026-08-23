@@ -1,21 +1,23 @@
-import Header from "@/components/Layout/Header/header.jsx"
-import Hero from "@/sections/Hero/Hero.jsx"
-import Projects from "@/sections/Projects/Projects.jsx"
-import ProjectDetails from "./sections/ProjectDetails/ProjectDetails.jsx"
-import About from "./sections/About/About.jsx"
-import Skills from "./sections/Skills/Skills.jsx"
-import Contact from "./sections/Contact/Contact.jsx"
+import { Route, Routes } from "react-router-dom"
+import Header from "./components/Layout/Header/header"
+import ScrollToHash from "./components/Navigation/ScrollToHash"
+import Home from "./pages/Home/Home"
+import ProjectPage from "./pages/ProjectPage/ProjectPage"
 
 function App() {
   return (
     <>
+      <ScrollToHash />
       <Header />
-      <Hero />
-      <Projects />
-      <ProjectDetails />
-      <About /> 
-      <Skills />
-      <Contact />
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+
+        <Route
+          path="/projects/:slug"
+          element={<ProjectPage />}
+        />
+      </Routes>
     </>
   )
 }

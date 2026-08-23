@@ -1,17 +1,14 @@
 import { useRef, useState } from "react"
 import styles from "./ProjectDetails.module.css"
-import { projects } from "../Projects/ProjectsData"
 import Button from "../../components/UI/Button/button"
 
-function ProjectDetails() {
+function ProjectDetails({ project }) {
   const processRef = useRef(null)
   const [activeProcessSlide, setActiveProcessSlide] = useState(0)
   const bookingRef = useRef(null)
   const [activeBookingSlide, setActiveBookingSlide] = useState(0)
 
-  const projectsWithDetails = projects.filter((project) => project.details)
-
-  if (!projectsWithDetails.length) return null
+  if (!project?.details) return null
 
   const handleProcessScroll = () => {
     const container = processRef.current
@@ -44,10 +41,9 @@ function ProjectDetails() {
   return (
     <section className={styles.section}>
       <div className="container">
-        {projectsWithDetails.map((project) => (
-          <div key={project.id} id={project.id} className={styles.details}>
+        <div id={project.id} className={styles.details}>
             {/* BACK */}
-            <a href="#projects" className={styles.backLabel}>
+            <a href="/#projects" className={styles.backLabel}>
               ← Volver a proyectos
             </a>
 
@@ -404,8 +400,7 @@ function ProjectDetails() {
                 </ul>
               </div>
             )}
-          </div>
-        ))}
+        </div>
       </div>
     </section>
   )

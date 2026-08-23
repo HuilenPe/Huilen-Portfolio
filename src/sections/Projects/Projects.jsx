@@ -1,12 +1,15 @@
+import { useNavigate } from "react-router-dom"
 import styles from "./Projects.module.css"
 import { FiFigma } from "react-icons/fi"
 import Button from "../../components/UI/Button/button"
 import { projects } from "./ProjectsData.js"
 
 function Projects() {
+  const navigate = useNavigate()
+
   const handleCardClick = (project) => {
-    if (project.details) {
-      window.location.href = `#${project.id}`
+    if (project.details && project.slug) {
+      navigate(`/projects/${project.slug}`)
       return
     }
 

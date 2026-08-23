@@ -8,6 +8,7 @@ import aldoHero from "/images/aldo/aldo-pena-hero.png";
 export const projects = [
   {
     id: "aldo-pena",
+    slug: "aldo-pena",
     title: "Aldo Peña — Archivo Artístico Digital",
     description:
       "Diseño UX/UI y desarrollo Frontend de un archivo digital con enfoque editorial y museográfico.",
@@ -111,6 +112,7 @@ export const projects = [
 
   {
     id: "health-client",
+    slug: "health",
     type: "case-study",
     title: "Health — Gestión médica clara y accesible",
     description:
