@@ -81,7 +81,7 @@ export const projects = [
         responsive: {
           title: "Del diseño a un sistema preparado para crecer",
           description:
-            "La implementación en React se planteó desde una arquitectura mobile-first y reutilizable. Obras y series se gestionan desde datos independientes de la interfaz, permitiendo ampliar el archivo sin reconstruir las vistas. Navegación, galerías y jerarquías se adaptan según el dispositivo, incorporando además rutas e internacionalización ES / EN.",
+            "La implementación en React se planteó desde una arquitectura mobile-first y reutilizable. Obras y series se gestionan como datos independientes de la interfaz y se relacionan mediante identificadores, permitiendo ampliar progresivamente el archivo sin reconstruir las vistas.",
           img: "/images/aldo/aldo-responsive.png",
 
           technologies: [

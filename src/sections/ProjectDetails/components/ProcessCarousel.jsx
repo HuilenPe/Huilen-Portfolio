@@ -1,5 +1,6 @@
 import { useRef, useState } from "react"
 import styles from "../ProjectDetails.module.css"
+import ProcessPhase from "./ProcessPhase"
 
 function ProcessCarousel({ process, projectTitle }) {
   const processRef = useRef(null)
@@ -8,7 +9,9 @@ function ProcessCarousel({ process, projectTitle }) {
   const slides = [
     {
       ...process.sitemap,
-      eyebrow: "Proceso",
+      phase: {
+        area: "UX/UI",
+      },
       alt: "Arquitectura de información del archivo artístico digital",
     },
     {
@@ -17,6 +20,9 @@ function ProcessCarousel({ process, projectTitle }) {
     },
     {
       ...process.responsive,
+      phase: {
+        area: "Frontend",
+      },
       alt: `Implementación responsive de ${projectTitle}`,
     },
   ].filter((slide) => slide.title)
@@ -52,10 +58,8 @@ function ProcessCarousel({ process, projectTitle }) {
             className={styles.processBlock}
           >
             <div className={styles.processText}>
-              {slide.eyebrow && (
-                <span className={styles.processEyebrow}>
-                  {slide.eyebrow}
-                </span>
+              {slide.phase && (
+                <ProcessPhase {...slide.phase} />
               )}
 
               <h3>{slide.title}</h3>
