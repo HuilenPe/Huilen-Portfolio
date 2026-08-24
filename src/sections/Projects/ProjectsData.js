@@ -1,4 +1,4 @@
-import photo from "/images/heroCard.png";
+import photo from "/images/hero_health_Card.png";
 import backgroundHeroHealth from "/images/backgroundHero.png";
 import mockupDashboardScreen from "/images/Dashboard.png";
 
