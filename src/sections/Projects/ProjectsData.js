@@ -83,7 +83,7 @@ export const projects = [
           title: "Del diseño a un sistema preparado para crecer",
           description:
             "La interfaz se desarrolló en React con una arquitectura responsive adaptada a distintos tamaños de pantalla. La gestión del archivo se conectó con Supabase para separar contenido y presentación, relacionando obras, categorías, imágenes y exposiciones. Supabase Storage centraliza los archivos visuales y permite ampliar el archivo progresivamente sin reconstruir las vistas.",
-          img: "/images/aldo/aldo-responsive.png",
+          img: "/images/aldo/aldo-responsive.webp",
 
           technologies: [
             "React",
