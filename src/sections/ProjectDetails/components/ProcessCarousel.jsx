@@ -79,11 +79,26 @@ function ProcessCarousel({ process, projectTitle }) {
               )}
             </div>
 
-            <img
-              src={slide.img}
-              alt={slide.alt}
-              className={styles.processImage}
-            />
+            {slide.mobileImg && slide.desktopImg ? (
+              <div className={styles.responsiveImages}>
+                <img
+                  src={slide.mobileImg}
+                  alt={`Vista mobile de ${projectTitle}`}
+                  className={`${styles.processImage} ${styles.responsiveMobileImage}`}
+                />
+                <img
+                  src={slide.desktopImg}
+                  alt={`Vista desktop de ${projectTitle}`}
+                  className={`${styles.processImage} ${styles.responsiveDesktopImage}`}
+                />
+              </div>
+            ) : (
+              <img
+                src={slide.img}
+                alt={slide.alt}
+                className={styles.processImage}
+              />
+            )}
           </div>
         ))}
       </div>

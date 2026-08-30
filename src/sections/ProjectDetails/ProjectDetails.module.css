@@ -470,6 +470,16 @@
 
 /* MOBILE */
 @media (max-width: 767px) {
+  .responsiveImages {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    aspect-ratio: auto;
+  }
+
+  .responsiveImages .processImage {
+    height: auto;
+  }
+
   .section {
     padding-top: 3rem;
     padding-bottom: 4rem;
@@ -756,4 +766,28 @@
   .bookingScreen img {
     max-width: 250px;
   }
+}
+/* RESPONSIVE SHOWCASE */
+.responsiveImages {
+  display: grid;
+  grid-template-columns: minmax(0, 0.42fr) minmax(0, 1.58fr);
+  gap: 1.5rem;
+  width: 100%;
+  aspect-ratio: 1400 / 681;
+}
+
+.responsiveImages .processImage {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.responsiveMobileImage {
+  object-fit: contain;
+  object-position: top center;
+}
+
+.responsiveDesktopImage {
+  object-fit: cover;
+  object-position: top center;
 }
