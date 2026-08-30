@@ -21,12 +21,12 @@ export const projects = [
       hero: {
         title: "Aldo Peña — Archivo Artístico Digital",
         subtitle:
-          "Diseño UX/UI y desarrollo Frontend de un archivo digital concebido como un recorrido por la obra y trayectoria del artista.",
+          "Diseño UX/UI y desarrollo frontend de una plataforma digital para preservar, organizar y hacer accesible la obra, trayectoria y legado de Aldo Peña.",
         tags: [
           "UX/UI",
           "Frontend Development",
           "React",
-          "Responsive Design",
+          "Supabase",
         ],
         background: aldoHero,
         mockup: "",
@@ -37,15 +37,15 @@ export const projects = [
         title:
           "De una web para mostrar obra a un archivo digital capaz de preservar una trayectoria.",
         content:
-          "La iniciativa nace de la cliente con la intención de crear un espacio digital donde reunir y mostrar la obra de Aldo Peña. Al comenzar a analizar el material, su trayectoria y la estructura inicial propuesta, el proyecto reveló un reto mayor: organizar décadas de producción artística, docencia, exposiciones, diseño y documentación dentro de una experiencia clara y coherente.",
+          "La iniciativa nació con la intención de crear un espacio digital donde reunir y mostrar la obra de Aldo Peña. Al analizar el volumen y la diversidad del material —obra artística, trayectoria, docencia, práctica multidisciplinar y documentación histórica— el proyecto evolucionó hacia un reto mayor: diseñar un archivo capaz de organizar, relacionar y hacer accesible una trayectoria extensa sin reducirla a una simple galería.",
       },
 
       context: {
         problema:
-          "El volumen y la diversidad del contenido podían derivar en una arquitectura con demasiadas páginas o, en el extremo contrario, en grandes bloques de información difíciles de recorrer. El reto dejó de ser simplemente cómo mostrar las obras y pasó a ser cómo convertir una trayectoria extensa en un recorrido comprensible para el usuario.",
+          "El archivo reúne contenidos de naturaleza muy distinta: obras, documentación, trayectoria, práctica profesional y material histórico. El principal reto de UX fue definir una arquitectura que permitiera explorar este volumen de información sin fragmentar excesivamente la navegación ni perder las relaciones entre los contenidos.",
 
         objetivo:
-          "Construir una arquitectura que permitiera descubrir progresivamente obra, biografía, práctica y archivo, manteniendo las relaciones entre los contenidos y preparando el sistema para crecer a medida que nuevos materiales fueran catalogados.",
+          "Diseñar un sistema de archivo digital claro y escalable, donde la obra pudiera explorarse por categorías y cada pieza conservara su contexto mediante información, imágenes y registros asociados. La estructura debía permitir incorporar progresivamente nuevos materiales sin replantear la experiencia.",
 
         usuario: [
           "Personas interesadas en la obra y trayectoria del artista",
@@ -56,54 +56,70 @@ export const projects = [
 
       approach: {
         decisiones: [
-          "Explorar distintas arquitecturas de información antes de definir la estructura final",
-          "Reducir la fragmentación y establecer relaciones claras entre obra, biografía, práctica y archivo",
-          "Construir el recorrido desde un lenguaje editorial y museográfico basado en jerarquía, imagen y ritmo de lectura",
-          "Diseñar una estructura preparada para incorporar nuevos contenidos sin replantear la experiencia",
+          "Organizar una trayectoria extensa mediante una arquitectura de información clara y progresiva",
+          "Relacionar obra, biografía, práctica multidisciplinar y archivo sin fragmentar la experiencia",
+          "Diseñar la exploración de obras mediante categorías, filtros y ordenación",
+          "Mantener el contexto de cada pieza a través de imágenes, metadatos y registros asociados",
+          "Construir una estructura preparada para incorporar nuevos materiales de forma progresiva",
         ],
       },
 
       process: {
         sitemap: {
-          title: "Explorar antes de estructurar",
+          title: "Arquitectura para una trayectoria extensa",
           description:
-            "La organización del contenido pasó por distintas propuestas y versiones del sitemap. El objetivo era encontrar un equilibrio entre profundidad y simplicidad: evitar una navegación excesivamente fragmentada sin concentrar décadas de información en bloques difíciles de recorrer.",
+            "La primera decisión fue ordenar el contenido en grandes áreas capaces de convivir dentro de una misma experiencia: Biografía, Obra, Práctica multidisciplinar y Legado y Archivo. La estructura evita convertir cada tipo de material en una página aislada y permite que el usuario avance desde una visión general hacia contenidos cada vez más específicos.",
           img: "/images/aldo/aldo-sitemap.png",
         },
 
         interaction: {
-          title: "Del portfolio al recorrido museográfico",
+          title: "Explorar la obra sin perder el contexto",
           description:
-            "Más que mostrar una colección de obras, el proyecto propone recorrer una trayectoria. De esta exploración surgió la decisión de no plantearlo únicamente como un portfolio artístico basado en galerías, sino como una experiencia editorial y museográfica. Obra, biografía, práctica y archivo forman parte de una misma narrativa que permite descubrir progresivamente la trayectoria del artista.",
-          img: "/images/aldo/aldo-works-interaction.png",
+            "El archivo de obras se diseñó como una herramienta de exploración, no como una galería estática. Las piezas pueden recorrerse por categorías, filtros y criterios de ordenación, mientras la carga progresiva permite manejar un volumen creciente de contenido sin saturar la interfaz.",
+          img: "/images/aldo/aldo-archive-exploration.png",
         },
 
         responsive: {
           title: "Del diseño a un sistema preparado para crecer",
           description:
-            "La implementación en React se planteó desde una arquitectura mobile-first y reutilizable. Obras y series se gestionan como datos independientes de la interfaz y se relacionan mediante identificadores, permitiendo ampliar progresivamente el archivo sin reconstruir las vistas.",
+            "La interfaz se desarrolló en React con una arquitectura responsive adaptada a distintos tamaños de pantalla. La gestión del archivo se conectó con Supabase para separar contenido y presentación, relacionando obras, categorías, imágenes y exposiciones. Supabase Storage centraliza los archivos visuales y permite ampliar el archivo progresivamente sin reconstruir las vistas.",
           img: "/images/aldo/aldo-responsive.png",
 
           technologies: [
             "React",
             "React Router",
+            "Supabase",
+            "Supabase Storage",
             "i18next",
-            "Mobile-first",
-            "Reusable Components",
           ],
         },
       },
 
+      artworkExperience: {
+        eyebrow: "Detalle de obra",
+        title: "Consultar una pieza sin abandonar el recorrido",
+        description:
+          "El detalle de cada obra mantiene al usuario dentro del archivo mientras consulta su información. La navegación anterior y siguiente permite avanzar entre piezas sin cerrar el modal, mientras la galería reúne múltiples registros fotográficos y los metadatos aportan contexto sobre técnica, dimensiones, colección y exposiciones asociadas.",
+        items: [
+          "Navegación continua",
+          "Galería de imágenes",
+          "Metadatos",
+          "Teclado + swipe",
+        ],
+        image: "/images/aldo/aldo-artwork-detail.png",
+        alt: "Detalle de una obra dentro del archivo artístico digital",
+      },
+
       result: {
-        title: "Un archivo en desarrollo",
+        title: "Un archivo preparado para crecer",
         content:
-          "El proyecto continúa creciendo en paralelo al proceso de investigación, catalogación y recuperación documental. Nuevas obras, fotografías y materiales procedentes de archivos privados, familiares e históricos se incorporan progresivamente, por lo que algunas secciones permanecen todavía en desarrollo.",
+          "El proyecto evolucionó hasta convertirse en un archivo artístico digital funcional, donde obra, trayectoria y documentación conviven dentro de una misma experiencia. La arquitectura de contenidos y la integración con Supabase permiten incorporar progresivamente nuevas piezas, imágenes y registros sin replantear la interfaz ni la navegación.",
       },
 
       learnings: [
-        "La arquitectura de información es especialmente importante cuando el contenido es extenso, heterogéneo y continuará creciendo.",
-        "Separar datos, componentes y presentación permite ampliar un archivo progresivamente sin reconstruir la experiencia.",
-        "Diseñar un archivo cultural requiere equilibrar el protagonismo de la obra con el contexto necesario para comprenderla.",
+        "Diseñar para grandes volúmenes de contenido requiere pensar primero en relaciones y arquitectura, no solo en pantallas.",
+        "Separar datos, lógica y presentación permite que una interfaz evolucione sin depender del volumen final del archivo.",
+        "En un archivo cultural, la interacción debe facilitar la exploración sin competir visualmente con la obra.",
       ],
     },
   },

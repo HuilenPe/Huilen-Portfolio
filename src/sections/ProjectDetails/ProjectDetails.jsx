@@ -222,24 +222,61 @@ function ProjectDetails({ project }) {
               />
             )}
 
-            {/* RESULT / SCOPE */}
-            {project.details.result && (
-              <div className={styles.detailBlock}>
-                <h3>{project.details.result.title}</h3>
-                <p>{project.details.result.content}</p>
+            {/* ARTWORK EXPERIENCE */}
+            {project.details.artworkExperience && (
+              <div className={styles.processBlock}>
+                <div className={styles.processText}>
+                  <span className={styles.processEyebrow}>
+                    {project.details.artworkExperience.eyebrow}
+                  </span>
+
+                  <h3>{project.details.artworkExperience.title}</h3>
+                  <p>{project.details.artworkExperience.description}</p>
+
+                  {project.details.artworkExperience.items?.length > 0 && (
+                    <div className={styles.techList}>
+                      {project.details.artworkExperience.items.map((item) => (
+                        <span key={item} className={styles.techItem}>
+                          {item}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </div>
+
+                {project.details.artworkExperience.image && (
+                  <img
+                    src={project.details.artworkExperience.image}
+                    alt={project.details.artworkExperience.alt}
+                    className={styles.processImage}
+                  />
+                )}
               </div>
             )}
 
-            {/* LEARNINGS */}
-            {project.details.learnings?.length > 0 && (
-              <div className={styles.detailBlock}>
-                <h3>Aprendizajes</h3>
+            {/* PROJECT CLOSING */}
+            {(project.details.result ||
+              project.details.learnings?.length > 0) && (
+              <div className={styles.projectClosing}>
+                {project.details.result && (
+                  <div className={styles.closingResult}>
+                    <span className={styles.processEyebrow}>Resultado</span>
+                    <h3>{project.details.result.title}</h3>
+                    <p>{project.details.result.content}</p>
+                  </div>
+                )}
 
-                <ul>
-                  {project.details.learnings.map((learning) => (
-                    <li key={learning}>{learning}</li>
-                  ))}
-                </ul>
+                {project.details.learnings?.length > 0 && (
+                  <div className={styles.closingLearnings}>
+                    <span className={styles.processEyebrow}>Aprendizajes</span>
+
+                    <ul>
+                      {project.details.learnings.map((learning) => (
+                        <li key={learning}>{learning}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
               </div>
             )}
         </div>
