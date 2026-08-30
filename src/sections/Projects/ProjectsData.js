@@ -76,7 +76,7 @@ export const projects = [
           title: "Explorar la obra sin perder el contexto",
           description:
             "El archivo de obras se diseñó como una herramienta de exploración, no como una galería estática. Las piezas pueden recorrerse por categorías, filtros y criterios de ordenación, mientras la carga progresiva permite manejar un volumen creciente de contenido sin saturar la interfaz.",
-          img: "/images/aldo/aldo-archive-exploration.png",
+          img: "/images/aldo/aldo-archive-exploration.webp",
         },
 
         responsive: {
@@ -106,7 +106,7 @@ export const projects = [
           "Metadatos",
           "Teclado + swipe",
         ],
-        image: "/images/aldo/aldo-artwork-detail.png",
+        image: "/images/aldo/aldo-artwork-detail.webp",
         alt: "Detalle de una obra dentro del archivo artístico digital",
       },
 
