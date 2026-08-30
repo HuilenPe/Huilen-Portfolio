@@ -481,6 +481,33 @@
 
   .hero {
     margin-bottom: 2.5rem;
+    padding: 1.5rem 1.25rem;
+    gap: 1.25rem;
+  }
+
+  .hero::before {
+    background: rgba(0, 0, 0, 0.28);
+  }
+
+  .hero h2 {
+    margin-bottom: 0.65rem;
+    font-size: 1.45rem;
+    line-height: 1.2;
+  }
+
+  .hero p {
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    line-height: 1.45;
+  }
+
+  .tags {
+    gap: 0.4rem;
+  }
+
+  .tag {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.66rem;
   }
 
   .gridTwo {
