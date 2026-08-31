@@ -151,6 +151,14 @@ export const projects = [
         mockup: mockupDashboardScreen,
       },
 
+      origin: {
+        eyebrow: "El punto de partida",
+        title:
+          "Diseñar una experiencia médica sin convertirla en un panel de opciones.",
+        content:
+          "Health nació como un proyecto formativo de UX/UI centrado en explorar cómo organizar distintas tareas relacionadas con la gestión médica dentro de una única experiencia móvil. El reto no era simplemente diseñar las pantallas, sino decidir qué información debía aparecer en cada momento y cómo guiar al usuario entre citas, profesionales, mensajes e información personal sin sobrecargar la interfaz.",
+      },
+
       context: {
         problema:
           "El proyecto partió de una necesidad amplia: organizar distintas acciones relacionadas con la gestión médica —citas, profesionales, mensajes e información personal— dentro de una experiencia móvil clara y fácil de recorrer. El principal reto era evitar que la aplicación se convirtiera en un panel saturado de opciones y mantener visibles las acciones prioritarias.",
