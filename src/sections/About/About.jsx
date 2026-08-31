@@ -7,12 +7,12 @@ function About() {
     "Artes Visuales — UPC",
   ]
 
-  const stack = ["React", "JavaScript", "CSS", "Figma", "Git", "VSCode"]
+  const stack = ["React", "JavaScript / TypeScript", "CSS", "Supabase", "Figma", "Git"]
 
   const focus = [
+    "UX/UI Design",
     "UI Systems",
     "Responsive Frontend",
-    "UX Thinking",
   ]
 
   return (
@@ -46,12 +46,11 @@ function About() {
 
             <div className={styles.text}>
               <p>
-                Actualmente desarrollo interfaces frontend y experiencias UI/UX
-                enfocadas en claridad, estética y usabilidad.
+                Diseño y desarrollo interfaces para productos digitales, trabajando desde la definición de la experiencia y el diseño UI hasta su implementación frontend. He participado en proyectos reales para clientes y también desarrollo productos propios de principio a fin.
               </p>
 
               <p>
-                Mi formación en Artes Visuales complementa mi perfil técnico y aporta una mirada enriquecedora sobre composición, jerarquía visual y experiencia de usuario.
+                Mi formación en Artes Visuales complementa mi perfil técnico y aporta una mirada especialmente atenta a la composición, la jerarquía visual y la experiencia de usuario.
               </p>
             </div>
 

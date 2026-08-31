@@ -2,7 +2,7 @@ import photo from "/images/hero_health_Card.png";
 import backgroundHeroHealth from "/images/backgroundHero.png";
 import mockupDashboardScreen from "/images/Dashboard.png";
 
-import photoAldo from "/images/aldo/aldo-pena-cover.png";
+import photoAldo from "/images/aldo/aldo_bg_card.png";
 import aldoHero from "/images/aldo/aldo-pena-hero.png";
 
 export const projects = [
@@ -11,7 +11,7 @@ export const projects = [
     slug: "aldo-pena",
     title: "Aldo Peña — Archivo Artístico Digital",
     description:
-      "Diseño UX/UI y desarrollo Frontend de un archivo digital con enfoque editorial y museográfico.",
+      "Diseño UX/UI y desarrollo frontend de un archivo artístico digital para preservar, organizar y explorar obra, trayectoria y documentación.",
     img: photoAldo,
     demo: "https://aldo-pena-web.vercel.app/",
     github: "https://github.com/HuilenPe/aldo-pena-web",

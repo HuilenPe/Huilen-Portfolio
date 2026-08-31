@@ -11,8 +11,7 @@ function Contact() {
           <h2>¿Creamos algo?</h2>
 
           <p className={styles.description}>
-            Estoy abierta a oportunidades junior frontend, UI design y proyectos
-            donde pueda seguir creciendo diseñando y construyendo interfaces.
+            Estoy abierta a oportunidades en frontend, UX/UI y equipos de producto donde diseño e implementación formen parte del mismo proceso.
           </p>
 
           <div className={styles.links}>
