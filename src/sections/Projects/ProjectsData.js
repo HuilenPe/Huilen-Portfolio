@@ -23,10 +23,9 @@ export const projects = [
         subtitle:
           "Diseño UX/UI y desarrollo frontend de una plataforma digital para preservar, organizar y hacer accesible la obra, trayectoria y legado de Aldo Peña.",
         tags: [
-          "UX/UI",
+          "UI Design",
+          "Product Thinking",
           "Frontend Development",
-          "React",
-          "Supabase",
         ],
         background: aldoHero,
         mockup: "",
@@ -56,6 +55,7 @@ export const projects = [
 
       approach: {
         decisiones: [
+          "Replantear una web inicialmente concebida para mostrar obra y convertirla en un archivo digital preparado para crecer",
           "Organizar una trayectoria extensa mediante una arquitectura de información clara y progresiva",
           "Relacionar obra, biografía, práctica multidisciplinar y archivo sin fragmentar la experiencia",
           "Diseñar la exploración de obras mediante categorías, filtros y ordenación",
@@ -82,7 +82,7 @@ export const projects = [
         responsive: {
           title: "Del diseño a un sistema preparado para crecer",
           description:
-            "La interfaz se desarrolló en React con una arquitectura responsive adaptada a distintos tamaños de pantalla. La gestión del archivo se conectó con Supabase para separar contenido y presentación, relacionando obras, categorías, imágenes y exposiciones. Supabase Storage centraliza los archivos visuales y permite ampliar el archivo progresivamente sin reconstruir las vistas.",
+            "La interfaz se desarrolló en React con una arquitectura responsive adaptada a distintos tamaños de pantalla. La estructura del proyecto está preparada para integrar Supabase como capa de datos, separando contenido y presentación y facilitando la relación entre obras, categorías, imágenes y exposiciones. Actualmente esta integración se encuentra en desarrollo.",
           mobileImg: "/images/aldo/aldo-responsive-mobile.webp",
           desktopImg: "/images/aldo/aldo-responsive-desktop.webp",
 
@@ -114,7 +114,7 @@ export const projects = [
       result: {
         title: "Un archivo preparado para crecer",
         content:
-          "El proyecto evolucionó hasta convertirse en un archivo artístico digital funcional, donde obra, trayectoria y documentación conviven dentro de una misma experiencia. La arquitectura de contenidos y la integración con Supabase permiten incorporar progresivamente nuevas piezas, imágenes y registros sin replantear la interfaz ni la navegación.",
+          "El proyecto evolucionó hasta convertirse en un archivo artístico digital funcional, donde obra, trayectoria y documentación conviven dentro de una misma experiencia. La arquitectura de contenidos está preparada para incorporar progresivamente nuevas piezas, imágenes y registros sin replantear la interfaz ni la navegación.",
       },
 
       learnings: [
