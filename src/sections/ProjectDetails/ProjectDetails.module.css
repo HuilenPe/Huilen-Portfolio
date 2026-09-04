@@ -66,7 +66,7 @@
   color: white;
 }
 
-.hero h2 {
+.hero h1 {
   margin-bottom: 0.75rem;
 
   font-size: 1.6rem;
@@ -499,7 +499,7 @@
     background: rgba(0, 0, 0, 0.28);
   }
 
-  .hero h2 {
+  .hero h1 {
     margin-bottom: 0.65rem;
     font-size: 1.45rem;
     line-height: 1.2;
@@ -691,7 +691,7 @@
     align-items: center;
   }
 
-  .hero h2 {
+  .hero h1 {
     font-size: 2.2rem;
   }
 
@@ -790,4 +790,95 @@
 .responsiveDesktopImage {
   object-fit: cover;
   object-position: top center;
+}
+
+/* ACCESSIBILITY */
+.backLabel:focus-visible {
+  outline: 2px solid var(--text-main);
+  outline-offset: 6px;
+  border-radius: 4px;
+}
+
+.projectTitle:focus {
+  outline: none;
+}
+
+.srOnly {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+
+  border: 0;
+}
+
+/* ACCESSIBLE CAROUSELS */
+.process,
+.bookingGrid {
+  cursor: grab;
+}
+
+.process:active,
+.bookingGrid:active {
+  cursor: grabbing;
+}
+
+.process:focus-visible,
+.bookingGrid:focus-visible {
+  outline: 2px solid var(--text-main);
+  outline-offset: 4px;
+}
+
+.processDot,
+.bookingDot {
+  padding: 0;
+  border: 0;
+  cursor: pointer;
+}
+
+.processDot:focus-visible,
+.bookingDot:focus-visible {
+  outline: 2px solid var(--text-main);
+  outline-offset: 4px;
+}
+
+@media (max-width: 767px) {
+  .carouselHint {
+    animation: carousel-hint 0.8s ease-in-out;
+  }
+
+  .processDots,
+  .bookingDots {
+    display: flex;
+  }
+}
+
+@keyframes carousel-hint {
+  0% {
+    transform: translateX(0);
+  }
+
+  40% {
+    transform: translateX(-14px);
+  }
+
+  70% {
+    transform: translateX(5px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carouselHint {
+    animation: none;
+  }
 }

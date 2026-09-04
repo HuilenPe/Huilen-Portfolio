@@ -10,7 +10,17 @@ function ProjectPage() {
   )
 
   if (!project) {
-    return <p>Proyecto no encontrado.</p>
+    return (
+      <section className="container">
+        <h1>Proyecto no encontrado</h1>
+        <p>
+          El proyecto que buscas no está disponible.
+        </p>
+        <a href="/#projects">
+          Volver a proyectos
+        </a>
+      </section>
+    )
   }
 
   return <ProjectDetails project={project} />

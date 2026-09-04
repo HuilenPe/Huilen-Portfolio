@@ -1,4 +1,4 @@
-import { useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import styles from "../ProjectDetails.module.css"
 import ProcessPhase from "./ProcessPhase"
 
@@ -27,7 +27,25 @@ function ProcessCarousel({ process, projectTitle }) {
     },
   ].filter((slide) => slide.title)
 
-  const handleScroll = () => {
+  function scrollToSlide(index) {
+    const container = processRef.current
+
+    if (!container) return
+
+    const clampedIndex = Math.max(
+      0,
+      Math.min(index, slides.length - 1)
+    )
+
+    container.scrollTo({
+      left: container.clientWidth * clampedIndex,
+      behavior: "smooth",
+    })
+
+    setActiveSlide(clampedIndex)
+  }
+
+  function handleScroll() {
     const container = processRef.current
 
     if (!container) return
@@ -41,21 +59,70 @@ function ProcessCarousel({ process, projectTitle }) {
     )
 
     setActiveSlide(
-      Math.min(activeSlideIndex, slides.length - 1)
+      Math.max(
+        0,
+        Math.min(activeSlideIndex, slides.length - 1)
+      )
     )
   }
 
+  function handleKeyDown(event) {
+    if (event.key === "ArrowRight") {
+      event.preventDefault()
+      scrollToSlide(activeSlide + 1)
+    }
+
+    if (event.key === "ArrowLeft") {
+      event.preventDefault()
+      scrollToSlide(activeSlide - 1)
+    }
+  }
+
+  useEffect(() => {
+    const container = processRef.current
+
+    if (!container) return
+
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches
+
+    if (prefersReducedMotion) return
+
+    const timer = window.setTimeout(() => {
+      container.classList.add(styles.carouselHint)
+    }, 500)
+
+    const cleanupTimer = window.setTimeout(() => {
+      container.classList.remove(styles.carouselHint)
+    }, 1500)
+
+    return () => {
+      window.clearTimeout(timer)
+      window.clearTimeout(cleanupTimer)
+    }
+  }, [])
+
   return (
-    <>
+    <section
+      className={styles.carousel}
+      aria-roledescription="carrusel"
+      aria-label={`Proceso de ${projectTitle}`}
+    >
       <div
         ref={processRef}
         className={styles.process}
         onScroll={handleScroll}
+        onKeyDown={handleKeyDown}
+        tabIndex={0}
       >
         {slides.map((slide, index) => (
           <div
             key={slide.title}
             className={styles.processBlock}
+            role="group"
+            aria-roledescription="diapositiva"
+            aria-label={`${index + 1} de ${slides.length}: ${slide.title}`}
           >
             <div className={styles.processText}>
               {slide.phase && (
@@ -86,6 +153,7 @@ function ProcessCarousel({ process, projectTitle }) {
                   alt={`Vista mobile de ${projectTitle}`}
                   className={`${styles.processImage} ${styles.responsiveMobileImage}`}
                 />
+
                 <img
                   src={slide.desktopImg}
                   alt={`Vista desktop de ${projectTitle}`}
@@ -103,22 +171,34 @@ function ProcessCarousel({ process, projectTitle }) {
         ))}
       </div>
 
-      <div
-        className={styles.processDots}
-        aria-label={`Paso ${activeSlide + 1} de ${slides.length}`}
+      <p
+        className={styles.srOnly}
+        aria-live="polite"
+        aria-atomic="true"
       >
+        Paso {activeSlide + 1} de {slides.length}:{" "}
+        {slides[activeSlide]?.title}
+      </p>
+
+      <div className={styles.processDots}>
         {slides.map((slide, index) => (
-          <span
+          <button
             key={slide.title}
+            type="button"
             className={`${styles.processDot} ${
               activeSlide === index
                 ? styles.processDotActive
                 : ""
             }`}
+            onClick={() => scrollToSlide(index)}
+            aria-label={`Ir al paso ${index + 1}: ${slide.title}`}
+            aria-current={
+              activeSlide === index ? "step" : undefined
+            }
           />
         ))}
       </div>
-    </>
+    </section>
   )
 }
 

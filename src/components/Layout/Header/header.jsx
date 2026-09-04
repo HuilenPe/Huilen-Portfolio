@@ -39,12 +39,16 @@ function Header() {
 
   const logoAnchorRef = useRef(null)
   const movingLogoRef = useRef(null)
+  const burgerRef = useRef(null)
+  const mobileNavRef = useRef(null)
 
   const skipAboutAnimationRef = useRef(false)
   const navigationCleanupRef = useRef(null)
 
   const [isOpen, setIsOpen] = useState(false)
   const [isAboutActive, setIsAboutActive] = useState(false)
+
+  const showAboutLogo = isHome && isAboutActive
 
   /* MOBILE MENU — lock scroll */
   useEffect(() => {
@@ -70,19 +74,60 @@ function Header() {
     }
   }, [])
 
-  /* MOBILE MENU — Escape */
+  /* MOBILE MENU — keyboard and focus management */
   useEffect(() => {
+    if (!isOpen) return
+
+    const menu = mobileNavRef.current
+    const burger = burgerRef.current
+
+    const focusFrame = requestAnimationFrame(() => {
+      menu?.querySelector("a[href]")?.focus()
+    })
+
     function handleKeyDown(event) {
       if (event.key === "Escape") {
         setIsOpen(false)
+
+        requestAnimationFrame(() => {
+          burger?.focus()
+        })
+
+        return
+      }
+
+      if (event.key !== "Tab" || !menu || !burger) return
+
+      const focusableElements = [
+        burger,
+        ...menu.querySelectorAll("a[href], button:not([disabled])"),
+      ]
+
+      if (focusableElements.length === 0) return
+
+      const firstElement = focusableElements[0]
+      const lastElement =
+        focusableElements[focusableElements.length - 1]
+
+      if (
+        event.shiftKey &&
+        document.activeElement === firstElement
+      ) {
+        event.preventDefault()
+        lastElement.focus()
+      } else if (
+        !event.shiftKey &&
+        document.activeElement === lastElement
+      ) {
+        event.preventDefault()
+        firstElement.focus()
       }
     }
 
-    if (isOpen) {
-      window.addEventListener("keydown", handleKeyDown)
-    }
+    window.addEventListener("keydown", handleKeyDown)
 
     return () => {
+      cancelAnimationFrame(focusFrame)
       window.removeEventListener("keydown", handleKeyDown)
     }
   }, [isOpen])
@@ -158,7 +203,6 @@ function handleSectionNav(targetId) {
     let attempts = 0
 
     if (!isHome) {
-      setIsAboutActive(false)
       return
     }
 
@@ -228,7 +272,7 @@ function handleSectionNav(targetId) {
         const target = document.getElementById("about-logo-target")
 
         const destination =
-          isAboutActive && target && !isOpen
+          showAboutLogo && target && !isOpen
             ? target.getBoundingClientRect()
             : source.getBoundingClientRect()
 
@@ -252,7 +296,7 @@ function handleSectionNav(targetId) {
       window.removeEventListener("resize", updateLogoPosition)
       window.removeEventListener("scroll", updateLogoPosition)
     }
-  }, [isAboutActive, isOpen, location.pathname])
+  }, [showAboutLogo, isOpen, location.pathname])
 
   return (
     <header className={styles.header}>
@@ -270,7 +314,7 @@ function handleSectionNav(targetId) {
           ref={movingLogoRef}
           href={isHome ? "#hero" : "/#hero"}
           className={`${styles.movingLogo} ${
-            isAboutActive ? styles.logoInAbout : ""
+            showAboutLogo ? styles.logoInAbout : ""
           }`}
           aria-label="Volver al inicio"
           onClick={(event) => handleNavClick(event, "hero")}
@@ -315,6 +359,7 @@ function handleSectionNav(targetId) {
 
         {/* BURGER */}
         <button
+          ref={burgerRef}
           type="button"
           className={`${styles.burger} ${
             isOpen ? styles.burgerOpen : ""
@@ -332,6 +377,7 @@ function handleSectionNav(targetId) {
         {/* NAV MOBILE */}
         {isOpen && (
           <nav
+            ref={mobileNavRef}
             id="mobile-menu"
             className={styles.mobileNav}
             aria-label="Menú principal mobile"

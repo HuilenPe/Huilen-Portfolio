@@ -8,16 +8,23 @@ function App() {
   return (
     <>
       <ScrollToHash />
+
+      <a href="#main-content" className="skip-link">
+        Saltar al contenido principal
+      </a>
+
       <Header />
 
-      <Routes>
-        <Route path="/" element={<Home />} />
+      <main id="main-content">
+        <Routes>
+          <Route path="/" element={<Home />} />
 
-        <Route
-          path="/projects/:slug"
-          element={<ProjectPage />}
-        />
-      </Routes>
+          <Route
+            path="/projects/:slug"
+            element={<ProjectPage />}
+          />
+        </Routes>
+      </main>
     </>
   )
 }

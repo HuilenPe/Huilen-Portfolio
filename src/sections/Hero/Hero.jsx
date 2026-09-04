@@ -41,7 +41,9 @@ function Hero() {
                     el.style.strokeDashoffset = "0"
                 }, 50)
 
-            } catch (e) { }
+            } catch {
+                return
+            }
         })
     }, [])
 

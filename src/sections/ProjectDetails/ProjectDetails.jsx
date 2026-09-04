@@ -1,9 +1,16 @@
+import { useEffect, useRef } from "react"
 import styles from "./ProjectDetails.module.css"
 import Button from "../../components/UI/Button/button"
 import ProcessCarousel from "./components/ProcessCarousel"
 import BookingFlow from "./components/BookingFlow"
 
 function ProjectDetails({ project }) {
+  const titleRef = useRef(null)
+
+  useEffect(() => {
+    titleRef.current?.focus()
+  }, [project.slug])
+
   if (!project?.details) return null
 
   return (
@@ -25,7 +32,13 @@ function ProjectDetails({ project }) {
               }}
             >
               <div className={styles.heroContent}>
-                <h2>{project.details.hero?.title || project.title}</h2>
+                <h1
+                  ref={titleRef}
+                  tabIndex={-1}
+                  className={styles.projectTitle}
+                >
+                  {project.details.hero?.title || project.title}
+                </h1>
 
                 <p>{project.details.hero?.subtitle}</p>
 
@@ -42,7 +55,7 @@ function ProjectDetails({ project }) {
                 <div className={styles.mockup}>
                   <img
                     src={project.details.hero.mockup}
-                    alt={project.title}
+                    alt={`Vista principal del proyecto ${project.title}`}
                   />
                 </div>
               )}

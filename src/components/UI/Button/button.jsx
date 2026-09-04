@@ -7,7 +7,11 @@ function Button({ children, onClick, href, variant = "primary", icon }) {
     const content = (
         <>
             <span>{children}</span>
-            {icon && <span className={styles.icon}>{icon}</span>}
+            {icon && (
+          <span className={styles.icon} aria-hidden="true">
+            {icon}
+          </span>
+        )}
         </>
     );
 
@@ -28,7 +32,7 @@ function Button({ children, onClick, href, variant = "primary", icon }) {
     }
 
     return (
-        <button onClick={onClick} className={className}>
+        <button type="button" onClick={onClick} className={className}>
             {content}
         </button>
     );

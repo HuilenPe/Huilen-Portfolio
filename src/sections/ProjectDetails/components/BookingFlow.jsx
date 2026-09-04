@@ -1,4 +1,4 @@
-import { useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import styles from "../ProjectDetails.module.css"
 
 function BookingFlow({ bookingFlow }) {
@@ -7,7 +7,25 @@ function BookingFlow({ bookingFlow }) {
 
   const screens = bookingFlow.screens ?? []
 
-  const handleScroll = () => {
+  function scrollToSlide(index) {
+    const container = bookingRef.current
+
+    if (!container) return
+
+    const clampedIndex = Math.max(
+      0,
+      Math.min(index, screens.length - 1)
+    )
+
+    container.scrollTo({
+      left: container.clientWidth * clampedIndex,
+      behavior: "smooth",
+    })
+
+    setActiveSlide(clampedIndex)
+  }
+
+  function handleScroll() {
     const container = bookingRef.current
 
     if (!container) return
@@ -21,12 +39,56 @@ function BookingFlow({ bookingFlow }) {
     )
 
     setActiveSlide(
-      Math.min(activeSlideIndex, screens.length - 1)
+      Math.max(
+        0,
+        Math.min(activeSlideIndex, screens.length - 1)
+      )
     )
   }
 
+  function handleKeyDown(event) {
+    if (event.key === "ArrowRight") {
+      event.preventDefault()
+      scrollToSlide(activeSlide + 1)
+    }
+
+    if (event.key === "ArrowLeft") {
+      event.preventDefault()
+      scrollToSlide(activeSlide - 1)
+    }
+  }
+
+  useEffect(() => {
+    const container = bookingRef.current
+
+    if (!container) return
+
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches
+
+    if (prefersReducedMotion) return
+
+    const timer = window.setTimeout(() => {
+      container.classList.add(styles.carouselHint)
+    }, 500)
+
+    const cleanupTimer = window.setTimeout(() => {
+      container.classList.remove(styles.carouselHint)
+    }, 1500)
+
+    return () => {
+      window.clearTimeout(timer)
+      window.clearTimeout(cleanupTimer)
+    }
+  }, [])
+
   return (
-    <div className={styles.bookingFlow}>
+    <section
+      className={styles.bookingFlow}
+      aria-roledescription="carrusel"
+      aria-label={bookingFlow.title}
+    >
       <div className={styles.processText}>
         <span className={styles.processEyebrow}>
           {bookingFlow.eyebrow}
@@ -40,15 +102,20 @@ function BookingFlow({ bookingFlow }) {
         ref={bookingRef}
         className={styles.bookingGrid}
         onScroll={handleScroll}
+        onKeyDown={handleKeyDown}
+        tabIndex={0}
       >
-        {screens.map((screen) => (
+        {screens.map((screen, index) => (
           <article
             key={screen.title}
             className={styles.bookingScreen}
+            role="group"
+            aria-roledescription="diapositiva"
+            aria-label={`${index + 1} de ${screens.length}: ${screen.title}`}
           >
             <img
               src={screen.img}
-              alt={screen.title}
+              alt=""
             />
 
             <div className={styles.bookingScreenText}>
@@ -59,22 +126,34 @@ function BookingFlow({ bookingFlow }) {
         ))}
       </div>
 
-      <div
-        className={styles.bookingDots}
-        aria-label={`Paso ${activeSlide + 1} de ${screens.length}`}
+      <p
+        className={styles.srOnly}
+        aria-live="polite"
+        aria-atomic="true"
       >
+        Paso {activeSlide + 1} de {screens.length}:{" "}
+        {screens[activeSlide]?.title}
+      </p>
+
+      <div className={styles.bookingDots}>
         {screens.map((screen, index) => (
-          <span
+          <button
             key={screen.title}
+            type="button"
             className={`${styles.bookingDot} ${
               activeSlide === index
                 ? styles.bookingDotActive
                 : ""
             }`}
+            onClick={() => scrollToSlide(index)}
+            aria-label={`Ir a ${screen.title}`}
+            aria-current={
+              activeSlide === index ? "step" : undefined
+            }
           />
         ))}
       </div>
-    </div>
+    </section>
   )
 }
 
