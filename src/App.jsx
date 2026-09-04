@@ -3,6 +3,7 @@ import Header from "./components/Layout/Header/header"
 import ScrollToHash from "./components/Navigation/ScrollToHash"
 import Home from "./pages/Home/Home"
 import ProjectPage from "./pages/ProjectPage/ProjectPage"
+import BackToTop from "./components/UI/BackToTop/BackToTop"
 
 function App() {
   return (
@@ -25,6 +26,8 @@ function App() {
           />
         </Routes>
       </main>
+
+      <BackToTop />
     </>
   )
 }
