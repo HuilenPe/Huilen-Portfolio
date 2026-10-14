@@ -46,7 +46,7 @@ function About() {
 
             <div className={styles.text}>
               <p>
-                Diseño y desarrollo interfaces para productos digitales, trabajando desde la definición de la experiencia y el diseño UI hasta su implementación frontend. He participado en proyectos reales para clientes y también desarrollo productos propios de principio a fin.
+                Diseño y desarrollo interfaces digitales, desde la definición de la experiencia y el diseño UI hasta su implementación frontend. Trabajo en proyectos para clientes y desarrollo proyectos propios, combinando diseño visual y código.
               </p>
 
               <p>
