@@ -13,6 +13,35 @@ function ProjectDetails({ project }) {
 
   if (!project?.details) return null
 
+  const covers = {
+    "aldo-pena": {
+      title: "Aldo Peña",
+      category: "Archivo artístico digital",
+      description:
+        "Diseño y desarrollo de un archivo digital que reúne la obra y la trayectoria de Aldo Peña.",
+      image: "/images/aldo/aldo-practice-desktop.png",
+      url: "https://xn--aldopea-9za.com/",
+    },
+    equinox: {
+      title: "Equinox",
+      category: "Rediseño web corporativo",
+      description:
+        "Rediseño e implementación de la web corporativa de Equinox, desde las primeras propuestas en Figma hasta su publicación.",
+      image: "/images/equinox/equinox-cover.png",
+      mobile: "/images/equinox/equinox-mobile.png",
+      url: project.demo,
+    },
+  }
+
+  const cover = covers[project.id] || {
+    title: project.details.hero?.title || project.title,
+    category: "Proyecto digital",
+    description: project.details.hero?.subtitle,
+    image: project.details.hero?.mockup,
+    url: project.demo,
+  }
+
+
   return (
     <section className={styles.section}>
       <div className="container">
@@ -23,64 +52,78 @@ function ProjectDetails({ project }) {
             </a>
 
             {/* HERO */}
-            <div
-              className={styles.hero}
-              style={{
-                backgroundImage: project.details.hero?.background
-                  ? `url(${project.details.hero.background})`
-                  : "none",
-              }}
-            >
-              <div className={styles.heroContent}>
-                <h1
-                  ref={titleRef}
-                  tabIndex={-1}
-                  className={styles.projectTitle}
-                >
-                  {project.details.hero?.title || project.title}
-                </h1>
+            <header className={styles.caseHeader}>
+              <div className={styles.caseIntro}>
+                <div>
+                  <p className={styles.caseCategory}>{cover.category}</p>
+                  <h1
+                    ref={titleRef}
+                    tabIndex={-1}
+                    className={`${styles.projectTitle} ${styles.caseTitle}`}
+                  >
+                    {cover.title}
+                  </h1>
+                </div>
 
-                <p>{project.details.hero?.subtitle}</p>
+                <div className={styles.caseSummary}>
+                  <p>{cover.description}</p>
+                  <p className={styles.caseRole}>
+                    {covers[project.id]
+                      ? "Diseño UX/UI · Desarrollo frontend"
+                      : project.details.hero?.tags?.join(" · ")}
+                  </p>
 
-                <div className={styles.tags}>
-                  {project.details.hero?.tags?.map((tag) => (
-                    <span key={tag} className={styles.tag}>
-                      {tag}
-                    </span>
-                  ))}
+                  <div className={styles.caseLinks}>
+                    {cover.url && (
+                      <a
+                        href={cover.url}
+                        aria-label={`Visitar la web de ${cover.title} (abre en otra pestaña)`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Visitar web <span aria-hidden="true">↗</span>
+                      </a>
+                    )}
+                    {project.github && (
+                      <Button variant="link" href={project.github}>
+                        Ver código
+                      </Button>
+                    )}
+                    {project.figma && (
+                      <Button variant="link" href={project.figma}>
+                        Ver prototipo
+                      </Button>
+                    )}
+                  </div>
                 </div>
               </div>
 
-              {project.details.hero?.mockup && (
-                <div className={styles.mockup}>
-                  <img
-                    src={project.details.hero.mockup}
-                    alt={`Vista principal del proyecto ${project.title}`}
-                  />
+              {cover.image && (
+                <div className={styles.caseStage}>
+                  <figure className={styles.caseVisual}>
+                    <img
+                      src={cover.image}
+                      alt={
+                        project.id === "aldo-pena"
+                          ? "Página Práctica de Aldo Peña: diseño y comunicación visual, curaduría y diseño expositivo"
+                          : `Vista de escritorio de ${cover.title}`
+                      }
+                      decoding="async"
+                    />
+                  </figure>
+
+                  {cover.mobile && (
+                    <figure className={styles.casePhone}>
+                      <img
+                        src={cover.mobile}
+                        alt={`Vista móvil de ${cover.title}`}
+                        decoding="async"
+                      />
+                    </figure>
+                  )}
                 </div>
               )}
-            </div>
-
-            {/* PROJECT ACTIONS */}
-            <div className={styles.projectActions}>
-              {project.demo && (
-                <Button variant="outline" href={project.demo}>
-                  Ver proyecto
-                </Button>
-              )}
-
-              {project.github && (
-                <Button variant="link" href={project.github}>
-                  Ver código
-                </Button>
-              )}
-
-              {project.figma && (
-                <Button variant="link" href={project.figma}>
-                  Ver prototipo
-                </Button>
-              )}
-            </div>
+            </header>
 
             {/* ORIGIN */}
             {project.details.origin && (
@@ -264,6 +307,44 @@ function ProjectDetails({ project }) {
                     className={styles.processImage}
                   />
                 )}
+              </div>
+            )}
+
+            
+            {project.id === "equinox" && (
+              <div className={styles.processBlock}>
+                <div className={styles.processText}>
+                  <span className={styles.processEyebrow}>
+                    Diseño e implementación responsive
+                  </span>
+                  <h2>Una interfaz adaptada a escritorio y móvil</h2>
+                  <p>
+                    Diseñé la interfaz en Figma y la implementé en React.
+                    La adaptación a móvil reorganiza la navegación, el
+                    contenido y las llamadas a la acción para mantener
+                    una lectura clara en pantallas pequeñas.
+                  </p>
+                </div>
+
+                <div className={styles.equinoxShowcase}>
+                  <figure className={styles.equinoxDesktop}>
+                    <img
+                      src="/images/equinox/equinox-cover.png"
+                      alt="Web de Equinox en escritorio"
+                      loading="lazy"
+                    />
+                    <figcaption>Escritorio</figcaption>
+                  </figure>
+
+                  <figure className={styles.equinoxMobile}>
+                    <img
+                      src="/images/equinox/equinox-mobile.png"
+                      alt="Web de Equinox en móvil"
+                      loading="lazy"
+                    />
+                    <figcaption>Móvil</figcaption>
+                  </figure>
+                </div>
               </div>
             )}
 

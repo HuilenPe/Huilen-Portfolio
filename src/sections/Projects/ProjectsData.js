@@ -126,7 +126,44 @@ export const projects = [
   },
 
   {
+    id: "equinox",
+    slug: "equinox",
+    title: "Equinox — Rediseño web corporativo",
+    description:
+      "Diseño UX/UI y desarrollo frontend de la web corporativa de Equinox, desde el diseño en Figma hasta la implementación en React.",
+    img: "/images/equinox/equinox-cover.png",
+    demo: "https://equinox.do/",
+    github: "",
+    figma: "",
+
+    details: {
+      hero: {
+        title: "Equinox — Rediseño web corporativo",
+        subtitle:
+          "Rediseño e implementación frontend de una web B2B para presentar los servicios de Equinox y facilitar el contacto con la empresa.",
+        tags: ["UX/UI Design", "Frontend Development", "React"],
+        background: "",
+        mockup: "/images/equinox/equinox-cover.png",
+      },
+
+      context: {
+        problema:
+          "El encargo consistió en reemplazar la web anterior de Equinox y reorganizar la presentación de sus servicios corporativos.",
+        objetivo:
+          "Diseñar y desarrollar una web responsive con una jerarquía clara entre la presentación de la empresa, sus servicios y las vías de contacto.",
+      },
+
+      result: {
+        title: "Diseño e implementación de la web corporativa",
+        content:
+          "Mi trabajo abarcó el diseño UX/UI en Figma y el desarrollo frontend en React de las páginas Home, About y Contact. La web está publicada.",
+      },
+    },
+  },
+
+  {
     id: "health-client",
+    visible: false,
     slug: "health",
     type: "case-study",
     title: "Health — Gestión médica clara y accesible",
