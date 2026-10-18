@@ -1,7 +1,9 @@
+import { useLanguage } from "../../../i18n/language"
 import { useEffect, useRef, useState } from "react"
 import styles from "../ProjectDetails.module.css"
 
 function BookingFlow({ bookingFlow }) {
+  const { t } = useLanguage()
   const bookingRef = useRef(null)
   const [activeSlide, setActiveSlide] = useState(0)
 
@@ -86,7 +88,7 @@ function BookingFlow({ bookingFlow }) {
   return (
     <section
       className={styles.bookingFlow}
-      aria-roledescription="carrusel"
+      aria-roledescription={t("carrusel")}
       aria-label={bookingFlow.title}
     >
       <div className={styles.processText}>
@@ -110,8 +112,8 @@ function BookingFlow({ bookingFlow }) {
             key={screen.title}
             className={styles.bookingScreen}
             role="group"
-            aria-roledescription="diapositiva"
-            aria-label={`${index + 1} de ${screens.length}: ${screen.title}`}
+            aria-roledescription={t("diapositiva")}
+            aria-label={t("{index} de {total}: {title}", { index: index + 1, total: screens.length, title: screen.title })}
           >
             <img
               src={screen.img}
@@ -130,8 +132,7 @@ function BookingFlow({ bookingFlow }) {
         className={styles.srOnly}
         aria-live="polite"
         aria-atomic="true"
-      >
-        Paso {activeSlide + 1} de {screens.length}:{" "}
+      >{t("Paso")} {activeSlide + 1}{t(" de ")}{screens.length}:{" "}
         {screens[activeSlide]?.title}
       </p>
 
@@ -146,7 +147,7 @@ function BookingFlow({ bookingFlow }) {
                 : ""
             }`}
             onClick={() => scrollToSlide(index)}
-            aria-label={`Ir a ${screen.title}`}
+            aria-label={t("Ir a {title}", { title: screen.title })}
             aria-current={
               activeSlide === index ? "step" : undefined
             }

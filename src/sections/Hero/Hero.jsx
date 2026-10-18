@@ -1,7 +1,9 @@
+import { useLanguage } from "../../i18n/language"
 import { useEffect, useRef } from "react"
 import styles from "./Hero.module.css"
 
 function Hero() {
+  const { t } = useLanguage()
     const contornoRef = useRef(null)
     const ojoIzqRef = useRef(null)
     const ojoDerRef = useRef(null)
@@ -59,16 +61,11 @@ return (
                         Frontend Developer · UI Designer
                     </p>
 
-                    <h1>
-                        Hola, soy
-                        <br />
+                    <h1>{t("Hola, soy")}<br />
                         Huilen Peña.
                     </h1>
 
-                    <p className={styles.description}>
-                        Diseño interfaces y las convierto en experiencias digitales
-                        claras y cuidadas, desde Figma hasta código.
-                    </p>
+                    <p className={styles.description}>{t("Diseño interfaces y las convierto en experiencias digitales claras y cuidadas, desde Figma hasta código.")}</p>
 
                     <div className={styles.heroActions}>
 
@@ -76,7 +73,7 @@ return (
                         className={styles.sketchButton}
                         onClick={handleScrollToProjects}
                     >
-                        <span>Ver proyectos</span>
+                        <span>{t("Ver proyectos")}</span>
 
                         <svg
                             className={styles.sketchOval}
@@ -88,9 +85,7 @@ return (
                         </svg>
                     </button>
 
-                    <a href="#about" className={styles.secondaryLink}>
-                        Sobre mí
-                        <span aria-hidden="true">→</span>
+                    <a href="#about" className={styles.secondaryLink}>{t("Sobre mí")}<span aria-hidden="true">→</span>
                     </a>
                     </div>
                 </div>

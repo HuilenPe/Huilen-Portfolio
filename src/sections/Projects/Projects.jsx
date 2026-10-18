@@ -1,27 +1,30 @@
+import { useLanguage, localize } from "../../i18n/language"
 import { Link } from "react-router-dom"
 import styles from "./Projects.module.css"
-import { projects } from "./ProjectsData.js"
-
-const cardPresentation = {
-  "aldo-pena": {
-    name: "Aldo Peña",
-    category: "Archivo artístico digital",
-    role: "Diseño UX/UI · Frontend",
-    image: "/images/aldo/aldo_bg_card.png",
-  },
-  equinox: {
-    name: "Equinox",
-    category: "Rediseño web corporativo",
-    role: "Diseño UX/UI · Frontend",
-    image: "/images/equinox/equinox-cover.png",
-  },
-}
+import { projects as sourceProjects } from "./ProjectsData.js"
 
 function Projects() {
+  const { t, language } = useLanguage()
+  const projects = localize(language, sourceProjects)
+  const cardPresentation = {
+    "aldo-pena": {
+      name: "Aldo Peña",
+      category: t("Archivo artístico digital"),
+      role: t("Diseño UX/UI · Frontend"),
+      image: "/images/aldo/aldo_bg_card.png",
+    },
+    equinox: {
+      name: "Equinox",
+      category: t("Rediseño web corporativo"),
+      role: t("Diseño UX/UI · Frontend"),
+      image: "/images/equinox/equinox-cover.png",
+    },
+  }
+
   return (
     <section id="projects" className={styles.section}>
       <div className="container">
-        <h2 className={styles.title}>Proyectos seleccionados</h2>
+        <h2 className={styles.title}>{t("Proyectos seleccionados")}</h2>
 
         <div className={styles.grid}>
           {projects
@@ -74,7 +77,7 @@ function Projects() {
                     <Link
                       to={internalHref}
                       className={styles.cardLink}
-                      aria-label={`Ver el proyecto ${name}`}
+                      aria-label={t("Ver el proyecto {name}", { name })}
                     >
                       {content}
                     </Link>
@@ -84,7 +87,7 @@ function Projects() {
                       className={styles.cardLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      aria-label={`Abrir ${name} en otra pestaña`}
+                      aria-label={t("Abrir {name} en otra pestaña", { name })}
                     >
                       {content}
                     </a>

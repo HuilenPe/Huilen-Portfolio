@@ -61,6 +61,13 @@ select {
 }
 
 /* TYPOGRAPHY */
+h1,
+h2,
+h3,
+p {
+  overflow-wrap: anywhere;
+}
+
 h1 {
   font-weight: 700;
   letter-spacing: -0.02em;
@@ -133,6 +140,7 @@ section {
   position: fixed;
   top: 1rem;
   left: 1rem;
+  max-width: calc(100% - 2rem);
   z-index: 1000;
 
   padding: 0.75rem 1rem;

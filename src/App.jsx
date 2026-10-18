@@ -1,3 +1,5 @@
+import { useLanguage } from "./i18n/language"
+import PageMetadata from "./i18n/PageMetadata"
 import { Route, Routes } from "react-router-dom"
 import Header from "./components/Layout/Header/header"
 import ScrollToHash from "./components/Navigation/ScrollToHash"
@@ -6,13 +8,13 @@ import ProjectPage from "./pages/ProjectPage/ProjectPage"
 import BackToTop from "./components/UI/BackToTop/BackToTop"
 
 function App() {
+  const { t } = useLanguage()
   return (
     <>
+      <PageMetadata />
       <ScrollToHash />
 
-      <a href="#main-content" className="skip-link">
-        Saltar al contenido principal
-      </a>
+      <a href="#main-content" className="skip-link">{t("Saltar al contenido principal")}</a>
 
       <Header />
 

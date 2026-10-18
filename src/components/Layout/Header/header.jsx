@@ -1,3 +1,5 @@
+import LanguageSwitcher from "../../../i18n/LanguageSwitcher"
+import { useLanguage } from "../../../i18n/language"
 import { useEffect, useRef, useState } from "react"
 import { useLocation, useNavigate } from "react-router-dom"
 import styles from "./header.module.css"
@@ -32,6 +34,7 @@ function LogoMark({ className = "" }) {
 }
 
 function Header() {
+  const { t, language } = useLanguage()
   const location = useLocation()
   const navigate = useNavigate()
 
@@ -99,6 +102,7 @@ function Header() {
       if (event.key !== "Tab" || !menu || !burger) return
 
       const focusableElements = [
+        ...burger.closest("header").querySelectorAll("button[aria-pressed]"),
         burger,
         ...menu.querySelectorAll("a[href], button:not([disabled])"),
       ]
@@ -296,7 +300,7 @@ function handleSectionNav(targetId) {
       window.removeEventListener("resize", updateLogoPosition)
       window.removeEventListener("scroll", updateLogoPosition)
     }
-  }, [showAboutLogo, isOpen, location.pathname])
+  }, [showAboutLogo, isOpen, location.pathname, language])
 
   return (
     <header className={styles.header}>
@@ -316,29 +320,25 @@ function handleSectionNav(targetId) {
           className={`${styles.movingLogo} ${
             showAboutLogo ? styles.logoInAbout : ""
           }`}
-          aria-label="Volver al inicio"
+          aria-label={t("Volver al inicio")}
           onClick={(event) => handleNavClick(event, "hero")}
         >
           <LogoMark />
         </a>
 
         {/* NAV DESKTOP */}
-        <nav className={styles.nav} aria-label="Menú principal">
+        <nav className={styles.nav} aria-label={t("Menú principal")}>
           <a
             href={isHome ? "#projects" : "/#projects"}
             className={styles.menuLink}
             onClick={(event) => handleNavClick(event, "projects")}
-          >
-            Proyectos
-          </a>
+          >{t("Proyectos")}</a>
 
           <a
             href={isHome ? "#about" : "/#about"}
             className={styles.menuLink}
             onClick={(event) => handleNavClick(event, "about")}
-          >
-            Sobre mí
-          </a>
+          >{t("Sobre mí")}</a>
 
           <a
             href={isHome ? "#skills" : "/#skills"}
@@ -352,10 +352,10 @@ function handleSectionNav(targetId) {
             href={isHome ? "#contact" : "/#contact"}
             className={styles.menuLink}
             onClick={(event) => handleNavClick(event, "contact")}
-          >
-            Contacto
-          </a>
+          >{t("Contacto")}</a>
         </nav>
+
+        <LanguageSwitcher />
 
         {/* BURGER */}
         <button
@@ -364,7 +364,7 @@ function handleSectionNav(targetId) {
           className={`${styles.burger} ${
             isOpen ? styles.burgerOpen : ""
           }`}
-          aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
+          aria-label={isOpen ? t("Cerrar menú") : t("Abrir menú")}
           aria-expanded={isOpen}
           aria-controls="mobile-menu"
           onClick={() => setIsOpen(!isOpen)}
@@ -380,23 +380,19 @@ function handleSectionNav(targetId) {
             ref={mobileNavRef}
             id="mobile-menu"
             className={styles.mobileNav}
-            aria-label="Menú principal mobile"
+            aria-label={t("Menú principal mobile")}
           >
             <a
               href={isHome ? "#projects" : "/#projects"}
               className={styles.burgerMenu}
               onClick={(event) => handleNavClick(event, "projects")}
-            >
-              Proyectos
-            </a>
+            >{t("Proyectos")}</a>
 
             <a
               href={isHome ? "#about" : "/#about"}
               className={styles.burgerMenu}
               onClick={(event) => handleNavClick(event, "about")}
-            >
-              Sobre mí
-            </a>
+            >{t("Sobre mí")}</a>
 
             <a
               href={isHome ? "#skills" : "/#skills"}
@@ -410,9 +406,7 @@ function handleSectionNav(targetId) {
               href={isHome ? "#contact" : "/#contact"}
               className={styles.burgerMenu}
               onClick={(event) => handleNavClick(event, "contact")}
-            >
-              Contacto
-            </a>
+            >{t("Contacto")}</a>
 
             <div className={styles.mobileSignature}>
               <LogoMark />

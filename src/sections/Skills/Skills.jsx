@@ -1,11 +1,13 @@
+import { useLanguage } from "../../i18n/language"
 import styles from "./Skills.module.css"
 
 function Skills() {
+  const { t } = useLanguage()
   const skillGroups = [
     {
       number: "01",
       title: "Frontend",
-      description: "Construcción de interfaces responsive y orientadas a producto.",
+      description: t("Construcción de interfaces responsive y orientadas a producto."),
       skills: [
         "React",
         "JavaScript",
@@ -17,7 +19,7 @@ function Skills() {
     {
       number: "02",
       title: "UI / UX",
-      description: "Diseño de interfaces claras, consistentes y fáciles de usar.",
+      description: t("Diseño de interfaces claras, consistentes y fáciles de usar."),
       skills: [
         "Figma",
         "Design Systems",
@@ -29,7 +31,7 @@ function Skills() {
     {
       number: "03",
       title: "Workflow",
-      description: "Herramientas y metodologías para trabajar de forma organizada.",
+      description: t("Herramientas y metodologías para trabajar de forma organizada."),
       skills: [
         "Git",
         "GitHub",
@@ -46,16 +48,9 @@ function Skills() {
           <p className={styles.label}>Skills</p>
 
           <div className={styles.intro}>
-            <h2>
-              Diseño, estructura
-              <br />
-              y código.
-            </h2>
+            <h2>{t("Diseño, estructura")}<br />{t("y código.")}</h2>
 
-            <p>
-              Combino pensamiento visual, estructura y código para construir
-              interfaces claras y consistentes.
-            </p>
+            <p>{t("Combino pensamiento visual, estructura y código para construir interfaces claras y consistentes.")}</p>
           </div>
         </header>
 

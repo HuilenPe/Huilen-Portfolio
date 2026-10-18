@@ -1,18 +1,18 @@
+import { useLanguage } from "../../i18n/language"
 import styles from "./Contact.module.css"
 import { FiMail, FiGithub, FiLinkedin } from "react-icons/fi"
 
 function Contact() {
+  const { t } = useLanguage()
   return (
     <section id="contact" className={styles.contact}>
       <div className="container">
         <div className={styles.content}>
-          <p className={styles.label}>Contacto</p>
+          <p className={styles.label}>{t("Contacto")}</p>
 
-          <h2>¿Creamos algo?</h2>
+          <h2>{t("¿Creamos algo?")}</h2>
 
-          <p className={styles.description}>
-            Estoy abierta a oportunidades en frontend, UX/UI y equipos de producto donde diseño e implementación formen parte del mismo proceso.
-          </p>
+          <p className={styles.description}>{t("Estoy abierta a oportunidades en frontend, UX/UI y equipos de producto donde diseño e implementación formen parte del mismo proceso.")}</p>
 
           <div className={styles.links}>
             <a href="mailto:huilenpe@gmail.com" className={styles.mainLink}>
