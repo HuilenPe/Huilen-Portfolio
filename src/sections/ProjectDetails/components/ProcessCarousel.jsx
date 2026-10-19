@@ -1,8 +1,10 @@
+import { useTranslation } from "react-i18next"
 import { useEffect, useRef, useState } from "react"
 import styles from "../ProjectDetails.module.css"
 import ProcessPhase from "./ProcessPhase"
 
 function ProcessCarousel({ process, projectTitle }) {
+  const { t } = useTranslation()
   const processRef = useRef(null)
   const [activeSlide, setActiveSlide] = useState(0)
 
@@ -12,18 +14,18 @@ function ProcessCarousel({ process, projectTitle }) {
       phase: {
         area: "UX/UI",
       },
-      alt: "Arquitectura de información del archivo artístico digital",
+      alt: t("carousel.archiveArchitectureAlt"),
     },
     {
       ...process.interaction,
-      alt: "Diseño de interacción de la sección Obras",
+      alt: t("carousel.worksInteractionAlt"),
     },
     {
       ...process.responsive,
       phase: {
         area: "Frontend",
       },
-      alt: `Implementación responsive de ${projectTitle}`,
+      alt: t("carousel.responsiveAlt", { name: projectTitle }),
     },
   ].filter((slide) => slide.title)
 
@@ -106,8 +108,8 @@ function ProcessCarousel({ process, projectTitle }) {
   return (
     <section
       className={styles.carousel}
-      aria-roledescription="carrusel"
-      aria-label={`Proceso de ${projectTitle}`}
+      aria-roledescription={t("carousel.role")}
+      aria-label={t("carousel.processLabel", { name: projectTitle })}
     >
       <div
         ref={processRef}
@@ -118,11 +120,11 @@ function ProcessCarousel({ process, projectTitle }) {
       >
         {slides.map((slide, index) => (
           <div
-            key={slide.title}
+            key={index}
             className={styles.processBlock}
             role="group"
-            aria-roledescription="diapositiva"
-            aria-label={`${index + 1} de ${slides.length}: ${slide.title}`}
+            aria-roledescription={t("carousel.slide")}
+            aria-label={t("carousel.itemLabel", { index: index + 1, total: slides.length, title: slide.title })}
           >
             <div className={styles.processText}>
               {slide.phase && (
@@ -150,13 +152,13 @@ function ProcessCarousel({ process, projectTitle }) {
               <div className={styles.responsiveImages}>
                 <img
                   src={slide.mobileImg}
-                  alt={`Vista mobile de ${projectTitle}`}
+                  alt={t("caseUI.mobileAlt", { name: projectTitle })}
                   className={`${styles.processImage} ${styles.responsiveMobileImage}`}
                 />
 
                 <img
                   src={slide.desktopImg}
-                  alt={`Vista desktop de ${projectTitle}`}
+                  alt={t("caseUI.desktopAlt", { name: projectTitle })}
                   className={`${styles.processImage} ${styles.responsiveDesktopImage}`}
                 />
               </div>
@@ -176,14 +178,17 @@ function ProcessCarousel({ process, projectTitle }) {
         aria-live="polite"
         aria-atomic="true"
       >
-        Paso {activeSlide + 1} de {slides.length}:{" "}
-        {slides[activeSlide]?.title}
+        {t("carousel.stepAnnouncement", {
+          index: activeSlide + 1,
+          total: slides.length,
+          title: slides[activeSlide]?.title ?? "",
+        })}
       </p>
 
       <div className={styles.processDots}>
         {slides.map((slide, index) => (
           <button
-            key={slide.title}
+            key={index}
             type="button"
             className={`${styles.processDot} ${
               activeSlide === index
@@ -191,7 +196,7 @@ function ProcessCarousel({ process, projectTitle }) {
                 : ""
             }`}
             onClick={() => scrollToSlide(index)}
-            aria-label={`Ir al paso ${index + 1}: ${slide.title}`}
+            aria-label={t("carousel.goToStep", { index: index + 1, title: slide.title })}
             aria-current={
               activeSlide === index ? "step" : undefined
             }

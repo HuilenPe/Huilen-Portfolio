@@ -1,7 +1,9 @@
+import { useTranslation } from "react-i18next"
 import { useEffect, useRef, useState } from "react"
 import styles from "../ProjectDetails.module.css"
 
 function BookingFlow({ bookingFlow }) {
+  const { t } = useTranslation()
   const bookingRef = useRef(null)
   const [activeSlide, setActiveSlide] = useState(0)
 
@@ -86,7 +88,7 @@ function BookingFlow({ bookingFlow }) {
   return (
     <section
       className={styles.bookingFlow}
-      aria-roledescription="carrusel"
+      aria-roledescription={t("carousel.role")}
       aria-label={bookingFlow.title}
     >
       <div className={styles.processText}>
@@ -107,11 +109,11 @@ function BookingFlow({ bookingFlow }) {
       >
         {screens.map((screen, index) => (
           <article
-            key={screen.title}
+            key={index}
             className={styles.bookingScreen}
             role="group"
-            aria-roledescription="diapositiva"
-            aria-label={`${index + 1} de ${screens.length}: ${screen.title}`}
+            aria-roledescription={t("carousel.slide")}
+            aria-label={t("carousel.itemLabel", { index: index + 1, total: screens.length, title: screen.title })}
           >
             <img
               src={screen.img}
@@ -131,14 +133,17 @@ function BookingFlow({ bookingFlow }) {
         aria-live="polite"
         aria-atomic="true"
       >
-        Paso {activeSlide + 1} de {screens.length}:{" "}
-        {screens[activeSlide]?.title}
+        {t("carousel.stepAnnouncement", {
+          index: activeSlide + 1,
+          total: screens.length,
+          title: screens[activeSlide]?.title ?? "",
+        })}
       </p>
 
       <div className={styles.bookingDots}>
         {screens.map((screen, index) => (
           <button
-            key={screen.title}
+            key={index}
             type="button"
             className={`${styles.bookingDot} ${
               activeSlide === index
@@ -146,7 +151,7 @@ function BookingFlow({ bookingFlow }) {
                 : ""
             }`}
             onClick={() => scrollToSlide(index)}
-            aria-label={`Ir a ${screen.title}`}
+            aria-label={t("carousel.goToScreen", { title: screen.title })}
             aria-current={
               activeSlide === index ? "step" : undefined
             }

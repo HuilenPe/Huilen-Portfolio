@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next"
 import { Route, Routes } from "react-router-dom"
 import Header from "./components/Layout/Header/header"
 import ScrollToHash from "./components/Navigation/ScrollToHash"
@@ -6,13 +7,12 @@ import ProjectPage from "./pages/ProjectPage/ProjectPage"
 import BackToTop from "./components/UI/BackToTop/BackToTop"
 
 function App() {
+  const { t } = useTranslation()
   return (
     <>
       <ScrollToHash />
 
-      <a href="#main-content" className="skip-link">
-        Saltar al contenido principal
-      </a>
+      <a href="#main-content" className="skip-link">{t("common.skipToContent")}</a>
 
       <Header />
 

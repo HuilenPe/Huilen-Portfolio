@@ -1,27 +1,28 @@
 import { Link } from "react-router-dom"
+import { useTranslation } from "react-i18next"
 import styles from "./Projects.module.css"
 import { projects } from "./ProjectsData.js"
 
 const cardPresentation = {
   "aldo-pena": {
     name: "Aldo Peña",
-    category: "Archivo artístico digital",
-    role: "Diseño UX/UI · Frontend",
+    categoryKey: "projects.cards.aldo.category",
     image: "/images/aldo/aldo_bg_card.png",
   },
   equinox: {
     name: "Equinox",
-    category: "Rediseño web corporativo",
-    role: "Diseño UX/UI · Frontend",
+    categoryKey: "projects.cards.equinox.category",
     image: "/images/equinox/equinox-cover.png",
   },
 }
 
 function Projects() {
+  const { t } = useTranslation()
+
   return (
     <section id="projects" className={styles.section}>
       <div className="container">
-        <h2 className={styles.title}>Proyectos seleccionados</h2>
+        <h2 className={styles.title}>{t("projects.title")}</h2>
 
         <div className={styles.grid}>
           {projects
@@ -57,13 +58,14 @@ function Projects() {
                     </div>
 
                     <p className={styles.category}>
-                      {presentation?.category || project.description}
+                      {presentation
+                        ? t(presentation.categoryKey)
+                        : project.description}
                     </p>
 
-                    {presentation?.role && (
-                      <p className={styles.role}>{presentation.role}</p>
+                    {presentation && (
+                      <p className={styles.role}>{t("projects.role")}</p>
                     )}
-
                   </div>
                 </>
               )
@@ -74,7 +76,7 @@ function Projects() {
                     <Link
                       to={internalHref}
                       className={styles.cardLink}
-                      aria-label={`Ver el proyecto ${name}`}
+                      aria-label={t("projects.viewProject", { name })}
                     >
                       {content}
                     </Link>
@@ -84,7 +86,7 @@ function Projects() {
                       className={styles.cardLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      aria-label={`Abrir ${name} en otra pestaña`}
+                      aria-label={t("projects.openProject", { name })}
                     >
                       {content}
                     </a>

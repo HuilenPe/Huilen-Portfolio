@@ -48,5 +48,58 @@
     "title": "¿Creamos algo?",
     "description": "Estoy abierta a oportunidades en frontend, UX/UI y equipos de producto donde diseño e implementación formen parte del mismo proceso.",
     "emailLabel": "Enviar correo electrónico"
+  },
+  "projects": {
+    "title": "Proyectos seleccionados",
+    "role": "Diseño UX/UI · Frontend",
+    "viewProject": "Ver el proyecto {{name}}",
+    "openProject": "Abrir {{name}} en otra pestaña",
+    "cards": {
+      "aldo": {
+        "category": "Archivo artístico digital"
+      },
+      "equinox": {
+        "category": "Rediseño web corporativo"
+      }
+    }
+  },
+  "caseUI": {
+    "notFoundTitle": "Proyecto no encontrado",
+    "notFoundDescription": "El proyecto que buscas no está disponible.",
+    "back": "Volver a proyectos",
+    "backArrow": "← Volver a proyectos",
+    "digitalProject": "Proyecto digital",
+    "role": "Diseño UX/UI · Desarrollo frontend",
+    "aldoSummary": "Diseño y desarrollo de un archivo digital que reúne la obra y la trayectoria de Aldo Peña.",
+    "equinoxSummary": "Rediseño e implementación de la web corporativa de Equinox, desde las primeras propuestas en Figma hasta su publicación.",
+    "aldoPracticeAlt": "Página Práctica de Aldo Peña: diseño y comunicación visual, curaduría y diseño expositivo",
+    "visitWebsite": "Visitar web",
+    "viewCode": "Ver código",
+    "viewPrototype": "Ver prototipo",
+    "visitWebsiteLabel": "Visitar la web de {{name}} (abre en otra pestaña)",
+    "desktopAlt": "Vista de escritorio de {{name}}",
+    "mobileAlt": "Vista móvil de {{name}}",
+    "context": "Contexto",
+    "goal": "Objetivo",
+    "keyDecisions": "Decisiones clave",
+    "responsiveLabel": "Diseño e implementación responsive",
+    "responsiveTitle": "Una interfaz adaptada a escritorio y móvil",
+    "responsiveDescription": "Diseñé la interfaz en Figma y la implementé en React. La adaptación a móvil reorganiza la navegación, el contenido y las llamadas a la acción para mantener una lectura clara en pantallas pequeñas.",
+    "desktop": "Escritorio",
+    "mobile": "Móvil",
+    "outcome": "Resultado",
+    "learnings": "Aprendizajes"
+  },
+  "carousel": {
+    "role": "carrusel",
+    "slide": "diapositiva",
+    "itemLabel": "{{index}} de {{total}}: {{title}}",
+    "stepAnnouncement": "Paso {{index}} de {{total}}: {{title}}",
+    "processLabel": "Proceso de {{name}}",
+    "goToStep": "Ir al paso {{index}}: {{title}}",
+    "goToScreen": "Ir a {{title}}",
+    "archiveArchitectureAlt": "Arquitectura de información del archivo artístico digital",
+    "worksInteractionAlt": "Diseño de interacción de la sección Obras",
+    "responsiveAlt": "Implementación responsive de {{name}}"
   }
 }

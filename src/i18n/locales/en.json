@@ -48,5 +48,147 @@
     "title": "Let’s create something.",
     "description": "I’m open to opportunities in frontend, UX/UI and product teams where design and implementation are part of the same process.",
     "emailLabel": "Send an email"
+  },
+  "projects": {
+    "title": "Selected projects",
+    "role": "UX/UI Design · Frontend",
+    "viewProject": "View the {{name}} project",
+    "openProject": "Open {{name}} in a new tab",
+    "cards": {
+      "aldo": {
+        "category": "Digital artist archive"
+      },
+      "equinox": {
+        "category": "Corporate website redesign"
+      }
+    }
+  },
+  "caseStudies": {
+    "aldo-pena": {
+      "title": "Aldo Peña — Digital Artist Archive",
+      "description": "UX/UI design and frontend development of a digital artist archive to preserve, organise and explore artworks, career history and documentation.",
+      "details": {
+        "hero": {
+          "title": "Aldo Peña — Digital Artist Archive",
+          "subtitle": "UX/UI design and frontend development of a digital platform to preserve, organise and make Aldo Peña’s work, career and legacy accessible."
+        },
+        "origin": {
+          "eyebrow": "How the project began",
+          "title": "From a website showcasing artworks to a digital archive preserving an artist’s career.",
+          "content": "The initiative began as a digital space to bring together and showcase Aldo Peña’s work. Reviewing the volume and variety of material — artworks, career history, teaching, multidisciplinary practice and historical documentation — revealed a broader challenge: designing an archive that could organise, connect and make an extensive career accessible, beyond a simple gallery."
+        },
+        "context": {
+          "problema": "The archive brings together very different types of content: artworks, documentation, career history, professional practice and historical material. The main UX challenge was to structure this information so people could explore it without excessive fragmentation or losing the connections between content.",
+          "objetivo": "Design a clear, scalable digital archive where works can be explored by category and each piece retains its context through information, images and related records. The structure needed to accommodate new material over time without rethinking the experience.",
+          "usuario": [
+            "People interested in the artist’s work and career",
+            "Researchers and people working in the arts and cultural sector",
+            "People who need to explore a large archive while keeping their place in the navigation"
+          ]
+        },
+        "approach": {
+          "decisiones": [
+            "Rethink a website originally intended to showcase artworks as a digital archive designed to grow",
+            "Organise an extensive career through clear, progressively detailed information architecture",
+            "Connect artworks, biography, multidisciplinary practice and archival material within one coherent experience",
+            "Enable artwork exploration through categories, filters and sorting",
+            "Keep each piece in context through images, metadata and related records",
+            "Build a structure that can gradually accommodate new material"
+          ]
+        },
+        "process": {
+          "sitemap": {
+            "title": "Architecture for an extensive career",
+            "description": "The first decision was to organise the content into broad areas within a shared experience: Biography, Works, Multidisciplinary Practice, and Legacy and Archive. This avoids isolating every type of material on a separate page and lets visitors move from an overview to increasingly specific content."
+          },
+          "interaction": {
+            "title": "Explore the work while keeping its context",
+            "description": "The works archive was designed as an exploration tool, rather than a static gallery. Visitors can browse pieces by category, filters and sorting criteria, while progressive loading accommodates a growing collection without overwhelming the interface."
+          },
+          "responsive": {
+            "title": "From design to a system ready to grow",
+            "description": "The interface was built in React with a responsive layout for different screen sizes. The project structure is ready to integrate Supabase as a data layer, separating content from presentation and supporting relationships between works, categories, images and exhibitions. This integration is currently in development."
+          }
+        },
+        "artworkExperience": {
+          "eyebrow": "Artwork detail",
+          "title": "Explore a piece without leaving the archive",
+          "description": "Artwork details keep visitors within the archive while they read about a piece. Previous and next navigation lets them move between works without closing the modal. The gallery brings together multiple photographic records, while metadata provides context on technique, dimensions, collection and associated exhibitions.",
+          "items": [
+            "Continuous navigation",
+            "Image gallery",
+            "Metadata",
+            "Keyboard + swipe"
+          ],
+          "alt": "Artwork details within the digital artist archive"
+        },
+        "result": {
+          "title": "An archive ready to grow",
+          "content": "The project evolved into a working digital artist archive, bringing together artworks, career history and documentation within one experience. Its content architecture can gradually accommodate new pieces, images and records without reworking the interface or navigation."
+        },
+        "learnings": [
+          "Designing for large volumes of content means thinking about relationships and architecture before screens.",
+          "Separating data, logic and presentation allows an interface to evolve independently of the archive’s final size.",
+          "In a cultural archive, interaction should support exploration without visually competing with the artwork."
+        ]
+      }
+    },
+    "equinox": {
+      "title": "Equinox — Corporate Website Redesign",
+      "description": "UX/UI design and frontend development of the Equinox corporate website, from Figma designs to React implementation.",
+      "details": {
+        "hero": {
+          "title": "Equinox — Corporate Website Redesign",
+          "subtitle": "Redesign and frontend implementation of a B2B website presenting Equinox’s services and helping visitors contact the company."
+        },
+        "context": {
+          "problema": "The brief was to replace Equinox’s previous website and reorganise the presentation of its corporate services.",
+          "objetivo": "Design and build a responsive website with a clear hierarchy between the company introduction, its services and contact options."
+        },
+        "result": {
+          "title": "Corporate website design and implementation",
+          "content": "My work covered UX/UI design in Figma and frontend development in React for the Home, About and Contact pages. The website is live."
+        }
+      }
+    }
+  },
+  "caseUI": {
+    "notFoundTitle": "Project not found",
+    "notFoundDescription": "The project you’re looking for is not available.",
+    "back": "Back to projects",
+    "backArrow": "← Back to projects",
+    "digitalProject": "Digital project",
+    "role": "UX/UI Design · Frontend Development",
+    "aldoSummary": "Design and development of a digital archive bringing together Aldo Peña’s work and career.",
+    "equinoxSummary": "Redesign and development of the Equinox corporate website, from the first Figma concepts to launch.",
+    "aldoPracticeAlt": "Aldo Peña’s Practice page: visual communication, curatorial work and exhibition design",
+    "visitWebsite": "Visit website",
+    "viewCode": "View code",
+    "viewPrototype": "View prototype",
+    "visitWebsiteLabel": "Visit the {{name}} website (opens in a new tab)",
+    "desktopAlt": "Desktop view of {{name}}",
+    "mobileAlt": "Mobile view of {{name}}",
+    "context": "Context",
+    "goal": "Goal",
+    "keyDecisions": "Key decisions",
+    "responsiveLabel": "Responsive design and development",
+    "responsiveTitle": "An interface for desktop and mobile",
+    "responsiveDescription": "I designed the interface in Figma and built it in React. On mobile, navigation, content and calls to action are reorganised to keep the experience clear on smaller screens.",
+    "desktop": "Desktop",
+    "mobile": "Mobile",
+    "outcome": "Outcome",
+    "learnings": "What I learned"
+  },
+  "carousel": {
+    "role": "carousel",
+    "slide": "slide",
+    "itemLabel": "{{index}} of {{total}}: {{title}}",
+    "stepAnnouncement": "Step {{index}} of {{total}}: {{title}}",
+    "processLabel": "{{name}} design process",
+    "goToStep": "Go to step {{index}}: {{title}}",
+    "goToScreen": "Go to {{title}}",
+    "archiveArchitectureAlt": "Information architecture of the digital artist archive",
+    "worksInteractionAlt": "Interaction design for the Works section",
+    "responsiveAlt": "Responsive implementation of {{name}}"
   }
 }

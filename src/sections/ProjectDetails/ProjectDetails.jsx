@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next"
 import { useEffect, useRef } from "react"
 import styles from "./ProjectDetails.module.css"
 import Button from "../../components/UI/Button/button"
@@ -5,6 +6,7 @@ import ProcessCarousel from "./components/ProcessCarousel"
 import BookingFlow from "./components/BookingFlow"
 
 function ProjectDetails({ project }) {
+  const { t } = useTranslation()
   const titleRef = useRef(null)
 
   useEffect(() => {
@@ -16,17 +18,17 @@ function ProjectDetails({ project }) {
   const covers = {
     "aldo-pena": {
       title: "Aldo Peña",
-      category: "Archivo artístico digital",
+      category: t("projects.cards.aldo.category"),
       description:
-        "Diseño y desarrollo de un archivo digital que reúne la obra y la trayectoria de Aldo Peña.",
+        t("caseUI.aldoSummary"),
       image: "/images/aldo/aldo-practice-desktop.png",
       url: "https://xn--aldopea-9za.com/",
     },
     equinox: {
       title: "Equinox",
-      category: "Rediseño web corporativo",
+      category: t("projects.cards.equinox.category"),
       description:
-        "Rediseño e implementación de la web corporativa de Equinox, desde las primeras propuestas en Figma hasta su publicación.",
+        t("caseUI.equinoxSummary"),
       image: "/images/equinox/equinox-cover.png",
       mobile: "/images/equinox/equinox-mobile.png",
       url: project.demo,
@@ -35,7 +37,7 @@ function ProjectDetails({ project }) {
 
   const cover = covers[project.id] || {
     title: project.details.hero?.title || project.title,
-    category: "Proyecto digital",
+    category: t("caseUI.digitalProject"),
     description: project.details.hero?.subtitle,
     image: project.details.hero?.mockup,
     url: project.demo,
@@ -47,9 +49,7 @@ function ProjectDetails({ project }) {
       <div className="container">
         <div id={project.id} className={styles.details}>
             {/* BACK */}
-            <a href="/#projects" className={styles.backLabel}>
-              ← Volver a proyectos
-            </a>
+            <a href="/#projects" className={styles.backLabel}>{t("caseUI.backArrow")} </a>
 
             {/* HERO */}
             <header className={styles.caseHeader}>
@@ -69,7 +69,7 @@ function ProjectDetails({ project }) {
                   <p>{cover.description}</p>
                   <p className={styles.caseRole}>
                     {covers[project.id]
-                      ? "Diseño UX/UI · Desarrollo frontend"
+                      ? t("caseUI.role")
                       : project.details.hero?.tags?.join(" · ")}
                   </p>
 
@@ -77,22 +77,17 @@ function ProjectDetails({ project }) {
                     {cover.url && (
                       <a
                         href={cover.url}
-                        aria-label={`Visitar la web de ${cover.title} (abre en otra pestaña)`}
+                        aria-label={t("caseUI.visitWebsiteLabel", { name: cover.title })}
                         target="_blank"
                         rel="noopener noreferrer"
-                      >
-                        Visitar web <span aria-hidden="true">↗</span>
+                      >{t("caseUI.visitWebsite")} <span aria-hidden="true">↗</span>
                       </a>
                     )}
                     {project.github && (
-                      <Button variant="link" href={project.github}>
-                        Ver código
-                      </Button>
+                      <Button variant="link" href={project.github}>{t("caseUI.viewCode")} </Button>
                     )}
                     {project.figma && (
-                      <Button variant="link" href={project.figma}>
-                        Ver prototipo
-                      </Button>
+                      <Button variant="link" href={project.figma}>{t("caseUI.viewPrototype")} </Button>
                     )}
                   </div>
                 </div>
@@ -105,8 +100,8 @@ function ProjectDetails({ project }) {
                       src={cover.image}
                       alt={
                         project.id === "aldo-pena"
-                          ? "Página Práctica de Aldo Peña: diseño y comunicación visual, curaduría y diseño expositivo"
-                          : `Vista de escritorio de ${cover.title}`
+                          ? t("caseUI.aldoPracticeAlt")
+                          : t("caseUI.desktopAlt", { name: cover.title })
                       }
                       decoding="async"
                     />
@@ -116,7 +111,7 @@ function ProjectDetails({ project }) {
                     <figure className={styles.casePhone}>
                       <img
                         src={cover.mobile}
-                        alt={`Vista móvil de ${cover.title}`}
+                        alt={t("caseUI.mobileAlt", { name: cover.title })}
                         decoding="async"
                       />
                     </figure>
@@ -143,12 +138,12 @@ function ProjectDetails({ project }) {
             {project.details.context && (
               <div className={styles.gridTwo}>
                 <div>
-                  <h3>Contexto</h3>
+                  <h3>{t("caseUI.context")} </h3>
                   <p>{project.details.context.problema}</p>
                 </div>
 
                 <div>
-                  <h3>Objetivo</h3>
+                  <h3>{t("caseUI.goal")} </h3>
                   <p>{project.details.context.objetivo}</p>
 
                   {project.details.context.usuario?.length > 0 && (
@@ -165,7 +160,7 @@ function ProjectDetails({ project }) {
             {/* KEY DECISIONS */}
             {project.details.approach?.decisiones?.length > 0 && (
               <div className={styles.detailBlock}>
-                <h3>Decisiones clave</h3>
+                <h3>{t("caseUI.keyDecisions")} </h3>
 
                 <ul>
                   {project.details.approach.decisiones.map((decision) => (
@@ -314,35 +309,28 @@ function ProjectDetails({ project }) {
             {project.id === "equinox" && (
               <div className={styles.processBlock}>
                 <div className={styles.processText}>
-                  <span className={styles.processEyebrow}>
-                    Diseño e implementación responsive
-                  </span>
-                  <h2>Una interfaz adaptada a escritorio y móvil</h2>
-                  <p>
-                    Diseñé la interfaz en Figma y la implementé en React.
-                    La adaptación a móvil reorganiza la navegación, el
-                    contenido y las llamadas a la acción para mantener
-                    una lectura clara en pantallas pequeñas.
-                  </p>
+                  <span className={styles.processEyebrow}>{t("caseUI.responsiveLabel")} </span>
+                  <h2>{t("caseUI.responsiveTitle")} </h2>
+                  <p>{t("caseUI.responsiveDescription")}</p>
                 </div>
 
                 <div className={styles.equinoxShowcase}>
                   <figure className={styles.equinoxDesktop}>
                     <img
                       src="/images/equinox/equinox-cover.png"
-                      alt="Web de Equinox en escritorio"
+                      alt={t("caseUI.desktopAlt", { name: "Equinox" })}
                       loading="lazy"
                     />
-                    <figcaption>Escritorio</figcaption>
+                    <figcaption>{t("caseUI.desktop")} </figcaption>
                   </figure>
 
                   <figure className={styles.equinoxMobile}>
                     <img
                       src="/images/equinox/equinox-mobile.png"
-                      alt="Web de Equinox en móvil"
+                      alt={t("caseUI.mobileAlt", { name: "Equinox" })}
                       loading="lazy"
                     />
-                    <figcaption>Móvil</figcaption>
+                    <figcaption>{t("caseUI.mobile")} </figcaption>
                   </figure>
                 </div>
               </div>
@@ -354,7 +342,7 @@ function ProjectDetails({ project }) {
               <div className={styles.projectClosing}>
                 {project.details.result && (
                   <div className={styles.closingResult}>
-                    <span className={styles.processEyebrow}>Resultado</span>
+                    <span className={styles.processEyebrow}>{t("caseUI.outcome")} </span>
                     <h3>{project.details.result.title}</h3>
                     <p>{project.details.result.content}</p>
                   </div>
@@ -362,7 +350,7 @@ function ProjectDetails({ project }) {
 
                 {project.details.learnings?.length > 0 && (
                   <div className={styles.closingLearnings}>
-                    <span className={styles.processEyebrow}>Aprendizajes</span>
+                    <span className={styles.processEyebrow}>{t("caseUI.learnings")} </span>
 
                     <ul>
                       {project.details.learnings.map((learning) => (

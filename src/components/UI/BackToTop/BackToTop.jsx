@@ -1,8 +1,10 @@
+import { useTranslation } from "react-i18next"
 import { useEffect, useState } from "react"
 import { FiArrowUp } from "react-icons/fi"
 import styles from "./BackToTop.module.css"
 
 function BackToTop() {
+  const { t } = useTranslation()
   const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
@@ -39,7 +41,7 @@ function BackToTop() {
         isVisible ? styles.visible : ""
       }`}
       onClick={handleClick}
-      aria-label="Volver arriba"
+      aria-label={t("common.backToTop")}
       aria-hidden={!isVisible}
       tabIndex={isVisible ? 0 : -1}
     >
