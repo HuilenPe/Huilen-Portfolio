@@ -107,13 +107,13 @@
           },
           "responsive": {
             "title": "From design to a system ready to grow",
-            "description": "The interface was built in React with a responsive layout for different screen sizes. The project structure is ready to integrate Supabase as a data layer, separating content from presentation and supporting relationships between works, categories, images and exhibitions. This integration is currently in development."
+            "description": "The interface was built in React and adapts to different screen sizes. Data services query Supabase to retrieve artworks, categories, images and associated exhibitions. Images are served from Supabase Storage, and multidisciplinary practice has its own queries for projects and documentation."
           }
         },
         "artworkExperience": {
           "eyebrow": "Artwork detail",
           "title": "Explore a piece without leaving the archive",
-          "description": "Artwork details keep visitors within the archive while they read about a piece. Previous and next navigation lets them move between works without closing the modal. The gallery brings together multiple photographic records, while metadata provides context on technique, dimensions, collection and associated exhibitions.",
+          "description": "Each artwork can be explored in a modal within the archive. Visitors can browse images, move to the previous or next artwork, and consult the available metadata. The selected artwork is reflected in the URL so a direct link to that piece can be shared.",
           "items": [
             "Continuous navigation",
             "Image gallery",
@@ -124,7 +124,7 @@
         },
         "result": {
           "title": "An archive ready to grow",
-          "content": "The project evolved into a working digital artist archive, bringing together artworks, career history and documentation within one experience. Its content architecture can gradually accommodate new pieces, images and records without reworking the interface or navigation."
+          "content": "The implementation includes an artwork archive with categories and sorting, artwork details with images and metadata, and a multidisciplinary practice section with projects and associated documentation. Artwork and practice queries are connected to Supabase. The archive remains in development: the Legacy and Archive section currently displays a coming-soon page."
         },
         "learnings": [
           "Designing for large volumes of content means thinking about relationships and architecture before screens.",

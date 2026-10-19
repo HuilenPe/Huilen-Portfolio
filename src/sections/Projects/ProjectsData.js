@@ -82,7 +82,7 @@ export const projects = [
         responsive: {
           title: "Del diseño a un sistema preparado para crecer",
           description:
-            "La interfaz se desarrolló en React con una arquitectura responsive adaptada a distintos tamaños de pantalla. La estructura del proyecto está preparada para integrar Supabase como capa de datos, separando contenido y presentación y facilitando la relación entre obras, categorías, imágenes y exposiciones. Actualmente esta integración se encuentra en desarrollo.",
+            "La interfaz se desarrolló en React y se adapta a distintos tamaños de pantalla. Los servicios de datos consultan Supabase para recuperar obras, categorías, imágenes y exposiciones asociadas. Las imágenes se sirven desde Supabase Storage, y la práctica multidisciplinar dispone de consultas propias para sus proyectos y documentación.",
           mobileImg: "/images/aldo/aldo-responsive-mobile.webp",
           desktopImg: "/images/aldo/aldo-responsive-desktop.webp",
 
@@ -100,7 +100,7 @@ export const projects = [
         eyebrow: "Detalle de obra",
         title: "Consultar una pieza sin abandonar el recorrido",
         description:
-          "El detalle de cada obra mantiene al usuario dentro del archivo mientras consulta su información. La navegación anterior y siguiente permite avanzar entre piezas sin cerrar el modal, mientras la galería reúne múltiples registros fotográficos y los metadatos aportan contexto sobre técnica, dimensiones, colección y exposiciones asociadas.",
+          "El detalle de cada obra se consulta en un modal dentro del archivo. Permite recorrer imágenes y avanzar a la obra anterior o siguiente, además de consultar los metadatos disponibles. La obra seleccionada queda reflejada en la URL para poder compartir un enlace directo a esa pieza.",
         items: [
           "Navegación continua",
           "Galería de imágenes",
@@ -114,7 +114,7 @@ export const projects = [
       result: {
         title: "Un archivo preparado para crecer",
         content:
-          "El proyecto evolucionó hasta convertirse en un archivo artístico digital funcional, donde obra, trayectoria y documentación conviven dentro de una misma experiencia. La arquitectura de contenidos está preparada para incorporar progresivamente nuevas piezas, imágenes y registros sin replantear la interfaz ni la navegación.",
+          "La implementación incluye un archivo de obras con categorías y ordenación, fichas con imágenes y metadatos, y una sección de práctica multidisciplinar con proyectos y documentación asociada. Las consultas de obras y práctica están conectadas a Supabase. El archivo continúa en desarrollo: la sección Legado y Archivo todavía muestra una pantalla de próxima disponibilidad.",
       },
 
       learnings: [
