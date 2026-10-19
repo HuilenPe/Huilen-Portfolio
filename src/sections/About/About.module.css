@@ -200,7 +200,7 @@
 
   .layout {
     display: grid;
-    grid-template-columns: 45% 55%;
+    grid-template-columns: minmax(0, 0.45fr) minmax(0, 0.55fr);
     align-items: center;
     gap: 3rem;
   }

@@ -396,3 +396,62 @@
     height: auto;
   }
 }
+
+/* TRIAL — ORGANIC PRIMARY CTA */
+.sketchButton {
+  isolation: isolate;
+}
+
+.sketchButton .sketchOval {
+  display: none;
+}
+
+.sketchButton::before {
+  content: "";
+  position: absolute;
+  inset: 0.05rem 0.15rem;
+  z-index: -1;
+  pointer-events: none;
+
+  border: 1.4px solid currentColor;
+  border-radius: 38% 62% 57% 43% / 61% 43% 57% 39%;
+  opacity: 0.65;
+  transform: rotate(-2deg);
+}
+
+.sketchButton:focus-visible::before {
+  background: rgba(0, 0, 0, 0.035);
+  opacity: 0.85;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .sketchButton::before {
+    transition:
+      transform 0.3s ease,
+      border-radius 0.3s ease,
+      background-color 0.3s ease,
+      opacity 0.3s ease;
+  }
+
+  .sketchButton:hover::before {
+    background: rgba(0, 0, 0, 0.035);
+    border-radius: 59% 41% 39% 61% / 42% 59% 41% 58%;
+    transform: rotate(2deg);
+    opacity: 0.85;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sketchButton::before {
+    transition: none;
+  }
+
+  .sketchButton:hover::before {
+    transform: rotate(-2deg);
+  }
+}
+
+/* Keep the organic CTA inside the content margins */
+.heroActions .sketchButton {
+  margin-left: 0;
+}
