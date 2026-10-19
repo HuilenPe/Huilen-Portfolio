@@ -100,6 +100,8 @@
     "goToScreen": "Ir a {{title}}",
     "archiveArchitectureAlt": "Arquitectura de información del archivo artístico digital",
     "worksInteractionAlt": "Diseño de interacción de la sección Obras",
-    "responsiveAlt": "Implementación responsive de {{name}}"
+    "responsiveAlt": "Implementación responsive de {{name}}",
+    "dataModelAlt": "Modelo de datos: artworks se conecta con categories, artwork_images y artwork_exhibitions.",
+    "dataModelCaption": "Modelo de datos del archivo de obras. Selección de tablas del esquema implementado. Abrir imagen para ampliar."
   }
 }

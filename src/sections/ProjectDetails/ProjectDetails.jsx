@@ -336,6 +336,31 @@ function ProjectDetails({ project }) {
               </div>
             )}
 
+            {/* PRACTICE — MOBILE VIEWS */}
+            {project.details.practiceShowcase && (
+              <section className={styles.practiceShowcase}>
+                <div>
+                  <h3>{project.details.practiceShowcase.title}</h3>
+                  <p>{project.details.practiceShowcase.description}</p>
+                </div>
+
+                <div className={styles.practiceScreens}>
+                  <img
+                    src={project.details.practiceShowcase.heroImage}
+                    alt={project.details.practiceShowcase.heroAlt}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <img
+                    src={project.details.practiceShowcase.categoryImage}
+                    alt={project.details.practiceShowcase.categoryAlt}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+              </section>
+            )}
+
             {/* PROJECT CLOSING */}
             {(project.details.result ||
               project.details.learnings?.length > 0) && (

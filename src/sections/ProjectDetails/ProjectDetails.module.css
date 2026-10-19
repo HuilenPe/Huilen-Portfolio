@@ -1202,3 +1202,75 @@
     transition: none;
   }
 }
+
+
+/* ALDO — PRACTICE MOBILE VIEWS */
+.practiceShowcase {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 2rem;
+  margin-top: 4rem;
+  padding: 0;
+}
+
+.practiceShowcase h3 {
+  margin-bottom: 1rem;
+}
+
+.practiceShowcase p {
+  max-width: 560px;
+  color: var(--text-medium);
+}
+
+.practiceScreens {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 1rem;
+  width: 100%;
+  max-width: 460px;
+  justify-self: center;
+}
+
+.practiceScreens img {
+  width: 100%;
+  height: auto;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
+}
+
+@media (min-width: 768px) {
+  .practiceShowcase {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: center;
+    gap: 3rem;
+  }
+}
+
+
+/* ALDO — ARTWORK DATA MODEL */
+.dataModelFigure {
+  grid-column: 1 / -1;
+  width: 100%;
+  max-width: 600px;
+  min-width: 0;
+  margin: 1rem auto 0;
+}
+
+.dataModelFigure a {
+  display: block;
+}
+
+.dataModelFigure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.dataModelFigure figcaption {
+  margin-top: 0.75rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--text-medium);
+}

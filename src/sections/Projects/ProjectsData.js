@@ -34,17 +34,17 @@ export const projects = [
       origin: {
         eyebrow: "El origen del proyecto",
         title:
-          "De una web para mostrar obra a un archivo digital capaz de preservar una trayectoria.",
+          "De mostrar obras a organizar una trayectoria.",
         content:
-          "La iniciativa nació con la intención de crear un espacio digital donde reunir y mostrar la obra de Aldo Peña. Al analizar el volumen y la diversidad del material —obra artística, trayectoria, docencia, práctica multidisciplinar y documentación histórica— el proyecto evolucionó hacia un reto mayor: diseñar un archivo capaz de organizar, relacionar y hacer accesible una trayectoria extensa sin reducirla a una simple galería.",
+          "El proyecto comenzó como una web para reunir y mostrar la obra de Aldo Peña. La diversidad del material —obras, docencia, práctica profesional y documentación histórica— llevó a ampliar la propuesta hacia un archivo digital.",
       },
 
       context: {
         problema:
-          "El archivo reúne contenidos de naturaleza muy distinta: obras, documentación, trayectoria, práctica profesional y material histórico. El principal reto de UX fue definir una arquitectura que permitiera explorar este volumen de información sin fragmentar excesivamente la navegación ni perder las relaciones entre los contenidos.",
+          "Las obras, los proyectos profesionales y la información biográfica necesitan formas distintas de presentación. El reto fue definir qué secciones y fichas requería cada contenido y cómo facilitar su consulta.",
 
         objetivo:
-          "Diseñar un sistema de archivo digital claro y escalable, donde la obra pudiera explorarse por categorías y cada pieza conservara su contexto mediante información, imágenes y registros asociados. La estructura debía permitir incorporar progresivamente nuevos materiales sin replantear la experiencia.",
+          "Permitir que los visitantes recorran las obras por categoría, consulten sus imágenes y metadatos, y exploren la trayectoria y la práctica profesional del artista. El archivo está pensado para los siguientes públicos:",
 
         usuario: [
           "Personas interesadas en la obra y trayectoria del artista",
@@ -55,36 +55,33 @@ export const projects = [
 
       approach: {
         decisiones: [
-          "Replantear una web inicialmente concebida para mostrar obra y convertirla en un archivo digital preparado para crecer",
-          "Organizar una trayectoria extensa mediante una arquitectura de información clara y progresiva",
-          "Relacionar obra, biografía, práctica multidisciplinar y archivo sin fragmentar la experiencia",
-          "Diseñar la exploración de obras mediante categorías, filtros y ordenación",
-          "Mantener el contexto de cada pieza a través de imágenes, metadatos y registros asociados",
-          "Construir una estructura preparada para incorporar nuevos materiales de forma progresiva",
-        ],
+  "Separar la obra artística de la práctica profesional, con categorías y fichas propias.",
+  "Incorporar categorías y ordenación para recorrer las obras.",
+  "Consultar las piezas en un modal con imágenes, metadatos y navegación anterior y siguiente.",
+  "Separar las consultas de datos de los componentes de interfaz y utilizar almacenamiento externo para las imágenes."
+],
       },
 
       process: {
         sitemap: {
           title: "Arquitectura para una trayectoria extensa",
           description:
-            "La primera decisión fue ordenar el contenido en grandes áreas capaces de convivir dentro de una misma experiencia: Biografía, Obra, Práctica multidisciplinar y Legado y Archivo. La estructura evita convertir cada tipo de material en una página aislada y permite que el usuario avance desde una visión general hacia contenidos cada vez más específicos.",
+            "La navegación distingue Biografía, Obras, Práctica y Legado y Archivo. Dentro de Obras y Práctica, las categorías permiten pasar de una vista general a las piezas y proyectos concretos. Legado y Archivo permanece como una sección pendiente de contenido.",
           img: "/images/aldo/aldo-sitemap.png",
         },
 
         interaction: {
           title: "Explorar la obra sin perder el contexto",
           description:
-            "El archivo de obras se diseñó como una herramienta de exploración, no como una galería estática. Las piezas pueden recorrerse por categorías, filtros y criterios de ordenación, mientras la carga progresiva permite manejar un volumen creciente de contenido sin saturar la interfaz.",
-          img: "/images/aldo/aldo-archive-exploration.webp",
+            "El archivo permite elegir una categoría y ordenar las obras por fecha, título o destacadas. La opción de mostrar más amplía el número de piezas visibles. Al abrir una obra, su detalle se consulta en un modal y la selección queda reflejada en la URL.",
+          img: "/images/aldo/aldo-painting-archive-desktop.png",
         },
 
         responsive: {
-          title: "Del diseño a un sistema preparado para crecer",
+          title: "React y Supabase: del modelo de datos a la interfaz",
           description:
-            "La interfaz se desarrolló en React y se adapta a distintos tamaños de pantalla. Los servicios de datos consultan Supabase para recuperar obras, categorías, imágenes y exposiciones asociadas. Las imágenes se sirven desde Supabase Storage, y la práctica multidisciplinar dispone de consultas propias para sus proyectos y documentación.",
-          mobileImg: "/images/aldo/aldo-responsive-mobile.webp",
-          desktopImg: "/images/aldo/aldo-responsive-desktop.webp",
+            "La interfaz en React consulta Supabase para recuperar los datos del archivo. Cada obra se relaciona con su categoría, sus imágenes y sus registros de exposiciones. Los archivos de imagen se sirven desde Supabase Storage. La sección de Práctica dispone de consultas propias para sus proyectos y documentación.",
+          dataModelImg: "/images/aldo/aldo-artwork-data-model.png",
 
           technologies: [
             "React",
@@ -107,12 +104,21 @@ export const projects = [
           "Metadatos",
           "Teclado + swipe",
         ],
-        image: "/images/aldo/aldo-artwork-detail.webp",
-        alt: "Detalle de una obra dentro del archivo artístico digital",
+        image: "/images/aldo/aldo-artwork-modal-desktop.png",
+        alt: "Detalle de una pintura con galería de imágenes, técnica, medidas y navegación entre obras",
       },
 
+      practiceShowcase: {
+  "title": "La práctica profesional en móvil",
+  "description": "La página de Práctica presenta la actividad interdisciplinar del artista. Estas vistas muestran su portada y la sección de Curaduría y Diseño Expositivo, con acceso a sus categorías.",
+  "heroImage": "/images/aldo/aldo-practice-hero-mobile.png",
+  "heroAlt": "Portada móvil de Práctica con fotografía y presentación de la actividad interdisciplinar",
+  "categoryImage": "/images/aldo/aldo-curatorship-mobile.png",
+  "categoryAlt": "Sección móvil de Curaduría y Diseño Expositivo con tarjetas de categorías"
+},
+
       result: {
-        title: "Un archivo preparado para crecer",
+        title: "Estado actual del archivo",
         content:
           "La implementación incluye un archivo de obras con categorías y ordenación, fichas con imágenes y metadatos, y una sección de práctica multidisciplinar con proyectos y documentación asociada. Las consultas de obras y práctica están conectadas a Supabase. El archivo continúa en desarrollo: la sección Legado y Archivo todavía muestra una pantalla de próxima disponibilidad.",
       },

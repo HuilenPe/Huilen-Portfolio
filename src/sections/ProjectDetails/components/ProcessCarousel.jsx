@@ -148,7 +148,25 @@ function ProcessCarousel({ process, projectTitle }) {
               )}
             </div>
 
-            {slide.mobileImg && slide.desktopImg ? (
+            {slide.dataModelImg ? (
+              <figure className={styles.dataModelFigure}>
+                <a
+                  href={slide.dataModelImg}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src={slide.dataModelImg}
+                    alt={t("carousel.dataModelAlt")}
+                    loading="lazy"
+                    decoding="async"
+                    width={824}
+                    height={826}
+                  />
+                </a>
+                <figcaption>{t("carousel.dataModelCaption")}</figcaption>
+              </figure>
+            ) : slide.mobileImg && slide.desktopImg ? (
               <div className={styles.responsiveImages}>
                 <img
                   src={slide.mobileImg}

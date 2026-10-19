@@ -74,12 +74,12 @@
         },
         "origin": {
           "eyebrow": "How the project began",
-          "title": "From a website showcasing artworks to a digital archive preserving an artist’s career.",
-          "content": "The initiative began as a digital space to bring together and showcase Aldo Peña’s work. Reviewing the volume and variety of material — artworks, career history, teaching, multidisciplinary practice and historical documentation — revealed a broader challenge: designing an archive that could organise, connect and make an extensive career accessible, beyond a simple gallery."
+          "title": "From showcasing artworks to organising an artist’s career.",
+          "content": "The project began as a website to bring together and showcase Aldo Peña’s work. The variety of material —artworks, teaching, professional practice and historical documentation— led to a broader proposal for a digital archive."
         },
         "context": {
-          "problema": "The archive brings together very different types of content: artworks, documentation, career history, professional practice and historical material. The main UX challenge was to structure this information so people could explore it without excessive fragmentation or losing the connections between content.",
-          "objetivo": "Design a clear, scalable digital archive where works can be explored by category and each piece retains its context through information, images and related records. The structure needed to accommodate new material over time without rethinking the experience.",
+          "problema": "Artworks, professional projects and biographical information need different forms of presentation. The challenge was to define the sections and detail views each type of content required and make them easy to explore.",
+          "objetivo": "Enable visitors to browse artworks by category, consult their images and metadata, and explore the artist’s career and professional practice. The archive is intended for the following audiences:",
           "usuario": [
             "People interested in the artist’s work and career",
             "Researchers and people working in the arts and cultural sector",
@@ -88,26 +88,24 @@
         },
         "approach": {
           "decisiones": [
-            "Rethink a website originally intended to showcase artworks as a digital archive designed to grow",
-            "Organise an extensive career through clear, progressively detailed information architecture",
-            "Connect artworks, biography, multidisciplinary practice and archival material within one coherent experience",
-            "Enable artwork exploration through categories, filters and sorting",
-            "Keep each piece in context through images, metadata and related records",
-            "Build a structure that can gradually accommodate new material"
+            "Separate artworks from professional practice, with their own categories and detail views.",
+            "Provide categories and sorting for browsing artworks.",
+            "Present artwork details in a modal with images, metadata, and previous and next navigation.",
+            "Separate data queries from interface components and use external image storage."
           ]
         },
         "process": {
           "sitemap": {
             "title": "Architecture for an extensive career",
-            "description": "The first decision was to organise the content into broad areas within a shared experience: Biography, Works, Multidisciplinary Practice, and Legacy and Archive. This avoids isolating every type of material on a separate page and lets visitors move from an overview to increasingly specific content."
+            "description": "Navigation separates Biography, Works, Practice, and Legacy and Archive. Within Works and Practice, categories lead from an overview to individual artworks and projects. Legacy and Archive remains a section awaiting content."
           },
           "interaction": {
             "title": "Explore the work while keeping its context",
-            "description": "The works archive was designed as an exploration tool, rather than a static gallery. Visitors can browse pieces by category, filters and sorting criteria, while progressive loading accommodates a growing collection without overwhelming the interface."
+            "description": "Visitors can choose a category and sort artworks by date, title or featured status. The load-more control increases the number of visible pieces. Opening an artwork displays its details in a modal and reflects the selection in the URL."
           },
           "responsive": {
-            "title": "From design to a system ready to grow",
-            "description": "The interface was built in React and adapts to different screen sizes. Data services query Supabase to retrieve artworks, categories, images and associated exhibitions. Images are served from Supabase Storage, and multidisciplinary practice has its own queries for projects and documentation."
+            "title": "React and Supabase: from data model to interface",
+            "description": "The React interface queries Supabase to retrieve archive data. Each artwork is linked to its category, images and exhibition records. Image files are served from Supabase Storage. The Practice section has its own queries for projects and documentation."
           }
         },
         "artworkExperience": {
@@ -120,17 +118,23 @@
             "Metadata",
             "Keyboard + swipe"
           ],
-          "alt": "Artwork details within the digital artist archive"
+          "alt": "Painting detail with an image gallery, technique, dimensions and navigation between artworks"
         },
         "result": {
-          "title": "An archive ready to grow",
+          "title": "Current state of the archive",
           "content": "The implementation includes an artwork archive with categories and sorting, artwork details with images and metadata, and a multidisciplinary practice section with projects and associated documentation. Artwork and practice queries are connected to Supabase. The archive remains in development: the Legacy and Archive section currently displays a coming-soon page."
         },
         "learnings": [
           "Designing for large volumes of content means thinking about relationships and architecture before screens.",
           "Separating data, logic and presentation allows an interface to evolve independently of the archive’s final size.",
           "In a cultural archive, interaction should support exploration without visually competing with the artwork."
-        ]
+        ],
+        "practiceShowcase": {
+          "title": "Professional practice on mobile",
+          "description": "The Practice page presents the artist’s interdisciplinary work. These views show its introduction and the Curatorial and Exhibition Design section, with access to its categories.",
+          "heroAlt": "Mobile Practice introduction with a photograph and an overview of the artist’s interdisciplinary work",
+          "categoryAlt": "Mobile Curatorial and Exhibition Design section with category cards"
+        }
       }
     },
     "equinox": {
@@ -189,6 +193,8 @@
     "goToScreen": "Go to {{title}}",
     "archiveArchitectureAlt": "Information architecture of the digital artist archive",
     "worksInteractionAlt": "Interaction design for the Works section",
-    "responsiveAlt": "Responsive implementation of {{name}}"
+    "responsiveAlt": "Responsive implementation of {{name}}",
+    "dataModelAlt": "Data model: artworks connects to categories, artwork_images and artwork_exhibitions.",
+    "dataModelCaption": "Artwork archive data model. Selected tables from the implemented schema. Open image to enlarge."
   }
 }
