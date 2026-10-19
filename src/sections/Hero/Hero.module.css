@@ -455,3 +455,10 @@
 .heroActions .sketchButton {
   margin-left: 0;
 }
+
+/* Align stacked CTA labels on mobile */
+@media (max-width: 599px) {
+  .heroActions .secondaryLink {
+    margin-left: 1.4rem;
+  }
+}
