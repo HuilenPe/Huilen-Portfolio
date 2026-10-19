@@ -1,7 +1,9 @@
+import { useTranslation } from "react-i18next"
 import { useEffect, useRef } from "react"
 import styles from "./Hero.module.css"
 
 function Hero() {
+    const { t } = useTranslation()
     const contornoRef = useRef(null)
     const ojoIzqRef = useRef(null)
     const ojoDerRef = useRef(null)
@@ -55,20 +57,15 @@ return (
 
                 {/* TEXTO */}
                 <div className={styles.left}>
-                    <p className={styles.eyebrow}>
-                        Frontend Developer · UI Designer
-                    </p>
+                    <p className={styles.eyebrow}>{t("hero.role")}</p>
 
                     <h1>
-                        Hola, soy
+                        {t("hero.greeting")}
                         <br />
                         Huilen Peña.
                     </h1>
 
-                    <p className={styles.description}>
-                        Diseño interfaces y las convierto en experiencias digitales
-                        claras y cuidadas, desde Figma hasta código.
-                    </p>
+                    <p className={styles.description}>{t("hero.description")}</p>
 
                     <div className={styles.heroActions}>
 
@@ -76,7 +73,7 @@ return (
                         className={styles.sketchButton}
                         onClick={handleScrollToProjects}
                     >
-                        <span>Ver proyectos</span>
+                        <span>{t("hero.projectsCta")}</span>
 
                         <svg
                             className={styles.sketchOval}
@@ -88,9 +85,7 @@ return (
                         </svg>
                     </button>
 
-                    <a href="#about" className={styles.secondaryLink}>
-                        Sobre mí
-                        <span aria-hidden="true">→</span>
+                    <a href="#about" className={styles.secondaryLink}>{t("hero.aboutCta")}<span aria-hidden="true">→</span>
                     </a>
                     </div>
                 </div>

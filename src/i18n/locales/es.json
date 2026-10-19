@@ -1,0 +1,52 @@
+{
+  "common": {
+    "skipToContent": "Saltar al contenido principal",
+    "backToTop": "Volver arriba",
+    "language": "Idioma"
+  },
+  "nav": {
+    "projects": "Proyectos",
+    "about": "Sobre mí",
+    "skills": "Skills",
+    "contact": "Contacto",
+    "home": "Volver al inicio",
+    "mainMenu": "Menú principal",
+    "mobileMenu": "Menú principal móvil",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú"
+  },
+  "hero": {
+    "role": "Frontend Developer · UI Designer",
+    "greeting": "Hola, soy",
+    "description": "Diseño interfaces y las convierto en experiencias digitales claras y cuidadas, desde Figma hasta código.",
+    "projectsCta": "Ver proyectos",
+    "aboutCta": "Sobre mí"
+  },
+  "about": {
+    "visualLabel": "DISEÑO · CÓDIGO",
+    "label": "Sobre mí",
+    "titleFirst": "Del arte visual",
+    "titleSecond": "al producto digital.",
+    "description": "Diseño y desarrollo interfaces digitales, desde la definición de la experiencia y el diseño UI hasta su implementación frontend. Trabajo en proyectos para clientes y desarrollo proyectos propios, combinando diseño visual y código.",
+    "background": "Mi formación en Artes Visuales complementa mi perfil técnico y aporta una mirada especialmente atenta a la composición, la jerarquía visual y la experiencia de usuario.",
+    "projectsCta": "Ver proyectos",
+    "education": "Educación",
+    "focus": "Enfoque",
+    "bootcamp": "Bootcamp Full Stack — Factoría F5",
+    "visualArts": "Artes Visuales — UPC"
+  },
+  "skills": {
+    "titleFirst": "Diseño, estructura",
+    "titleSecond": "y código.",
+    "intro": "Combino pensamiento visual, estructura y código para construir interfaces claras y consistentes.",
+    "frontendDescription": "Construcción de interfaces responsive y orientadas a producto.",
+    "uiDescription": "Diseño de interfaces claras, consistentes y fáciles de usar.",
+    "workflowDescription": "Herramientas y metodologías para trabajar de forma organizada."
+  },
+  "contact": {
+    "label": "Contacto",
+    "title": "¿Creamos algo?",
+    "description": "Estoy abierta a oportunidades en frontend, UX/UI y equipos de producto donde diseño e implementación formen parte del mismo proceso.",
+    "emailLabel": "Enviar correo electrónico"
+  }
+}

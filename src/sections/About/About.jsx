@@ -1,10 +1,12 @@
+import { useTranslation } from "react-i18next"
 import styles from "./About.module.css"
 
 function About() {
+  const { t } = useTranslation()
   const education = [
     "Google UX Design",
-    "Bootcamp Full Stack — Factoría F5",
-    "Artes Visuales — UPC",
+    t("about.bootcamp"),
+    t("about.visualArts"),
   ]
 
   const stack = ["React", "JavaScript / TypeScript", "CSS", "Supabase", "Figma", "Git"]
@@ -27,7 +29,7 @@ function About() {
                 aria-hidden="true"
               />
             </div>
-            <p className={styles.verticalText}>DISEÑO · CÓDIGO</p>
+            <p className={styles.verticalText}>{t("about.visualLabel")}</p>
 
             <div className={styles.sketchBox}>
               <span className={styles.sketchLine}></span>
@@ -36,35 +38,24 @@ function About() {
           </div>
 
           <div className={styles.content}>
-            <p className={styles.label}>Sobre mí</p>
+            <p className={styles.label}>{t("about.label")}</p>
 
-            <h2>
-              Del arte visual
-              <br />
-              al producto digital.
-            </h2>
+            <h2>{t("about.titleFirst")}<br />{t("about.titleSecond")}</h2>
 
             <div className={styles.text}>
-              <p>
-                Diseño y desarrollo interfaces digitales, desde la definición de la experiencia y el diseño UI hasta su implementación frontend. Trabajo en proyectos para clientes y desarrollo proyectos propios, combinando diseño visual y código.
-              </p>
-
-              <p>
-                Mi formación en Artes Visuales complementa mi perfil técnico y aporta una mirada especialmente atenta a la composición, la jerarquía visual y la experiencia de usuario.
-              </p>
+              <p>{t("about.description")}</p>
+              <p>{t("about.background")}</p>
             </div>
 
-            <a href="#projects" className={styles.cta}>
-              Ver proyectos
-              <span>→</span>
+            <a href="#projects" className={styles.cta}>{t("about.projectsCta")}<span>→</span>
             </a>
           </div>
         </div>
 
         <div className={styles.infoGrid}>
-          <InfoBlock title="Educación" items={education} />
+          <InfoBlock title={t("about.education")} items={education} />
           <InfoBlock title="Stack" items={stack} />
-          <InfoBlock title="Enfoque" items={focus} />
+          <InfoBlock title={t("about.focus")} items={focus} />
         </div>
       </div>
     </section>

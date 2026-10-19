@@ -1,18 +1,18 @@
+import { useTranslation } from "react-i18next"
 import styles from "./Contact.module.css"
 import { FiMail, FiGithub, FiLinkedin } from "react-icons/fi"
 
 function Contact() {
+  const { t } = useTranslation()
   return (
     <section id="contact" className={styles.contact}>
       <div className="container">
         <div className={styles.content}>
-          <p className={styles.label}>Contacto</p>
+          <p className={styles.label}>{t("contact.label")}</p>
 
-          <h2>¿Creamos algo?</h2>
+          <h2>{t("contact.title")}</h2>
 
-          <p className={styles.description}>
-            Estoy abierta a oportunidades en frontend, UX/UI y equipos de producto donde diseño e implementación formen parte del mismo proceso.
-          </p>
+          <p className={styles.description}>{t("contact.description")}</p>
 
           <div className={styles.links}>
             <a href="mailto:huilenpe@gmail.com" className={styles.mainLink}>
@@ -39,7 +39,7 @@ function Contact() {
                 <FiLinkedin />
               </a>
 
-              <a href="mailto:huilenpe@gmail.com" aria-label="Email">
+              <a href="mailto:huilenpe@gmail.com" aria-label={t("contact.emailLabel")}>
                 <FiMail />
               </a>
             </div>

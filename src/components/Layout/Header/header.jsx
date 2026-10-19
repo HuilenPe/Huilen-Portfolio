@@ -1,7 +1,9 @@
+import { useTranslation } from "react-i18next"
 import { useEffect, useRef, useState } from "react"
 import { useLocation, useNavigate } from "react-router-dom"
 import styles from "./header.module.css"
 import logoStyles from "./logo.module.css"
+import LanguageSwitcher from "../../UI/LanguageSwitcher/LanguageSwitcher"
 
 function LogoMark({ className = "" }) {
   return (
@@ -32,6 +34,8 @@ function LogoMark({ className = "" }) {
 }
 
 function Header() {
+  const { t, i18n } = useTranslation()
+  const language = i18n.resolvedLanguage
   const location = useLocation()
   const navigate = useNavigate()
 
@@ -40,6 +44,7 @@ function Header() {
   const logoAnchorRef = useRef(null)
   const movingLogoRef = useRef(null)
   const burgerRef = useRef(null)
+  const languageSwitcherRef = useRef(null)
   const mobileNavRef = useRef(null)
 
   const skipAboutAnimationRef = useRef(false)
@@ -99,6 +104,7 @@ function Header() {
       if (event.key !== "Tab" || !menu || !burger) return
 
       const focusableElements = [
+        ...(languageSwitcherRef.current?.querySelectorAll("button") ?? []),
         burger,
         ...menu.querySelectorAll("a[href], button:not([disabled])"),
       ]
@@ -296,7 +302,7 @@ function handleSectionNav(targetId) {
       window.removeEventListener("resize", updateLogoPosition)
       window.removeEventListener("scroll", updateLogoPosition)
     }
-  }, [showAboutLogo, isOpen, location.pathname])
+  }, [showAboutLogo, isOpen, location.pathname, language])
 
   return (
     <header className={styles.header}>
@@ -316,46 +322,40 @@ function handleSectionNav(targetId) {
           className={`${styles.movingLogo} ${
             showAboutLogo ? styles.logoInAbout : ""
           }`}
-          aria-label="Volver al inicio"
+          aria-label={t("nav.home")}
           onClick={(event) => handleNavClick(event, "hero")}
         >
           <LogoMark />
         </a>
 
         {/* NAV DESKTOP */}
-        <nav className={styles.nav} aria-label="Menú principal">
+        <nav className={styles.nav} aria-label={t("nav.mainMenu")}>
           <a
             href={isHome ? "#projects" : "/#projects"}
             className={styles.menuLink}
             onClick={(event) => handleNavClick(event, "projects")}
-          >
-            Proyectos
-          </a>
+          >{t("nav.projects")}</a>
 
           <a
             href={isHome ? "#about" : "/#about"}
             className={styles.menuLink}
             onClick={(event) => handleNavClick(event, "about")}
-          >
-            Sobre mí
-          </a>
+          >{t("nav.about")}</a>
 
           <a
             href={isHome ? "#skills" : "/#skills"}
             className={styles.menuLink}
             onClick={(event) => handleNavClick(event, "skills")}
-          >
-            Skills
-          </a>
+          >{t("nav.skills")}</a>
 
           <a
             href={isHome ? "#contact" : "/#contact"}
             className={styles.menuLink}
             onClick={(event) => handleNavClick(event, "contact")}
-          >
-            Contacto
-          </a>
+          >{t("nav.contact")}</a>
         </nav>
+
+        <LanguageSwitcher containerRef={languageSwitcherRef} />
 
         {/* BURGER */}
         <button
@@ -364,7 +364,7 @@ function handleSectionNav(targetId) {
           className={`${styles.burger} ${
             isOpen ? styles.burgerOpen : ""
           }`}
-          aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
+          aria-label={isOpen ? t("nav.closeMenu") : t("nav.openMenu")}
           aria-expanded={isOpen}
           aria-controls="mobile-menu"
           onClick={() => setIsOpen(!isOpen)}
@@ -380,39 +380,31 @@ function handleSectionNav(targetId) {
             ref={mobileNavRef}
             id="mobile-menu"
             className={styles.mobileNav}
-            aria-label="Menú principal mobile"
+            aria-label={t("nav.mobileMenu")}
           >
             <a
               href={isHome ? "#projects" : "/#projects"}
               className={styles.burgerMenu}
               onClick={(event) => handleNavClick(event, "projects")}
-            >
-              Proyectos
-            </a>
+            >{t("nav.projects")}</a>
 
             <a
               href={isHome ? "#about" : "/#about"}
               className={styles.burgerMenu}
               onClick={(event) => handleNavClick(event, "about")}
-            >
-              Sobre mí
-            </a>
+            >{t("nav.about")}</a>
 
             <a
               href={isHome ? "#skills" : "/#skills"}
               className={styles.burgerMenu}
               onClick={(event) => handleNavClick(event, "skills")}
-            >
-              Skills
-            </a>
+            >{t("nav.skills")}</a>
 
             <a
               href={isHome ? "#contact" : "/#contact"}
               className={styles.burgerMenu}
               onClick={(event) => handleNavClick(event, "contact")}
-            >
-              Contacto
-            </a>
+            >{t("nav.contact")}</a>
 
             <div className={styles.mobileSignature}>
               <LogoMark />

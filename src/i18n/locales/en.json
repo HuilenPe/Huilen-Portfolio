@@ -1,0 +1,52 @@
+{
+  "common": {
+    "skipToContent": "Skip to main content",
+    "backToTop": "Back to top",
+    "language": "Language"
+  },
+  "nav": {
+    "projects": "Projects",
+    "about": "About me",
+    "skills": "Skills",
+    "contact": "Contact",
+    "home": "Back to home",
+    "mainMenu": "Main navigation",
+    "mobileMenu": "Mobile navigation",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "hero": {
+    "role": "Frontend Developer · UI Designer",
+    "greeting": "Hi, I’m",
+    "description": "I design interfaces and turn them into clear, thoughtful digital experiences, from Figma to code.",
+    "projectsCta": "View projects",
+    "aboutCta": "About me"
+  },
+  "about": {
+    "visualLabel": "DESIGN · CODE",
+    "label": "About me",
+    "titleFirst": "From visual art",
+    "titleSecond": "to digital products.",
+    "description": "I design and build digital interfaces, from shaping the user experience and UI to frontend implementation. I work on client and personal projects, combining visual design and code.",
+    "background": "My background in Visual Arts complements my technical skills, with particular attention to composition, visual hierarchy and user experience.",
+    "projectsCta": "View projects",
+    "education": "Education",
+    "focus": "Focus",
+    "bootcamp": "Full Stack Bootcamp — Factoría F5",
+    "visualArts": "Visual Arts — UPC"
+  },
+  "skills": {
+    "titleFirst": "Design, structure",
+    "titleSecond": "and code.",
+    "intro": "I combine visual thinking, structure and code to build clear, consistent interfaces.",
+    "frontendDescription": "Building responsive, product-focused interfaces.",
+    "uiDescription": "Designing clear, consistent and easy-to-use interfaces.",
+    "workflowDescription": "Tools and methods for an organised workflow."
+  },
+  "contact": {
+    "label": "Contact",
+    "title": "Let’s create something.",
+    "description": "I’m open to opportunities in frontend, UX/UI and product teams where design and implementation are part of the same process.",
+    "emailLabel": "Send an email"
+  }
+}

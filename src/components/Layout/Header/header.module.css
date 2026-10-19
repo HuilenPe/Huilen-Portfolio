@@ -261,6 +261,7 @@
   }
 
   .nav {
+    margin-left: auto;
     display: flex;
     gap: 2rem;
   }
