@@ -137,15 +137,14 @@ function ProcessCarousel({ process, projectTitle }) {
               {slide.technologies?.length > 0 && (
                 <div className={styles.techList}>
                   {slide.technologies.map((tech) => (
-                    <span
-                      key={tech}
-                      className={styles.techItem}
-                    >
+                    <span key={tech} className={styles.techItem}>
                       {tech}
                     </span>
                   ))}
                 </div>
               )}
+
+
             </div>
 
             {slide.dataModelImg ? (

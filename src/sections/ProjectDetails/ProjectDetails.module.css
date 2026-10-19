@@ -1274,3 +1274,62 @@
   line-height: 1.5;
   color: var(--text-medium);
 }
+
+
+/* MOBILE — CONSISTENT PROCESS SLIDES */
+@media (max-width: 767px) {
+  .carousel .process {
+    align-items: stretch;
+  }
+
+  .carousel .process > .processBlock {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+
+  .carousel .process > .processBlock > .processText {
+    flex: 1 0 auto;
+  }
+
+  .carousel .process > .processBlock > .processImage {
+    flex: 0 0 340px;
+    width: 100%;
+    height: 340px;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  .carousel .dataModelFigure {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 340px;
+    height: 340px;
+    margin: 0;
+  }
+
+  .carousel .dataModelFigure a {
+    flex: 1;
+    min-height: 0;
+  }
+
+  .carousel .dataModelFigure img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .carousel .dataModelFigure figcaption {
+    flex: 0 0 auto;
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
+}
+
+
+/* PROCESS — HIDE TECHNOLOGIES ON MOBILE */
+@media (max-width: 767px) {
+  .carousel .techList {
+    display: none;
+  }
+}
