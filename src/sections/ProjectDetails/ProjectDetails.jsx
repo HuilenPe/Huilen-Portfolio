@@ -108,7 +108,12 @@ function ProjectDetails({ project }) {
               </div>
 
               {cover.image && (
-                <div className={styles.caseStage}>
+                <div
+                  className={styles.caseStage}
+                  tabIndex={project.id === "equinox" ? 0 : undefined}
+                  role={project.id === "equinox" ? "region" : undefined}
+                  aria-label={project.id === "equinox" ? t("equinoxCase.coverLabel") : undefined}
+                >
                   <figure className={styles.caseVisual}>
                     <img
                       src={cover.image}

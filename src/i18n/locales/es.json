@@ -125,6 +125,8 @@
     "contactMobile": "Contact · Wireframe móvil",
     "openImage": "Abrir imagen completa: {{name}} (nueva pestaña)",
     "imageHint": "Podés pulsar cada imagen para verla completa.",
-    "photographyNote": "Siguiente mejora de contenido: incorporar fotografías propias de la empresa."
+    "photographyNote": "Siguiente mejora de contenido: incorporar fotografías propias de la empresa.",
+    "coverLabel": "Equinox: vistas de escritorio y móvil",
+    "comparisonLabel": "Home: comparación de wireframe y diseño visual"
   }
 }

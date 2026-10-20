@@ -218,6 +218,8 @@
     "contactMobile": "Contact · Mobile wireframe",
     "openImage": "Open full image: {{name}} (new tab)",
     "imageHint": "Select any image to view it in full.",
-    "photographyNote": "Next content improvement: incorporate the company’s own photography."
+    "photographyNote": "Next content improvement: incorporate the company’s own photography.",
+    "coverLabel": "Equinox: desktop and mobile views",
+    "comparisonLabel": "Home: wireframe and visual design comparison"
   }
 }

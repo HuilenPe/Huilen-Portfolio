@@ -42,7 +42,12 @@ export default function EquinoxProcess() {
           <p>{text("designText")}</p>
           <p className={styles.equinoxCaseHint}>{text("imageHint")}</p>
         </div>
-        <div className={styles.equinoxCaseComparison}>
+        <div
+          className={styles.equinoxCaseComparison}
+          tabIndex={0}
+          role="region"
+          aria-label={text("comparisonLabel")}
+        >
           {screen("equinox-home-wireframe-desktop.png", "wireframeDesktop")}
           {screen("equinox-home-design-desktop.png", "designDesktop")}
         </div>

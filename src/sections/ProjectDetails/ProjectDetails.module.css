@@ -1552,3 +1552,84 @@
 .equinoxCaseProcess > section:not(.equinoxCaseConstraints) {
   padding: 0;
 }
+
+/* EQUINOX — MOBILE HORIZONTAL SLIDES */
+.details[id="equinox"] .caseStage:focus-visible,
+.equinoxCaseComparison:focus-visible {
+  outline: 2px solid var(--text-main);
+  outline-offset: 4px;
+}
+
+@media (max-width: 767px) {
+  .details[id="equinox"] .caseStage,
+  .equinoxCaseComparison {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 1rem;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    padding: 1rem;
+    scroll-padding-inline: 1rem;
+  }
+
+  .details[id="equinox"] .caseStage > .caseVisual,
+  .details[id="equinox"] .caseStage > .casePhone {
+    flex: 0 0 92%;
+    width: 92%;
+    max-width: none;
+    min-width: 0;
+    height: auto;
+    aspect-ratio: auto;
+    margin: 0;
+    scroll-snap-align: start;
+  }
+
+  .details[id="equinox"] .caseStage > .caseVisual > img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .details[id="equinox"] .caseStage > .casePhone {
+    align-self: flex-start;
+    overflow: visible;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .details[id="equinox"] .caseStage > .casePhone > img {
+    display: block;
+    width: min(100%, 220px);
+    height: auto;
+    aspect-ratio: 9 / 23;
+    margin-inline: auto;
+    object-fit: cover;
+    object-position: top center;
+    border: 1px solid #d5d8dc;
+    border-radius: 6px;
+    background: white;
+  }
+
+  .equinoxCaseComparison {
+    padding: 0 0 0.75rem;
+    scroll-padding-inline: 0;
+  }
+
+  .equinoxCaseComparison > .equinoxCaseScreen {
+    flex: 0 0 92%;
+    min-width: 0;
+    scroll-snap-align: start;
+  }
+
+  .equinoxCaseComparison img {
+    width: 100%;
+    height: auto;
+    object-fit: initial;
+  }
+}
