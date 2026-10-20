@@ -1431,7 +1431,6 @@
 .equinoxCaseSupport {
   padding: 1.25rem 0;
   border-top: 1px solid #dce3df;
-  border-bottom: 1px solid #dce3df;
 }
 
 .equinoxCaseSupport summary {
@@ -1500,4 +1499,53 @@
 .equinoxCaseComparison > .equinoxCaseScreen > a {
   padding-top: 12px;
   padding-bottom: 12px;
+}
+
+/* EQUINOX — COMPACT RESULT */
+.details[id="equinox"] .projectClosing {
+  grid-template-columns: minmax(0, 1fr);
+  margin-top: 2rem;
+  padding-top: 2rem;
+}
+
+.details[id="equinox"] .closingResult {
+  max-width: 760px;
+}
+
+/* EQUINOX — SECTION SPACING */
+.details[id="equinox"] .caseHeader {
+  margin-bottom: 2rem;
+}
+
+.details[id="equinox"] .gridTwo {
+  margin-bottom: 2.5rem;
+}
+
+.equinoxCaseProcess {
+  margin-top: 0;
+  gap: 5rem;
+}
+
+.equinoxCaseText {
+  margin-bottom: 1.25rem;
+}
+
+.equinoxCaseProcess section > p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 767px) {
+  .details[id="equinox"] .gridTwo {
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .equinoxCaseProcess {
+    gap: 2rem;
+  }
+}
+
+/* EQUINOX — REMOVE GLOBAL PADDING FROM INNER SECTIONS */
+.equinoxCaseProcess > section:not(.equinoxCaseConstraints) {
+  padding: 0;
 }

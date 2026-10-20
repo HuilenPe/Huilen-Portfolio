@@ -58,6 +58,12 @@ export default function EquinoxProcess() {
         </div>
       </section>
 
+      <section>
+        <h2>{text("developmentTitle")}</h2>
+        <p>{text("developmentText")}</p>
+        <p className={styles.equinoxCaseHint}>{text("photographyNote")}</p>
+      </section>
+
       <details className={styles.equinoxCaseSupport}>
         <summary>{text("supportTitle")}</summary>
         <p>{text("supportText")}</p>

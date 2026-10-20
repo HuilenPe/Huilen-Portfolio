@@ -160,9 +160,9 @@ export const projects = [
       },
 
       result: {
-        title: "Diseño y desarrollo publicados",
+        title: "Una web renovada y publicada",
         content:
-          "Mi trabajo abarcó los wireframes, el diseño de alta fidelidad en Figma y el desarrollo frontend en React de Home, About y Contact. La web está publicada. La propuesta utilizó fotografías de Unsplash ante la falta de imágenes propias; contar con material fotográfico real de la empresa quedó como una mejora pendiente.",
+          "La web corporativa reconstruida de Equinox está publicada, con Home, About y Contact adaptadas a escritorio y móvil. Mi aportación abarcó el proceso desde los primeros wireframes hasta la interfaz implementada en React.",
       },
     },
   },

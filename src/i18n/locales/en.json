@@ -150,8 +150,8 @@
           "objetivo": "Redesign the corporate presentation and build the Home, About and Contact pages for desktop and mobile."
         },
         "result": {
-          "title": "Design and development delivered",
-          "content": "My work covered wireframes, high-fidelity designs in Figma and React frontend development for Home, About and Contact. The website is live. The design used Unsplash photographs because company photography was unavailable; obtaining photographs of the actual business remained an outstanding improvement."
+          "title": "A redesigned website, now live",
+          "content": "Equinox’s rebuilt corporate website is live, with Home, About and Contact adapted for desktop and mobile. My contribution covered the process from the initial wireframes to the published React interface."
         }
       }
     }
@@ -202,21 +202,22 @@
     "constraintsText": "The only supplied asset was the logo from the previous website. Without brand guidelines or company photography, I developed the visual proposal and selected Unsplash images to accompany the content.",
     "briefText": "Before designing, I asked about the audience, the website’s objective, its content, the freedom to reorganise it and how to handle Contact within the agreed scope.",
     "designTitle": "From wireframe to visual design",
-    "designText": "The Home wireframe organised the introduction, services, company capabilities, access to About and the contact call to action. The high-fidelity design developed that structure with photography, icons and colour.",
+    "designText": "The Home structure introduces services first, followed by the company’s capabilities, About and contact. In the visual design, services change from outlined cards to columns with icons, while capabilities are grouped on a shared background. The green from the logo appears in icons and calls to action.",
     "wireframeDesktop": "Home · Desktop wireframe",
     "designDesktop": "Home · High-fidelity design in Figma",
     "mobileTitle": "The structure was also planned for mobile",
     "mobileText": "The mobile wireframe already shows stacked calls to action, a services carousel and single-column content blocks. The second image shows the implemented mobile interface.",
     "wireframeMobile": "Home · Mobile wireframe · Partial view",
     "implementationMobile": "Home · Mobile implementation · Partial view",
-    "developmentTitle": "From Figma design to React implementation",
-    "developmentText": "I developed the Home, About and Contact frontend in React, translating the visual proposal and its desktop and mobile layouts into the published website.",
+    "developmentTitle": "From design to React implementation",
+    "developmentText": "I developed Home, About and Contact in React. Navigation connects the three pages and provides direct access to services from Home. On mobile, the interface includes an expandable menu, stacked calls to action and a services carousel.",
     "supportTitle": "View the About and Contact wireframes",
     "supportText": "The inner pages were also explored through wireframes. Contact presents email, phone and address details without a form. The contact details visible in these sketches are placeholders.",
     "aboutWireframe": "About · Desktop wireframe",
     "contactDesktop": "Contact · Desktop wireframe",
     "contactMobile": "Contact · Mobile wireframe",
     "openImage": "Open full image: {{name}} (new tab)",
-    "imageHint": "Select any image to view it in full."
+    "imageHint": "Select any image to view it in full.",
+    "photographyNote": "Next content improvement: incorporate the company’s own photography."
   }
 }
