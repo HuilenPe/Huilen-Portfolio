@@ -154,15 +154,15 @@ export const projects = [
 
       context: {
         problema:
-          "El encargo consistió en reemplazar la web anterior de Equinox y reorganizar la presentación de sus servicios corporativos.",
+          "El encargo fue modernizar visualmente una web antigua en WordPress y reconstruirla. El alcance inicial no incluía añadir funcionalidades ni conservar funciones existentes.",
         objetivo:
-          "Diseñar y desarrollar una web responsive con una jerarquía clara entre la presentación de la empresa, sus servicios y las vías de contacto.",
+          "Rediseñar la presentación corporativa y desarrollar las páginas Home, About y Contact con adaptación a escritorio y móvil.",
       },
 
       result: {
-        title: "Diseño e implementación de la web corporativa",
+        title: "Diseño y desarrollo publicados",
         content:
-          "Mi trabajo abarcó el diseño UX/UI en Figma y el desarrollo frontend en React de las páginas Home, About y Contact. La web está publicada.",
+          "Mi trabajo abarcó los wireframes, el diseño de alta fidelidad en Figma y el desarrollo frontend en React de Home, About y Contact. La web está publicada. La propuesta utilizó fotografías de Unsplash ante la falta de imágenes propias; contar con material fotográfico real de la empresa quedó como una mejora pendiente.",
       },
     },
   },

@@ -1,3 +1,4 @@
+import EquinoxProcess from "./components/EquinoxProcess"
 import { useTranslation } from "react-i18next"
 import { useEffect, useRef } from "react"
 import styles from "./ProjectDetails.module.css"
@@ -305,36 +306,10 @@ function ProjectDetails({ project }) {
               </div>
             )}
 
-            
-            {project.id === "equinox" && (
-              <div className={styles.processBlock}>
-                <div className={styles.processText}>
-                  <span className={styles.processEyebrow}>{t("caseUI.responsiveLabel")} </span>
-                  <h2>{t("caseUI.responsiveTitle")} </h2>
-                  <p>{t("caseUI.responsiveDescription")}</p>
-                </div>
 
-                <div className={styles.equinoxShowcase}>
-                  <figure className={styles.equinoxDesktop}>
-                    <img
-                      src="/images/equinox/equinox-cover.png"
-                      alt={t("caseUI.desktopAlt", { name: "Equinox" })}
-                      loading="lazy"
-                    />
-                    <figcaption>{t("caseUI.desktop")} </figcaption>
-                  </figure>
+            {project.id === "equinox" && <EquinoxProcess />}
 
-                  <figure className={styles.equinoxMobile}>
-                    <img
-                      src="/images/equinox/equinox-mobile.png"
-                      alt={t("caseUI.mobileAlt", { name: "Equinox" })}
-                      loading="lazy"
-                    />
-                    <figcaption>{t("caseUI.mobile")} </figcaption>
-                  </figure>
-                </div>
-              </div>
-            )}
+
 
             {/* PRACTICE — MOBILE VIEWS */}
             {project.details.practiceShowcase && (

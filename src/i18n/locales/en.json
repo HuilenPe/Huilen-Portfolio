@@ -146,12 +146,12 @@
           "subtitle": "Redesign and frontend implementation of a B2B website presenting Equinox’s services and helping visitors contact the company."
         },
         "context": {
-          "problema": "The brief was to replace Equinox’s previous website and reorganise the presentation of its corporate services.",
-          "objetivo": "Design and build a responsive website with a clear hierarchy between the company introduction, its services and contact options."
+          "problema": "The brief was to visually modernise an old WordPress website and rebuild it. The initial scope did not include adding features or retaining existing functionality.",
+          "objetivo": "Redesign the corporate presentation and build the Home, About and Contact pages for desktop and mobile."
         },
         "result": {
-          "title": "Corporate website design and implementation",
-          "content": "My work covered UX/UI design in Figma and frontend development in React for the Home, About and Contact pages. The website is live."
+          "title": "Design and development delivered",
+          "content": "My work covered wireframes, high-fidelity designs in Figma and React frontend development for Home, About and Contact. The website is live. The design used Unsplash photographs because company photography was unavailable; obtaining photographs of the actual business remained an outstanding improvement."
         }
       }
     }
@@ -196,5 +196,27 @@
     "responsiveAlt": "Responsive implementation of {{name}}",
     "dataModelAlt": "Data model: artworks connects to categories, artwork_images and artwork_exhibitions.",
     "dataModelCaption": "Artwork archive data model. Selected tables from the implemented schema. Open image to enlarge."
+  },
+  "equinoxCase": {
+    "constraintsTitle": "Designing with only the existing logo",
+    "constraintsText": "The only supplied asset was the logo from the previous website. Without brand guidelines or company photography, I developed the visual proposal and selected Unsplash images to accompany the content.",
+    "briefText": "Before designing, I asked about the audience, the website’s objective, its content, the freedom to reorganise it and how to handle Contact within the agreed scope.",
+    "designTitle": "From wireframe to visual design",
+    "designText": "The Home wireframe organised the introduction, services, company capabilities, access to About and the contact call to action. The high-fidelity design developed that structure with photography, icons and colour.",
+    "wireframeDesktop": "Home · Desktop wireframe",
+    "designDesktop": "Home · High-fidelity design in Figma",
+    "mobileTitle": "The structure was also planned for mobile",
+    "mobileText": "The mobile wireframe already shows stacked calls to action, a services carousel and single-column content blocks. The second image shows the implemented mobile interface.",
+    "wireframeMobile": "Home · Mobile wireframe · Partial view",
+    "implementationMobile": "Home · Mobile implementation · Partial view",
+    "developmentTitle": "From Figma design to React implementation",
+    "developmentText": "I developed the Home, About and Contact frontend in React, translating the visual proposal and its desktop and mobile layouts into the published website.",
+    "supportTitle": "View the About and Contact wireframes",
+    "supportText": "The inner pages were also explored through wireframes. Contact presents email, phone and address details without a form. The contact details visible in these sketches are placeholders.",
+    "aboutWireframe": "About · Desktop wireframe",
+    "contactDesktop": "Contact · Desktop wireframe",
+    "contactMobile": "Contact · Mobile wireframe",
+    "openImage": "Open full image: {{name}} (new tab)",
+    "imageHint": "Select any image to view it in full."
   }
 }

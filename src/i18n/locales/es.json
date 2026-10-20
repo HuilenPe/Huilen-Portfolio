@@ -103,5 +103,27 @@
     "responsiveAlt": "Implementación responsive de {{name}}",
     "dataModelAlt": "Modelo de datos: artworks se conecta con categories, artwork_images y artwork_exhibitions.",
     "dataModelCaption": "Modelo de datos del archivo de obras. Selección de tablas del esquema implementado. Abrir imagen para ampliar."
+  },
+  "equinoxCase": {
+    "constraintsTitle": "Diseñar contando únicamente con el logo",
+    "constraintsText": "El único recurso recibido fue el logo de la web anterior. Sin una guía gráfica ni fotografías de la empresa, desarrollé la propuesta visual y seleccioné imágenes de Unsplash para acompañar el contenido.",
+    "briefText": "Antes de diseñar, planteé preguntas sobre el público, el objetivo de la web, los contenidos, la libertad para reorganizarlos y cómo resolver Contact dentro del alcance acordado.",
+    "designTitle": "Del wireframe al diseño visual",
+    "designText": "El wireframe de Home organizó la presentación inicial, los servicios, las capacidades de la empresa, el acceso a About y la llamada a contacto. El diseño de alta fidelidad desarrolló esa estructura con fotografías, iconos y color.",
+    "wireframeDesktop": "Home · Wireframe de escritorio",
+    "designDesktop": "Home · Diseño de alta fidelidad en Figma",
+    "mobileTitle": "La estructura también se planteó para móvil",
+    "mobileText": "El wireframe móvil ya presenta las llamadas a la acción apiladas, los servicios en carrusel y los bloques de contenido en una columna. La segunda imagen muestra la interfaz implementada en móvil.",
+    "wireframeMobile": "Home · Wireframe móvil · Vista parcial",
+    "implementationMobile": "Home · Implementación móvil · Vista parcial",
+    "developmentTitle": "Del diseño en Figma a la implementación en React",
+    "developmentText": "Desarrollé el frontend de Home, About y Contact en React, trasladando la propuesta visual y sus composiciones de escritorio y móvil a la web publicada.",
+    "supportTitle": "Ver los wireframes de About y Contact",
+    "supportText": "Las páginas interiores también se trabajaron en wireframes. Contact plantea email, teléfono y dirección, sin formulario. Los datos de contacto visibles en estos bocetos son provisionales.",
+    "aboutWireframe": "About · Wireframe de escritorio",
+    "contactDesktop": "Contact · Wireframe de escritorio",
+    "contactMobile": "Contact · Wireframe móvil",
+    "openImage": "Abrir imagen completa: {{name}} (nueva pestaña)",
+    "imageHint": "Podés pulsar cada imagen para verla completa."
   }
 }
