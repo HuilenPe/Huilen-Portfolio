@@ -1496,3 +1496,8 @@
 .details[id="equinox"] .caseStage {
   align-items: flex-start;
 }
+/* EQUINOX — SMALLER VERTICAL COMPARISON PADDING */
+.equinoxCaseComparison > .equinoxCaseScreen > a {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
