@@ -14,6 +14,19 @@ function ProjectDetails({ project }) {
     titleRef.current?.focus()
   }, [project.slug])
 
+  useEffect(() => {
+    if (project?.id !== "equinox") return
+
+    const previousTitle = document.title
+    document.title = "Equinox — Huilen Peña"
+
+    return () => {
+      document.title = previousTitle
+    }
+  }, [project?.id])
+
+  const SectionHeading = project?.id === "equinox" ? "h2" : "h3"
+
   if (!project?.details) return null
 
   const covers = {
@@ -139,12 +152,12 @@ function ProjectDetails({ project }) {
             {project.details.context && (
               <div className={styles.gridTwo}>
                 <div>
-                  <h3>{t("caseUI.context")} </h3>
+                  <SectionHeading>{t("caseUI.context")}</SectionHeading>
                   <p>{project.details.context.problema}</p>
                 </div>
 
                 <div>
-                  <h3>{t("caseUI.goal")} </h3>
+                  <SectionHeading>{t("caseUI.goal")}</SectionHeading>
                   <p>{project.details.context.objetivo}</p>
 
                   {project.details.context.usuario?.length > 0 && (
@@ -343,7 +356,7 @@ function ProjectDetails({ project }) {
                 {project.details.result && (
                   <div className={styles.closingResult}>
                     <span className={styles.processEyebrow}>{t("caseUI.outcome")} </span>
-                    <h3>{project.details.result.title}</h3>
+                    <SectionHeading>{project.details.result.title}</SectionHeading>
                     <p>{project.details.result.content}</p>
                   </div>
                 )}

@@ -32,6 +32,7 @@ export default function EquinoxProcess() {
       <section className={styles.equinoxCaseConstraints}>
         <h2>{text("constraintsTitle")}</h2>
         <p>{text("constraintsText")}</p>
+        <p className={styles.equinoxCaseHint}>{text("photographyNote")}</p>
         <p>{text("briefText")}</p>
       </section>
 
@@ -61,7 +62,6 @@ export default function EquinoxProcess() {
       <section>
         <h2>{text("developmentTitle")}</h2>
         <p>{text("developmentText")}</p>
-        <p className={styles.equinoxCaseHint}>{text("photographyNote")}</p>
       </section>
 
       <details className={styles.equinoxCaseSupport}>

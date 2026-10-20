@@ -109,7 +109,7 @@
     "constraintsText": "El único recurso recibido fue el logo de la web anterior. Sin una guía gráfica ni fotografías de la empresa, desarrollé la propuesta visual y seleccioné imágenes de Unsplash para acompañar el contenido.",
     "briefText": "Antes de diseñar, planteé preguntas sobre el público, el objetivo de la web, los contenidos, la libertad para reorganizarlos y cómo resolver Contact dentro del alcance acordado.",
     "designTitle": "Del wireframe al diseño visual",
-    "designText": "La estructura de Home presenta primero los servicios, después las capacidades de la empresa y, por último, About y contacto. En el diseño visual, los servicios pasan de tarjetas delimitadas a columnas con iconos, mientras que las capacidades se agrupan sobre un fondo común. El verde del logo se incorpora a los iconos y a las llamadas a la acción.",
+    "designText": "La estructura de Home presenta primero los servicios, después las capacidades de la empresa y, por último, About y contacto. Tras la primera presentación, cambié las tarjetas delimitadas de servicios por columnas con iconos a partir de una corrección de la empresa. En el diseño visual, las capacidades se agrupan sobre un fondo común y el verde del logo se incorpora a los iconos y a las llamadas a la acción.",
     "wireframeDesktop": "Home · Wireframe de escritorio",
     "designDesktop": "Home · Diseño de alta fidelidad en Figma",
     "mobileTitle": "La estructura también se planteó para móvil",

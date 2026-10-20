@@ -182,7 +182,8 @@
   margin-bottom: 4rem;
 }
 
-.gridTwo h3 {
+.gridTwo h3,
+.gridTwo h2 {
   margin-bottom: 1rem;
 
   font-size: 1.2rem;
@@ -262,7 +263,8 @@
   max-width: 560px;
 }
 
-.closingResult h3 {
+.closingResult h3,
+.closingResult h2 {
   margin: 0.75rem 0 1rem;
 
   font-size: 1.5rem;
@@ -569,7 +571,8 @@
     max-width: none;
   }
 
-  .closingResult h3 {
+  .closingResult h3,
+.closingResult h2 {
     font-size: 1.35rem;
   }
 
